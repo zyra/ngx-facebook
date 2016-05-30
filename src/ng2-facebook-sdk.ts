@@ -26,5 +26,5 @@ export interface FacebookInitParams {
     status?: boolean;
     xfbml?: boolean;
     frictionlessRequests?: boolean;
-    hideFlashCallback?: any
+    hideFlashCallback?: any;
 }
