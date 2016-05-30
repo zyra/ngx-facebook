@@ -9,16 +9,19 @@ export class FacebookService {
         FB.init(params);
     }
 
-    api(path: string, method?: string, params?: any): Promise<any> {
+    api(path: string, method?: FacebookMethods = 'get', params?: any = {}): Promise<any> {
         return new Promise<any>(
             (resolve, reject) => {
+                FB.api(path, method, params, () => {
 
+                });
             }
         );
     }
 
 }
 
+export type FacebookMethods = 'get' | 'post' | 'delete';
 export interface FacebookInitParams {
     appId?: string;
     version: string;
