@@ -10,7 +10,9 @@
     "url": "git+https://github.com/ihadeed/ng2-facebook-sdk.git"
   },
   "keywords": [
-    "facebook"
+    "facebook",
+    "angular2",
+    "sdk"
   ],
   "author": "Ibrahim Hadeed",
   "license": "MIT",
