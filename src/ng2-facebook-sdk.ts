@@ -78,6 +78,20 @@ export class FacebookService {
         );
     }
 
+    login(options?: FacebookLoginOptions): Promise<FacebookLoginResponse> {
+        return new Promise<FacebookLoginResponse>(
+            (resolve, reject) => {
+                FB.login((response: FacebookLoginResponse) => {
+                   if(response.authResponse) {
+                       resolve(response);
+                   }else{
+                       reject();
+                   }
+                }, options);
+            }
+        );
+    }
+
 }
 
 export interface FacebookInitParams {
@@ -131,12 +145,27 @@ export interface FacebookUiParams {
     method: any;
 }
 
+export interface FacebookAuthResponse {
+    accessToken: string;
+    expiresIn: number;
+    signedRequest: string;
+    userID: string;
+}
+
 export interface FacebookLoginStatus {
     status: string;
-    authResponse: {
-        accessToken: string;
-        expiresIn: string;
-        signedRequest: string;
-        userId: string;
-    };
+    authResponse: FacebookAuthResponse;
+}
+
+export interface FacebookLoginOptions {
+    auth_type?: string;
+    scope?: string;
+    return_scopes?: boolean;
+    enable_profile_selector?: boolean;
+    profile_selector_ids?: string;
+}
+
+export interface FacebookLoginResponse {
+    authResponse: FacebookAuthResponse;
+    status: string;
 }
