@@ -12,8 +12,14 @@ export class FacebookService {
     api(path: string, method?: string = 'get', params?: any = {}): Promise<any> {
         return new Promise<any>(
             (resolve, reject) => {
-                FB.api(path, method, params, () => {
-
+                FB.api(path, method, params, (response: any) => {
+                    if(!response){
+                        reject();
+                    }else if(response.error){
+                        reject(response.error);
+                    }else{
+                        resolve(response);
+                    }
                 });
             }
         );
