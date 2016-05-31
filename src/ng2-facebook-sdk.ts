@@ -78,6 +78,11 @@ export class FacebookService {
         );
     }
 
+    /**
+     * Login the user
+     * @param options
+     * @returns {Promise<FacebookLoginResponse>}
+     */
     login(options?: FacebookLoginOptions): Promise<FacebookLoginResponse> {
         return new Promise<FacebookLoginResponse>(
             (resolve, reject) => {
@@ -88,6 +93,20 @@ export class FacebookService {
                        reject();
                    }
                 }, options);
+            }
+        );
+    }
+
+    /**
+     * Logout the user
+     * @returns {Promise<any>}
+     */
+    logout(): Promise<any> {
+        return new Promise<any>(
+            (resolve, reject) => {
+                FB.logout((response: any) => {
+                    resolve(response);
+                });
             }
         );
     }
