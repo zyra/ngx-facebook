@@ -4,6 +4,7 @@
   "description": "Facebook TypeScript SDK for Angular2",
   "main": "index.ts",
   "scripts": {
+    "build": "tsc --module commonjs --sourcemap --outDir dist/ -d typings/es6-shim/es6-shim.d.ts --experimentalDecorators src/index.ts --target ES5",
     "test": "echo \"No tests for now :)\" && exit 0"
   },
   "repository": {
