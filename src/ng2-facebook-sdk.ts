@@ -87,11 +87,11 @@ export class FacebookService {
         return new Promise<FacebookLoginResponse>(
             (resolve, reject) => {
                 FB.login((response: FacebookLoginResponse) => {
-                   if(response.authResponse) {
-                       resolve(response);
-                   }else{
-                       reject();
-                   }
+                    if(response.authResponse) {
+                        resolve(response);
+                    }else{
+                        reject();
+                    }
                 }, options);
             }
         );
@@ -103,12 +103,20 @@ export class FacebookService {
      */
     logout(): Promise<any> {
         return new Promise<any>(
-            (resolve, reject) => {
+            (resolve) => {
                 FB.logout((response: any) => {
                     resolve(response);
                 });
             }
         );
+    }
+
+    /**
+     * This synchronous function returns back the current authResponse.
+     * @returns {Promise<FacebookAuthResponse>}
+     */
+    getAuthResponse(): FacebookAuthResponse {
+        return <FacebookAuthResponse>FB.getAuthResponse();
     }
 
 }
