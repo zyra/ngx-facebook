@@ -63,6 +63,21 @@ export class FacebookService {
         );
     }
 
+    /**
+     * This method allows you to determine if a user is logged in to Facebook and has authenticated your app.
+     * @returns {Promise<FacebookLoginStatus>}
+     */
+    getLoginStatus(): Promise<FacebookLoginStatus> {
+        return new Promise<FacebookLoginStatus>(
+            (resolve, reject) => {
+                FB.getLoginStatus((response: FacebookLoginStatus) => {
+                    if(!response) reject();
+                    else resolve(response);
+                });
+            }
+        );
+    }
+
 }
 
 export interface FacebookInitParams {
@@ -116,3 +131,12 @@ export interface FacebookUiParams {
     method: any;
 }
 
+export interface FacebookLoginStatus {
+    status: string;
+    authResponse: {
+        accessToken: string;
+        expiresIn: string;
+        signedRequest: string;
+        userId: string;
+    };
+}
