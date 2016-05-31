@@ -2,18 +2,33 @@
 
 **NOTE**: This is work under progress. Watch this repo to be updated.
 
-## Installation
-Via NPM:
+### Installation
+Install via NPM:
 ```
-npm install ng2-facebook-sdk
-```
-
-Via GIT:
-```
-git clone https://github.com/ihadeed/ng2-facebook-sdk.git
+npm i --save-dev ng2-facebook-sdk
 ```
 
-Via Bower:
+Install via Bower:
 ```
 bower install ng2-facebook-sdk
+```
+
+### Usage
+```typescript
+import {FacebookService, FacebookLoginResponse} from 'ng2-facebook-sdk/dist';
+
+@Component({
+  templateUrl: '/path/to/template.html',
+  providers: [FacebookService]
+})
+export class MyComponent {
+  constructor(private fb: FacebookService) { }
+
+  someFunction(): void {
+    this.fb.login().then(
+      (response: FacebookLoginResponse) => console.log(response),
+      (error: any) => console.error(error)
+    );
+  }
+}
 ```
