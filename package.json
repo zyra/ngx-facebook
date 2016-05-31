@@ -23,6 +23,7 @@
   "homepage": "https://github.com/ihadeed/ng2-facebook-sdk#readme",
   "devDependencies": {
     "@angular/core": "^2.0.0-rc.1",
+    "browserify": "^13.0.1",
     "rxjs": "^5.0.0-beta.6",
     "typescript": "^1.8.10",
     "zone.js": "^0.6.12"
