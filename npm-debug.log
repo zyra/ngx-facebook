@@ -1,0 +1,50 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'version',
+1 verbose cli   'patch' ]
+2 info using npm@2.14.12
+3 info using node@v4.2.4
+4 info git [ 'status', '--porcelain' ]
+5 info preversion ng2-facebook-sdk@0.1.1
+6 verbose version.write data { name: 'ng2-facebook-sdk',
+6 verbose version.write   version: '0.1.1',
+6 verbose version.write   description: 'Facebook TypeScript SDK for Angular2',
+6 verbose version.write   main: 'index.ts',
+6 verbose version.write   scripts: { test: 'echo "No tests for now :)" && exit 0' },
+6 verbose version.write   repository:
+6 verbose version.write    { type: 'git',
+6 verbose version.write      url: 'git+https://github.com/ihadeed/ng2-facebook-sdk.git' },
+6 verbose version.write   keywords: [ 'facebook', 'angular2', 'sdk' ],
+6 verbose version.write   author: 'Ibrahim Hadeed',
+6 verbose version.write   license: 'MIT',
+6 verbose version.write   bugs: { url: 'https://github.com/ihadeed/ng2-facebook-sdk/issues' },
+6 verbose version.write   homepage: 'https://github.com/ihadeed/ng2-facebook-sdk#readme',
+6 verbose version.write   devDependencies:
+6 verbose version.write    { '@angular/core': '^2.0.0-rc.1',
+6 verbose version.write      rxjs: '^5.0.0-beta.6',
+6 verbose version.write      typescript: '^1.8.10',
+6 verbose version.write      'zone.js': '^0.6.12' } } to package.json
+7 info version ng2-facebook-sdk@0.1.1
+8 info git [ 'add', 'package.json' ]
+9 info git [ 'commit', '-m', '0.1.1' ]
+10 info git [ 'tag', 'v0.1.1', '-am', '0.1.1' ]
+11 verbose stack Error: Command failed: git -c core.longpaths=true tag v0.1.1 -am 0.1.1
+11 verbose stack fatal: tag 'v0.1.1' already exists
+11 verbose stack
+11 verbose stack     at ChildProcess.exithandler (child_process.js:213:12)
+11 verbose stack     at emitTwo (events.js:87:13)
+11 verbose stack     at ChildProcess.emit (events.js:172:7)
+11 verbose stack     at maybeClose (internal/child_process.js:818:16)
+11 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+12 verbose cwd C:\Users\Ibrahim\WebstormProjects\ng2-facebook-sdk
+13 error Windows_NT 10.0.10586
+14 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "version" "patch"
+15 error node v4.2.4
+16 error npm  v2.14.12
+17 error code 128
+18 error Command failed: git -c core.longpaths=true tag v0.1.1 -am 0.1.1
+18 error fatal: tag 'v0.1.1' already exists
+19 error If you need help, you may report this error at:
+19 error     <https://github.com/npm/npm/issues>
+20 verbose exit [ 1, true ]
