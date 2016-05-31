@@ -109,6 +109,7 @@ export const enum FacebookApiMethod {
 }
 
 export interface FacebookUiParams {
+    // TODO add all possible params for different dialogs
     /**
      * The UI dialog that is being invoked. This is a required field.
      */
