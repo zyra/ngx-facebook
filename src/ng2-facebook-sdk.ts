@@ -9,6 +9,7 @@ export class FacebookService {
         FB.init(params);
     }
 
+    // TODO create an interface (type) for the response instead of any
     api(path: string, method?: string = 'get', params?: any = {}): Promise<any> {
         return new Promise<any>(
             (resolve, reject) => {
