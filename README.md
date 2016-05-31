@@ -13,7 +13,7 @@ Install via Bower:
 bower install ng2-facebook-sdk
 ```
 
-### Usage
+### Example Usage
 ```typescript
 import {FacebookService, FacebookLoginResponse} from 'ng2-facebook-sdk/dist';
 
