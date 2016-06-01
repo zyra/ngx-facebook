@@ -10,7 +10,7 @@
 - [Installation](#installation)
 - [Example Usage](#example-usage)
 - [API Reference](#api-reference)
-    - init()
+    - [init()](#initparams-facebookinitparams-void)
 
 
 ### Installation
