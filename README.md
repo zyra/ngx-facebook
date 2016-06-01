@@ -37,3 +37,35 @@ export class MyComponent {
   }
 }
 ```
+
+
+### API Reference
+
+#### init(params: FacebookInitParams): void
+This method is used to initialize and setup the SDK.
+```javascript
+import {FacebookService, FacebookInitParams} from 'ng2-facebook-sdk/dist';
+
+@Component(...)
+export class MyComponent {
+  constructor(private fb: FacebookService) {
+    let fbParams: FacebookInitParams = {
+                                   appId: '1234566778',
+                                   xfbml: true,
+                                   version: 'v2.6'
+                                   };
+    this.fb.init(fbParams);
+  }
+}
+```
+
+
+
+```javascript
+import {FacebookService, FacebookInitParams} from 'ng2-facebook-sdk/dist';
+
+@Component(...)
+export class MyComponent {
+  
+}
+```
