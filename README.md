@@ -9,7 +9,7 @@
 
 - [Installation](#installation)
 - [Example Usage](#example-usage)
-- [API Reference](#api-reference)
+- [Methods](#methods)
     - [init(params: FacebookInitParams): void](#initparams-facebookinitparams-void)
     - api(path: string, method?: FacebookApiMethod, params?: any = {}): Promise<any>
     - ui(params: FacebookUiParams): Promise<any>
@@ -59,7 +59,7 @@ export class MyComponent {
 ```
 
 
-## API Reference
+## Methods
 
 #### init(params: FacebookInitParams): void
 This method is used to initialize and setup the SDK.
