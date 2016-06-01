@@ -18,13 +18,13 @@
     - logout(): Promise<any>
     - getAuthResponse(): FacebookAuthResponse
 - Interfaces
-    - FacebookInitParams
-    - FacebookApiMethod (enum)
-    - FacebookUiParams
-    - FacebookAuthResponse
-    - FacebookLoginStatus
-    - FacebookLoginOptions
-    - FacebookLoginResponse
+    - [FacebookInitParams](#facebookinitparams)
+    - [FacebookApiMethod (enum)](#facebookapimethod-enum)
+    - [FacebookUiParams](#facebookuiparams)
+    - [FacebookAuthResponse](#facebookauthresponse)
+    - [FacebookLoginStatus](#facebookloginstatus)
+    - [FacebookLoginOptions](#facebookloginoptions)
+    - [FacebookLoginResponse](#facebookloginresponse)
 
 
 ## Installation
