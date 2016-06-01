@@ -7,6 +7,12 @@
 
 **NOTE**: This is work under progress. Watch this repo to be updated.
 
+- [Installation](#installation)
+- [Example Usage](#example-usage)
+- [API Reference](#api-reference)
+    - init()
+
+
 ### Installation
 Install via NPM:
 ```
