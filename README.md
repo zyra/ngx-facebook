@@ -17,7 +17,7 @@
     - login(options? FacebookLoginOptions): Promise<FacebookLoginResponse>
     - logout(): Promise<any>
     - getAuthResponse(): FacebookAuthResponse
-- Interfaces
+- [Interfaces](#interfaces)
     - [FacebookInitParams](#facebookinitparams)
     - [FacebookApiMethod (enum)](#facebookapimethod-enum)
     - [FacebookUiParams](#facebookuiparams)
