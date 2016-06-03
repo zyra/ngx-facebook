@@ -104,11 +104,11 @@ frictionlessRequests   | `boolean`  |   Frictionless Requests are available to g
 hideFlashCallback   | `function`  |   This specifies a function that is called whenever it is necessary to hide Adobe Flash objects on a page. This is used when `.api()` requests are made, as Flash objects will always have a higher `z-index` than any other DOM element. See our Custom Flash Hide Callback for more details on what to put in this function. **Defaults to `null`**.
 
 #### FacebookApiMethod (enum)
-```typescript
-    'get',
-    'post',
-    'delete'
-```
+Name    |   Description
+--------|--------------
+get |   Get request
+post | Post request
+delete | Delete request
 
 #### FacebookUiParams
 
@@ -121,22 +121,22 @@ signedRequest|`string`|
 userID|`string`|The Facebook user ID
 
 #### FacebookLoginStatus
-```typescript
-    status: string;
-    authResponse: FacebookAuthResponse;
-```
+Name    |   Type    |   Description
+--------|-----------|--------------
+status|`string`|Status
+authResponse|`FacebookAuthResponse`| Facebook AuthResponse object
 
 #### FacebookLoginOptions
-```typescript
-    auth_type?: string;
-    scope?: string;
-    return_scopes?: boolean;
-    enable_profile_selector?: boolean;
-    profile_selector_ids?: string;
-```
+Name    |   Type    |   Description
+--------|-----------|--------------
+auth_type|`string`|
+scope|`string`|
+return_scopes|`boolean`|
+enable_profile_selector|`boolean`|
+profile_selector_ids|`string`|
 
 #### FacebookLoginResponse
-```typescript
-    authResponse: FacebookAuthResponse;
-    status: string;
-```
+Name    |   Type    |   Description
+--------|-----------|--------------
+authResponse|`FacebookAuthResponse`|
+status|`string`|
