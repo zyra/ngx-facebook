@@ -5,8 +5,6 @@
 
 # Angular2 Facebook SDK
 
-**NOTE**: This is work under progress. Watch this repo to be updated.
-
 - [Installation](#installation)
 - [Example Usage](#example-usage)
 - [Methods](#methods)
