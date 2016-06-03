@@ -93,12 +93,11 @@ export class MyComponent {
 
 ## Interfaces
 #### FacebookInitParams
+Name    |   Type    |   Description
+--------|-----------|--------------
+appId   | `string`  |   Your application ID. If you don't have one find it in the App dashboard or go there to create a new app. Defaults to null.
 ```typescript
-     /**
-      * Your application ID. If you don't have one find it in the App dashboard or go there to create a new app. Defaults to null.
-      */
-     appId?: string;
- 
+   
      /**
       * Determines which versions of the Graph API and any API dialogs or plugins are invoked when using the .api() and .ui() functions. Valid values are determined by currently available versions, such as 'v2.0'. This is a required parameter.
       */
