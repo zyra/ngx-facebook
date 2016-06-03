@@ -113,12 +113,12 @@ hideFlashCallback   | `function`  |   This specifies a function that is called w
 #### FacebookUiParams
 
 #### FacebookAuthResponse
-```typescript
-    accessToken: string;
-    expiresIn: number;
-    signedRequest: string;
-    userID: string;
-```
+Name    |   Type    |   Description
+--------|-----------|--------------
+accessToken|`string`|User access token
+expiresIn|`number`|Access token lifetime in seconds
+signedRequest|`string`|
+userID|`string`|The Facebook user ID
 
 #### FacebookLoginStatus
 ```typescript
