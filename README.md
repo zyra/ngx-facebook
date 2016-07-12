@@ -4,6 +4,7 @@
 
 
 # Angular2 Facebook SDK
+This is a wrapper for the official Facebook JavaScript SDK. You must still include their JavaScript files in your project. This wrapper makes it easier to use Facebook SDK with Angular2 by providing types and promises.
 
 - [Installation](#installation)
 - [Example Usage](#example-usage)
