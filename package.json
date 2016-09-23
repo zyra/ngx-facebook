@@ -29,7 +29,7 @@
     "@angular/core": "^2.0.0-rc.1",
     "browserify": "^13.1.0",
     "rxjs": "^5.0.0-beta.6",
-    "typescript": "^1.8.10",
+    "typescript": "^2.0.3",
     "zone.js": "^0.6.12"
   }
 }
