@@ -3,6 +3,7 @@
   "version": "0.1.5",
   "description": "Facebook TypeScript SDK for Angular2",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "files": [
     "dist"
   ],
