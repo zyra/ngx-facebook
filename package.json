@@ -1,6 +1,6 @@
 {
   "name": "ng2-facebook-sdk",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "Facebook TypeScript SDK for Angular2",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
