@@ -22,7 +22,7 @@ export class FacebookService {
      * @param params This is an object consisting of any parameters that you want to pass into your Graph API call.
      * @returns {Promise<any>}
      */
-    api(path: string, method?: FacebookApiMethod = 'get', params?: any = {}): Promise<any> {
+    api(path: string, method: FacebookApiMethod = 'get', params: any = {}): Promise<any> {
         return new Promise<any>(
             (resolve, reject) => {
                 FB.api(path, method, params, (response: any) => {
@@ -158,11 +158,7 @@ export interface FacebookInitParams {
     hideFlashCallback?: any;
 }
 
-export const enum FacebookApiMethod {
-    'get',
-    'post',
-    'delete'
-}
+export type FacebookApiMethod = 'get' | 'post' | 'delete';
 
 export interface FacebookUiParams {
     // TODO add all possible params for different dialogs
