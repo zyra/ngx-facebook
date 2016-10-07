@@ -20,17 +20,16 @@
     "angular2",
     "sdk"
   ],
-  "author": "Ibrahim Hadeed",
+  "author": "Zyra Media Inc.",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ihadeed/ng2-facebook-sdk/issues"
   },
   "homepage": "https://github.com/ihadeed/ng2-facebook-sdk#readme",
   "devDependencies": {
-    "@angular/core": "^2.0.0-rc.1",
-    "browserify": "^13.1.0",
-    "rxjs": "^5.0.0-beta.6",
-    "typescript": "^1.8.10",
-    "zone.js": "^0.6.12"
+    "@angular/core": "^2.0.1",
+    "rxjs": "5.0.0-beta.12",
+    "typescript": "^2.0.3",
+    "zone.js": "0.6.25"
   }
 }
