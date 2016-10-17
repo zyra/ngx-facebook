@@ -27,15 +27,16 @@ This is a wrapper for the official Facebook JavaScript SDK. You must still inclu
 
 
 ## Installation
-Install via NPM:
+- Install via NPM:
 ```
 npm i --save-dev ng2-facebook-sdk
 ```
 
-Install via Bower:
+- Add the Facebook JavaScript SDK to your index.html
 ```
-bower install ng2-facebook-sdk
+<script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js"></script>
 ```
+
 
 ## Example Usage
 ```typescript
