@@ -40,7 +40,7 @@ npm i --save-dev ng2-facebook-sdk
 
 ## Example Usage
 ```typescript
-import {FacebookService, FacebookLoginResponse} from 'ng2-facebook-sdk/dist';
+import {FacebookService, FacebookLoginResponse} from 'ng2-facebook-sdk';
 
 @Component({
   templateUrl: '/path/to/template.html',
@@ -64,7 +64,7 @@ export class MyComponent {
 #### init(params: FacebookInitParams): void
 This method is used to initialize and setup the SDK.
 ```typescript
-import {FacebookService, FacebookInitParams} from 'ng2-facebook-sdk/dist';
+import {FacebookService, FacebookInitParams} from 'ng2-facebook-sdk';
 
 @Component(...)
 export class MyComponent {
@@ -82,7 +82,7 @@ export class MyComponent {
 
 
 ```typescript
-import {FacebookService, FacebookInitParams} from 'ng2-facebook-sdk/dist';
+import {FacebookService, FacebookInitParams} from 'ng2-facebook-sdk';
 
 @Component(...)
 export class MyComponent {
