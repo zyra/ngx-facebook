@@ -304,6 +304,18 @@ export interface FacebookUiParams extends ShareDialogParams, FeedDialogParams, S
      * - Mobile web apps will always default to the touch display type.
      */
     display?: string;
+    
+    /**
+     * - Dialog in create phase allows you to get stream url to upload video; Dialog in publish phase will provide preview and go live button. required
+     * - phase = create | publish
+     */
+    phase?: string;
+    
+    /**
+     * - This parameter is required for publish phase.
+     * - The response object returned from either API or create phase.
+     */
+    broadcast_data?: any;
 
 }
 
