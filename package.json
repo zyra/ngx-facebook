@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ihadeed/ng2-facebook-sdk.git"
+    "url": "git+https://github.com/zyramedia/ng2-facebook-sdk.git"
   },
   "keywords": [
     "facebook",
@@ -23,9 +23,9 @@
   "author": "Zyra Media Inc.",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ihadeed/ng2-facebook-sdk/issues"
+    "url": "https://github.com/zyramedia/ng2-facebook-sdk/issues"
   },
-  "homepage": "https://github.com/ihadeed/ng2-facebook-sdk#readme",
+  "homepage": "https://github.com/zyramedia/ng2-facebook-sdk",
   "devDependencies": {
     "@angular/compiler": "^2.1.1",
     "@angular/compiler-cli": "^2.1.1",
