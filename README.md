@@ -94,7 +94,6 @@ export class MyComponent {
 
 
 ## api
-
 This method lets you make calls to the Graph API
 
 **Parameters**
@@ -135,7 +134,6 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 Login the user
 
 **Parameters**
-
 -   `options`
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;FacebookLoginResponse>**
@@ -167,7 +165,6 @@ status   | `boolean`  |   Determines whether the current login status of the use
 xfbml   | `boolean`  |   Determines whether XFBML tags used by social plugins are parsed, and therefore whether the plugins are rendered or not. **Defaults to `false`**.
 frictionlessRequests   | `boolean`  |   Frictionless Requests are available to games on Facebook.com or on mobile web using the JavaScript SDK. This parameter determines whether they are enabled. **Defaults to `false`**.
 hideFlashCallback   | `function`  |   This specifies a function that is called whenever it is necessary to hide Adobe Flash objects on a page. This is used when `.api()` requests are made, as Flash objects will always have a higher `z-index` than any other DOM element. See our Custom Flash Hide Callback for more details on what to put in this function. **Defaults to `null`**.
-
 
 ## FacebookApiMethod
 Name    |   Description
