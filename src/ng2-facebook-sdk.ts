@@ -113,7 +113,7 @@ export class FacebookService {
 
     /**
      * This synchronous function returns back the current authResponse.
-     * @returns {Promise<FacebookAuthResponse>}
+     * @returns {FacebookAuthResponse}
      */
     getAuthResponse(): FacebookAuthResponse {
         return <FacebookAuthResponse>FB.getAuthResponse();
@@ -219,14 +219,12 @@ export interface FeedDialogParams {
     to?: string;
 
     /**
-     *
-     The link attached to this post. With the Feed Dialog, people can also share plain text status updates with no content from your app; just leave the link parameter empty.
+     * The link attached to this post. With the Feed Dialog, people can also share plain text status updates with no content from your app; just leave the link parameter empty.
      */
     link?: string;
 
     /**
-     *
-     The URL of a picture attached to this post. The picture must be at least 200px by 200px. See our documentation on sharing best practices for more information on sizes
+     * The URL of a picture attached to this post. The picture must be at least 200px by 200px. See our documentation on sharing best practices for more information on sizes
      */
     picture?: string;
 
@@ -246,8 +244,7 @@ export interface FeedDialogParams {
     caption?: string;
 
     /**
-     *
-     The description of the link (appears beneath the link caption). If not specified, this field is automatically populated by information scraped from the link, typically the title of the page.
+     * The description of the link (appears beneath the link caption). If not specified, this field is automatically populated by information scraped from the link, typically the title of the page.
      */
     description?: string;
 
@@ -323,9 +320,21 @@ export interface FacebookUiResponse extends ShareDialogResponse, FeedDialogRespo
 
 
 export interface FacebookAuthResponse {
+    /**
+     * User access token
+     */
     accessToken: string;
+    /**
+     * Access token lifetime in seconds
+     */
     expiresIn: number;
+    /**
+     *
+     */
     signedRequest: string;
+    /**
+     * The Facebook user ID
+     */
     userID: string;
 }
 
