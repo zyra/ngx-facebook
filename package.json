@@ -8,7 +8,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "ngc",
+    "build": "rm -rf aot dist && ngc",
     "test": "echo \"No tests for now :)\" && exit 0"
   },
   "repository": {
