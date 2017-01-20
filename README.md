@@ -215,6 +215,7 @@ link    | `string` | Required parameter. The URL that is being sent in the messa
 
 ## FacebookUiParams
 This interface extends [ShareDialogParams](#sharedialogparams), [FeedDialogParams](#feeddialogparams) and [SendDialogParams](#senddialogparams). It also contains the following properties:
+
 Name    |   Type    |   Description
 :--- | :--- | :---
 method  |   `any` |   The UI dialog that is being invoked. **This is a required field.**
