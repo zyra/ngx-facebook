@@ -9,13 +9,13 @@ This is a wrapper for the official Facebook JavaScript SDK. You must still inclu
 - [Installation](#installation)
 - [Example Usage](#example-usage)
 - [Methods](#methods)
-    - [init(params: FacebookInitParams): void](#initparams-facebookinitparams-void)
-    - api(path: string, method?: FacebookApiMethod, params?: any = {}): Promise<any>
-    - ui(params: FacebookUiParams): Promise<any>
-    - getLoginStatus(): Promise<FacebookLoginStatus>
-    - login(options? FacebookLoginOptions): Promise<FacebookLoginResponse>
-    - logout(): Promise<any>
-    - getAuthResponse(): FacebookAuthResponse
+    - [init](#init)
+    - [api](#api)
+    - [ui](#ui)
+    - [getLoginStatus](#getLoginStatus)
+    - [login](#login)
+    - [logout](#logout)
+    - [getAuthResponse](#getAuthResponse)
 - [Interfaces](#interfaces)
     - [FacebookInitParams](#facebookinitparams)
     - [FacebookApiMethod (enum)](#facebookapimethod-enum)
@@ -59,10 +59,17 @@ export class MyComponent {
 ```
 
 
-## Methods
+# Methods
 
-#### init(params: FacebookInitParams): void
+## init
+
 This method is used to initialize and setup the SDK.
+
+**Parameters**
+
+-   `params`
+
+#### Example
 ```typescript
 import {FacebookService, FacebookInitParams} from 'ng2-facebook-sdk';
 
@@ -80,19 +87,74 @@ export class MyComponent {
 ```
 
 
+## api
 
-```typescript
-import {FacebookService, FacebookInitParams} from 'ng2-facebook-sdk';
+This method lets you make calls to the Graph API
 
-@Component(...)
-export class MyComponent {
-  
-}
-```
+**Parameters**
+
+-   `path`  This is the Graph API endpoint path that you want to call.
+-   `method`  This is the HTTP method that you want to use for the API request.
+-   `params`  This is an object consisting of any parameters that you want to pass into your Graph API call.
+
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;any>**
+
+## ui
+
+This method is used to trigger different forms of Facebook created UI dialogs.
+These dialogs include:
+
+-   Share dialog
+-   Login dialog
+-   Add page tab dialog
+-   Requests dialog
+-   Send dialog
+-   Payments dialog
+-   Go Live dialog
+
+**Parameters**
+
+-   `params`  A collection of parameters that control which dialog is loaded, and relevant settings.
+
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;FacebookUiResponse>**
+
+## getLoginStatus
+
+This method allows you to determine if a user is logged in to Facebook and has authenticated your app.
+
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;FacebookLoginStatus>**
+
+## login
+
+Login the user
+
+**Parameters**
+
+-   `options`
+
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;FacebookLoginResponse>**
+
+## logout
+
+Logout the user
+
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;any>**
+
+## getAuthResponse
+
+This synchronous function returns back the current authResponse.
+
+Returns **FacebookAuthResponse**
 
 
-## Interfaces
-#### FacebookInitParams
+#### init(params: FacebookInitParams): void
+This method is used to initialize and setup the SDK.
+
+
+
+
+# Interfaces
+## FacebookInitParams
 Name    |   Type    |   Description
 --------|-----------|--------------
 appId   | `string`  |   Your application ID. If you don't have one find it in the App dashboard or go there to create a new app. **Defaults to `null`**.
@@ -103,16 +165,16 @@ xfbml   | `boolean`  |   Determines whether XFBML tags used by social plugins ar
 frictionlessRequests   | `boolean`  |   Frictionless Requests are available to games on Facebook.com or on mobile web using the JavaScript SDK. This parameter determines whether they are enabled. **Defaults to `false`**.
 hideFlashCallback   | `function`  |   This specifies a function that is called whenever it is necessary to hide Adobe Flash objects on a page. This is used when `.api()` requests are made, as Flash objects will always have a higher `z-index` than any other DOM element. See our Custom Flash Hide Callback for more details on what to put in this function. **Defaults to `null`**.
 
-#### FacebookApiMethod (enum)
+## FacebookApiMethod (enum)
 Name    |   Description
 --------|--------------
 get |   Get request
 post | Post request
 delete | Delete request
 
-#### FacebookUiParams
+## FacebookUiParams
 
-#### FacebookAuthResponse
+## FacebookAuthResponse
 Name    |   Type    |   Description
 --------|-----------|--------------
 accessToken|`string`|User access token
@@ -120,13 +182,13 @@ expiresIn|`number`|Access token lifetime in seconds
 signedRequest|`string`|
 userID|`string`|The Facebook user ID
 
-#### FacebookLoginStatus
+## FacebookLoginStatus
 Name    |   Type    |   Description
 --------|-----------|--------------
 status|`string`|Status
 authResponse|`FacebookAuthResponse`| Facebook AuthResponse object
 
-#### FacebookLoginOptions
+###FacebookLoginOptions
 Name    |   Type    |   Description
 --------|-----------|--------------
 auth_type|`string`|
@@ -135,7 +197,7 @@ return_scopes|`boolean`|
 enable_profile_selector|`boolean`|
 profile_selector_ids|`string`|
 
-#### FacebookLoginResponse
+## FacebookLoginResponse
 Name    |   Type    |   Description
 --------|-----------|--------------
 authResponse|`FacebookAuthResponse`|
