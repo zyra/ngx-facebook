@@ -45,12 +45,29 @@ npm i --save-dev ng2-facebook-sdk
 
 
 ## Example Usage
+In your main app module, import `FacebookService` and add it to your providers:
+```typescript
+
+import { FacebookService } from 'ng2-facebook-sdk';
+
+@NgModule({
+  ...
+  providers: [
+    FacebookService
+  ],
+  ...
+})
+export class AppModule { }
+
+```
+
+Then inject the service in any component/service:
+
 ```typescript
 import {FacebookService, FacebookLoginResponse} from 'ng2-facebook-sdk';
 
 @Component({
-  templateUrl: '/path/to/template.html',
-  providers: [FacebookService]
+  templateUrl: '/path/to/template.html'
 })
 export class MyComponent {
   constructor(private fb: FacebookService) { }
