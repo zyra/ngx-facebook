@@ -45,6 +45,9 @@ npm i --save-dev ng2-facebook-sdk
 
 
 ## Example Usage
+
+You can view our example project here: https://github.com/zyramedia/ng2-facebook-sdk-example
+
 In your main app module, import `FacebookService` and add it to your providers:
 ```typescript
 
