@@ -93,7 +93,7 @@ This method is used to initialize and setup the SDK.
 
 **Parameters**
 
--   `params` { [FacebookInitParams](#facebookinitparams)} Options to initialize the app with
+-   `params`: ([FacebookInitParams](#facebookinitparams)) Options to initialize the app with
 
 #### Example
 ```typescript
@@ -118,11 +118,24 @@ This method lets you make calls to the Graph API
 
 **Parameters**
 
--   `path`  This is the Graph API endpoint path that you want to call.
--   `method`  This is the HTTP method that you want to use for the API request.
--   `params`  This is an object consisting of any parameters that you want to pass into your Graph API call.
+-   `path`: (String)  This is the Graph API endpoint path that you want to call.
+-   `method`: (String) (optional)  This is the HTTP method that you want to use for the API request. Defaults to `get`.
+-   `params`: (Object) (optional)  This is an object consisting of any parameters that you want to pass into your Graph API call. Defaults to `null`.
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;any>**
+
+Example: 
+```typescript
+// Basic example
+// We only have to pass the path since there are no params, and the default method is `get`.
+this.fb.api('/me/friends'); 
+// Returns a promise that resolves with the user's friends
+
+// Example with params
+this.fb.api('/me/accounts', 'get', { is_business: true }); 
+// Returns a promise that resolves with the user's pages
+```
+---
 
 ## ui
 
@@ -139,37 +152,85 @@ These dialogs include:
 
 **Parameters**
 
--   `params`  A collection of parameters that control which dialog is loaded, and relevant settings.
+-   `params`: ([FacebookUiParams](#facebookuiparams))  A collection of parameters that control which dialog is loaded, and relevant settings.
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;FacebookUiResponse>**
+The [FacebookUiParams](#facebookuiparams) interface extends [ShareDialogParams](#sharedialogparams), [FeedDialogParams](#feeddialogparams) and [SendDialogParams](#senddialogparam). The accepted params are broken into 3 interfaces for documentation purposes only, to make it easier for developers to know what params each UI method takes.
+
+Returns **Promise&lt;[FacebookUiResponse](#facebookuiresponse)>**
+
+Example: 
+```typescript
+// example of using the share dialog
+this.fb.ui({
+  method: 'share',
+  href: 'https://github.com/zyramedia/ng2-facebook-sdk'
+});
+// returns a promise that resolves with the UI response
+```
+---
 
 ## getLoginStatus
 
 This method allows you to determine if a user is logged in to Facebook and has authenticated your app.
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;FacebookLoginStatus>**
+Returns **Promise&lt;[FacebookLoginStatus](#facebookloginstatus)>**
+
+
+Example: 
+```typescript
+this.fb.getLoginStatus();
+// returns a promise that resolves with the login status
+```
+---
 
 ## login
 
 Login the user
 
 **Parameters**
--   `options`
+-   `options`: ([FacebookLoginOptions](#facebookloginoptions)) (optional) Login options
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;FacebookLoginResponse>**
+Returns **Promise&lt;[FacebookLoginResponse](#facebookloginresponse)>**
+
+
+Example: 
+```typescript
+// basic login that allows access to the user's basic profile
+this.fb.login();
+
+// login with options
+this.fb.login({
+  enable_profile_selector: true, // allow user to pick what profile to login with
+  return_scopes: true, // returns the scopes that the user authorized
+  scope: 'public_profile,user_friends,email,pages_show_list' // the scopes we want the user to authorize
+});
+```
+---
 
 ## logout
 
 Logout the user
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;any>**
+Returns **Promise&lt;any>**
+
+Example: 
+```typescript
+this.fb.logout();
+```
+---
 
 ## getAuthResponse
 
 This synchronous function returns back the current authResponse.
 
-Returns **FacebookAuthResponse**
+Returns **[FacebookAuthResponse](#facebookauthresponse)**
 
+
+Example: 
+```typescript
+this.fb.getAuthResponse();
+```
+---
 
 
 # Interfaces
