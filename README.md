@@ -114,7 +114,7 @@ export class MyComponent {
 
 
 ## api
-This method lets you make calls to the Graph API
+This method lets you make calls to the Graph API. Please note that before using the `api` method, the user must be logged in.
 
 **Parameters**
 
@@ -247,6 +247,35 @@ xfbml   | `boolean`  |   Determines whether XFBML tags used by social plugins ar
 frictionlessRequests   | `boolean`  |   Frictionless Requests are available to games on Facebook.com or on mobile web using the JavaScript SDK. This parameter determines whether they are enabled. **Defaults to `false`**.
 hideFlashCallback   | `function`  |   This specifies a function that is called whenever it is necessary to hide Adobe Flash objects on a page. This is used when `.api()` requests are made, as Flash objects will always have a higher `z-index` than any other DOM element. See our Custom Flash Hide Callback for more details on what to put in this function. **Defaults to `null`**.
 
+## FacebookLoginOptions
+Name    |   Type    |   Description
+:--- |:--- |:--- 
+auth_type|`string`| Optional key, only supports one value: `rerequest`. Use this when re-requesting a [declined permission](https://developers.facebook.com/docs/facebook-login/web#re-asking-declined-permissions).
+scope|`string`| Comma separated list of [extended premissions](https://developers.facebook.com/docs/reference/login/extended-permissions).
+return_scopes|`boolean`| When true, the granted scopes will be returned in a comma-separated list in the grantedScopes field of the [authResponse](#facebookauthresponse).
+enable_profile_selector|`boolean`| When true, prompt the user to grant permission for one or more Pages
+profile_selector_ids|`string`| Comma separated list of IDs to display in the profile selector
+
+## FacebookAuthResponse
+Name    |   Type    |   Description
+:--- |:--- |:--- 
+accessToken|`string`|User access token
+expiresIn|`number`|Access token lifetime in seconds
+signedRequest|`string`|
+userID|`string`|The Facebook user ID
+
+## FacebookLoginStatus
+Name    |   Type    |   Description
+:--- |:--- |:--- 
+status|`string`|Status
+authResponse|[`FacebookAuthResponse`](#facebookauthresponse)| Facebook AuthResponse object
+
+## FacebookLoginResponse
+Name    |   Type    |   Description
+:--- |:--- |:--- 
+authResponse|[`FacebookAuthResponse`](#facebookauthresponse)| Auth response object
+status|`string`| Login status
+
 ## FacebookApiMethod
 Name    |   Description
 :--- |:--- 
@@ -309,31 +338,8 @@ broadcast_data  |   `any`   |   The response object returned from either API or 
 ## FacebookUiResponse
 This interface extends [ShareDialogResponse](#sharedialogresponse) and [FeedDialogResponse](#feeddialogresponse).
 
-## FacebookAuthResponse
-Name    |   Type    |   Description
-:--- |:--- |:--- 
-accessToken|`string`|User access token
-expiresIn|`number`|Access token lifetime in seconds
-signedRequest|`string`|
-userID|`string`|The Facebook user ID
 
-## FacebookLoginStatus
-Name    |   Type    |   Description
-:--- |:--- |:--- 
-status|`string`|Status
-authResponse|`FacebookAuthResponse`| Facebook AuthResponse object
 
-###FacebookLoginOptions
-Name    |   Type    |   Description
-:--- |:--- |:--- 
-auth_type|`string`|
-scope|`string`|
-return_scopes|`boolean`|
-enable_profile_selector|`boolean`|
-profile_selector_ids|`string`|
 
-## FacebookLoginResponse
-Name    |   Type    |   Description
-:--- |:--- |:--- 
-authResponse|`FacebookAuthResponse`|
-status|`string`|
+# Disclaimer
+A large portion of this documentation and the documentaion included in the source code are copied from the official [Facebook Docs](https://developers.facebook.com/docs/). This is to make sure that everything is as clear as possible, and consistent with the way Facebook explains it.
