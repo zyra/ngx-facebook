@@ -35,7 +35,7 @@ This is a wrapper for the official Facebook JavaScript SDK. You must still inclu
 ## Installation
 - Install via NPM:
 ```
-npm i --save-dev ng2-facebook-sdk
+npm i --save ng2-facebook-sdk
 ```
 
 - Add the Facebook JavaScript SDK to your index.html
