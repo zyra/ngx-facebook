@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "build": "rm -rf aot dist && ngc",
-    "test": "echo \"No tests for now :)\" && exit 0"
+    "test": "echo \"No tests for now :)\" && exit 0",
+    "link": "cd dist && npm link"
   },
   "repository": {
     "type": "git",
@@ -27,11 +28,13 @@
   },
   "homepage": "https://github.com/zyramedia/ng2-facebook-sdk",
   "devDependencies": {
-    "@angular/compiler": "^2.1.1",
-    "@angular/compiler-cli": "^2.1.1",
-    "@angular/core": "^2.1.1",
-    "rxjs": "5.0.0-beta.12",
-    "typescript": "^2.0.10",
-    "zone.js": "0.6.25"
+    "@angular/compiler": "2.4.10",
+    "@angular/common": "2.4.10",
+    "@angular/compiler-cli": "2.4.10",
+    "@angular/core": "2.4.10",
+    "@angular/platform-browser": "2.4.10",
+    "rxjs": "5.0.1",
+    "typescript": "2.0.10",
+    "zone.js": "0.7.2"
   }
 }
