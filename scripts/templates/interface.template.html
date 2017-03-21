@@ -9,7 +9,7 @@
 {%- if export.heritage %}
 <h4>{{export.heritage}}</h4>
 {% endif -%}
-{% if export.params && export.params.length > 0 %}
+{% if (export.params.length > 0) %}
 <table class="table table-striped table-bordered rounded">
   <thead>
   <tr>

@@ -9,14 +9,7 @@ const projectPackage = require('../package.json'),
 
 const dgeni = new Dgeni([dgeniConfig]);
 
-try {
-  dgeni.generate()
-    .then(docs => {
-      console.log(`${docs.length} docs generated`);
-    });
-} catch (e) {
-  console.error('An error occurred while attempting to generate docs');
-  console.error(e.message);
-  console.error(e.stack);
-  process.exit(1);
-}
+dgeni.generate()
+  .then(docs => {
+    console.log(`${docs.length} docs generated`);
+  });
