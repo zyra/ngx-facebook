@@ -1,0 +1,16 @@
+h2, .h2 {
+  display: block;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+h3, .h3 {
+  display: block;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+h4, .h4 {
+  display: block;
+  margin-top: 10px;
+}
