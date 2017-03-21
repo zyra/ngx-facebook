@@ -6,13 +6,16 @@ declare var FB: any;
 
 @Injectable()
 export class FacebookService {
-
     /**
      * This method is used to initialize and setup the SDK.
      * @param params
      */
     init(params: FacebookInitParams): void {
-        FB.init(params);
+        try {
+            FB.init(params);
+        } catch (err) {
+            console.error(err);
+        }
     }
 
     /**
@@ -25,15 +28,19 @@ export class FacebookService {
     api(path: string, method: FacebookApiMethod = 'get', params: any = {}): Promise<any> {
         return new Promise<any>(
             (resolve, reject) => {
-                FB.api(path, method, params, (response: any) => {
-                    if(!response){
-                        reject();
-                    }else if(response.error){
-                        reject(response.error);
-                    }else{
-                        resolve(response);
-                    }
-                });
+                try {
+                    FB.api(path, method, params, (response: any) => {
+                        if(!response){
+                            reject();
+                        }else if(response.error){
+                            reject(response.error);
+                        }else{
+                            resolve(response);
+                        }
+                    });
+                } catch (err) {
+                    console.error(err);
+                }
             }
         );
     }
@@ -54,11 +61,15 @@ export class FacebookService {
     ui(params: FacebookUiParams): Promise<FacebookUiResponse> {
         return new Promise<any>(
             (resolve, reject) => {
-                FB.ui(params, (response: any) => {
-                    if(!response) reject();
-                    else if(response.error) reject(response.error);
-                    else resolve(response);
-                });
+                try {
+                    FB.ui(params, (response: any) => {
+                        if(!response) reject();
+                        else if(response.error) reject(response.error);
+                        else resolve(response);
+                    });
+                } catch (err) {
+                    console.error(err);
+                }
             }
         );
     }
@@ -70,10 +81,14 @@ export class FacebookService {
     getLoginStatus(): Promise<FacebookLoginStatus> {
         return new Promise<FacebookLoginStatus>(
             (resolve, reject) => {
-                FB.getLoginStatus((response: FacebookLoginStatus) => {
-                    if(!response) reject();
-                    else resolve(response);
-                });
+                try {
+                    FB.getLoginStatus((response: FacebookLoginStatus) => {
+                        if(!response) reject();
+                        else resolve(response);
+                    });
+                } catch (err) {
+                    console.error(err);
+                }
             }
         );
     }
@@ -86,13 +101,17 @@ export class FacebookService {
     login(options?: FacebookLoginOptions): Promise<FacebookLoginResponse> {
         return new Promise<FacebookLoginResponse>(
             (resolve, reject) => {
-                FB.login((response: FacebookLoginResponse) => {
-                    if(response.authResponse) {
-                        resolve(response);
-                    }else{
-                        reject();
-                    }
-                }, options);
+                try {
+                    FB.login((response: FacebookLoginResponse) => {
+                        if(response.authResponse) {
+                            resolve(response);
+                        }else{
+                            reject();
+                        }
+                    }, options);
+                } catch (err) {
+                    console.error('FB is not defined');
+                }
             }
         );
     }
@@ -104,9 +123,13 @@ export class FacebookService {
     logout(): Promise<any> {
         return new Promise<any>(
             (resolve) => {
-                FB.logout((response: any) => {
-                    resolve(response);
-                });
+                try {
+                    FB.logout((response: any) => {
+                        resolve(response);
+                    });
+                } catch (err) {
+                    console.error('FB is not defined');
+                }
             }
         );
     }
@@ -116,7 +139,11 @@ export class FacebookService {
      * @returns {FacebookAuthResponse}
      */
     getAuthResponse(): FacebookAuthResponse {
-        return <FacebookAuthResponse>FB.getAuthResponse();
+        try {
+            return <FacebookAuthResponse>FB.getAuthResponse();
+        } catch (err) {
+            console.error(err);
+        }
     }
 
 }
@@ -211,7 +238,7 @@ export interface FeedDialogParams {
     /**
      * The ID of the person posting the message. If this is unspecified, it defaults to the current person. If specified, it must be the ID of the person or of a page that the person administers.
      */
-    from?: string;
+        from?: string;
 
     /**
      * The ID of the profile that this story will be published to. If this is unspecified, it defaults to the value of from. The ID must be a friend who also uses your app.
@@ -301,13 +328,13 @@ export interface FacebookUiParams extends ShareDialogParams, FeedDialogParams, S
      * - Mobile web apps will always default to the touch display type.
      */
     display?: string;
-    
+
     /**
      * - Dialog in create phase allows you to get stream url to upload video; Dialog in publish phase will provide preview and go live button. required
      * - phase = create | publish
      */
     phase?: string;
-    
+
     /**
      * - This parameter is required for publish phase.
      * - The response object returned from either API or create phase.
