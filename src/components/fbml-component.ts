@@ -12,6 +12,9 @@ export function FBMLAttribute(target: any, key: string) {
   });
 }
 
+/**
+ * @hidden
+ */
 export class FBMLComponent {
 
   protected nativeElement: HTMLElement;
