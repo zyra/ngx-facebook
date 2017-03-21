@@ -2,6 +2,11 @@ machine:
   node:
     version: 5.5.0
 
+general:
+  branches:
+    ignore:
+      - gh-pages
+
 test:
   override:
     - npm run build
