@@ -2,16 +2,10 @@ machine:
   node:
     version: 5.5.0
 
-general:
-  branches:
-    only:
-      - master # ignore PRs and branches
-      - v2
-      - v2-docs
-
 test:
   override:
-    - echo "No tests to run"
+    - npm run build
+    - node scripts/update_docs.js
 
 deployment:
  staging:
