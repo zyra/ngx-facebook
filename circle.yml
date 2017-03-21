@@ -9,6 +9,6 @@ test:
 
 deployment:
  staging:
-   branch: v2-docs
+   branch: v2
    commands:
      - bash ./scripts/update_docs.sh
