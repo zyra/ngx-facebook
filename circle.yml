@@ -17,4 +17,4 @@ deployment:
  staging:
    branch: v2-docs
    commands:
-     - ./scripts/update_docs.sh
+     - bash ./scripts/update_docs.sh
