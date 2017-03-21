@@ -1,6 +1,12 @@
 import { AuthResponse } from './auth-response';
 
 export interface LoginResponse {
-    authResponse: AuthResponse;
-    status: string;
+  /**
+   * Auth Response object
+   */
+  authResponse: AuthResponse;
+  /**
+   * Status as string
+   */
+  status: string;
 }

@@ -78,7 +78,7 @@ export class FacebookService {
    * - Payments dialog
    * - Go Live dialog
    * @param params A collection of parameters that control which dialog is loaded, and relevant settings.
-   * @returns {Promise<FacebookUiResponse>}
+   * @returns {Promise<UIResponse>}
    */
   ui(params: UIParams): Promise<UIResponse> {
     return new Promise<any>((resolve, reject) => {
@@ -94,7 +94,7 @@ export class FacebookService {
 
   /**
    * This method allows you to determine if a user is logged in to Facebook and has authenticated your app.
-   * @returns {Promise<FacebookLoginStatus>}
+   * @returns {Promise<LoginStatus>}
    */
   getLoginStatus(): Promise<LoginStatus> {
     return new Promise<LoginStatus>((resolve, reject) => {
@@ -112,8 +112,25 @@ export class FacebookService {
 
   /**
    * Login the user
-   * @param [options] {LoginOptions}
-   * @returns {Promise<FacebookLoginResponse>}
+   * @usage
+   * ```typescript
+   * // login without options
+   * this.fb.login()
+   *   .then((response: LoginResponse) => console.log('Logged in', response))
+   *   .catch(e => console.error('Error logging in'));
+   *
+   * // login with options
+   * const options: LoginOptions = {
+   *   scope: 'public_profiel,user_friends,email,pages_show_list',
+   *   return_scopes: true,
+   *   enable_profile_selector: true
+   * };
+   * this.fb.login(options)
+   *   .then(...)
+   *   .catch(...);
+   * ```
+   * @param [options] {LoginOptions} Login options
+   * @returns {Promise<LoginResponse>} returns a promise that resolves with [LoginResponse](../LoginResponse) object, or rejects with an error
    */
   login(options?: LoginOptions): Promise<LoginResponse> {
     return new Promise<LoginResponse>((resolve, reject) => {
@@ -131,7 +148,11 @@ export class FacebookService {
 
   /**
    * Logout the user
-   * @returns {Promise<any>}
+   * @usage
+   * ```typescript
+   * this.fb.logout().then(() => console.log('Logged out!'));
+   * ```
+   * @returns {Promise<any>} returns a promise that resolves when the user is logged out
    */
   logout(): Promise<any> {
     return new Promise<any>((resolve) => {
@@ -145,7 +166,15 @@ export class FacebookService {
 
   /**
    * This synchronous function returns back the current authResponse.
-   * @returns {FacebookAuthResponse}
+   * @usage
+   * ```typescript
+   * import { AuthResponse, FacebookService } from 'ng2-facebook-sdk';
+   *
+   * ...
+   *
+   * const authResponse: AuthResponse = this.fb.getAuthResponse();
+   * ```
+   * @returns {AuthResponse} returns an [AuthResponse](../AuthResponse) object
    */
   getAuthResponse(): AuthResponse {
     return <AuthResponse>FB.getAuthResponse();
