@@ -147,7 +147,7 @@ module.exports = function() {
 
     .config(function (writeFilesProcessor) {
       // TODO change this after finishing dev
-      writeFilesProcessor.outputFolder = './generated-docs/';
+      writeFilesProcessor.outputFolder = '../ng2-facebook-sdk-site/';
     })
 
     .config(function (templateFinder, templateEngine) {
