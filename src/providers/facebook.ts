@@ -5,14 +5,34 @@ declare var FB: any;
 
 // TODO create an interface (type) for the response instead of any
 
+/**
+ * @hidden
+ */
 export type ApiMethod = 'get' | 'post' | 'delete';
 
+/**
+ * The service to inject to use Facebook's SDK
+ * @usage
+ * ```typescript
+ * import { FacebookService, InitParams } from 'ng2-facebook-sdk';
+ *
+ * constructor(private fb: FacebookService) {
+ *
+ *   const params: InitParams = {
+ *
+ *   };
+ *
+ *   fb.init(params);
+ *
+ * }
+ * ```
+ */
 @Injectable()
 export class FacebookService {
 
   /**
    * This method is used to initialize and setup the SDK.
-   * @param params
+   * @param params {InitParams} Initialization parameters
    */
   init(params: InitParams): void {
     FB.init(params);
@@ -20,9 +40,15 @@ export class FacebookService {
 
   /**
    * This method lets you make calls to the Graph API
-   * @param path This is the Graph API endpoint path that you want to call.
-   * @param method This is the HTTP method that you want to use for the API request.
-   * @param params This is an object consisting of any parameters that you want to pass into your Graph API call.
+   * @usage
+   * ```typescript
+   * this.fb.api('somepath')
+   *   .then(res => console.log(res))
+   *   .catch(e => console.log(e));
+   * ```
+   * @param path {string} The Graph API endpoint path that you want to call.
+   * @param [method=get] {string} The HTTP method that you want to use for the API request.
+   * @param [params] {Object} An object consisting of any parameters that you want to pass into your Graph API call.
    * @returns {Promise<any>}
    */
   api(path: string, method: ApiMethod = 'get', params: any = {}): Promise<any> {
@@ -86,7 +112,7 @@ export class FacebookService {
 
   /**
    * Login the user
-   * @param options
+   * @param [options] {LoginOptions}
    * @returns {Promise<FacebookLoginResponse>}
    */
   login(options?: LoginOptions): Promise<LoginResponse> {

@@ -1,0 +1,75 @@
+{% extends "doc.layout.html" %}
+
+{% block content %}
+
+{% macro typeList(types) -%}
+{% set separator = joiner("|") %}
+{% for type in types %}{{ separator() }}{{ type | code }}{% endfor %}
+{%- endmacro -%}
+
+{%- for export in doc.moduleDoc.exports %}
+
+<h1 class="display-4">
+  {{export.name}}
+</h1>
+<small>({{export.docType}})</small>
+{{export.description}}
+
+{% if export.usage %}
+
+<a href="#usage" class="h2" id="usage">
+  Usage
+</a>
+{{ doc.usage | marked}}
+
+{% endif %}
+
+{%- for member in export.members %}
+<a id="{{ member.name }}" href="#{{member.name}}" class="h3">{{ member.name }}</a>
+{{ member.description | marked }}
+{% if member.params %}
+<table class="table table-striped table-bordered rounded">
+  <thead>
+  <tr>
+    <th>Param</th>
+    <th>Type</th>
+    <th>Details</th>
+    <th>Default</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for param in member.params %}
+  <tr>
+    <td>
+      {{param.name}}
+      {% if param.optional %}<em>(optional)</em>{% endif -%}
+    </td>
+    <td>
+      <code>{{ param.typeList | escape }}</code>
+    </td>
+    <td>
+      {{ param.description }}
+    </td>
+    <td>
+      {%- if param.defaultValue %}
+      <code>{{ param.defaultValue | escape }}</code>
+      {% endif -%}
+    </td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endif -%}
+
+{% if member.usage %}
+Example usage of <code>{{ member.name }}</code>:
+<br>
+<br>
+{{ member.usage | marked }}
+{% endif %}
+<hr>
+{% endfor -%}
+
+{% endfor -%}
+
+{% endblock %}

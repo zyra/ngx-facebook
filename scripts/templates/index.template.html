@@ -1,0 +1,42 @@
+{% extends "main.layout.html" %}
+
+{%- block body -%}
+<div style="max-width: 600px; float: none; margin: 30px auto;">
+
+  <h1 class="display-4">Angular 2 Facebook SDK</h1>
+  <p class="lead">
+    This is a wrapper for the official Facebook JavaScript SDK. You must still include their JavaScript files in your project. This wrapper makes it easier to use Facebook SDK with Angular2 by providing types and promises.
+  </p>
+
+  <h2>Installation</h2>
+  <h4>Install via NPM</h4>
+  <pre>
+  <code>
+    npm i --save ng2-facebook-sdk
+  </code>
+</pre>
+
+  <h4>Add the Facebook JavaScript SDK to your <code>index.html</code></h4>
+  <pre>
+  <code>
+    {{ '<script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js"></script>' | escape}}
+  </code>
+</pre>
+
+  <h2>Documentation</h2>
+  <div class="list-group">
+    {%- for doc in docs -%}
+    {%- if doc.name -%}
+    <a class="list-group-item" href="{{ doc.URL }}">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{doc.name}}</h5>
+        <small>{{doc.docType}}</small>
+      </div>
+      <p class="mb-1">{{doc.description}}</p>
+    </a>
+    {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{%- endblock -%}

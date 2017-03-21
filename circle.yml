@@ -1,0 +1,22 @@
+machine:
+  node:
+    version: 5.5.0
+  ruby:
+    version: 2.1.2
+
+general:
+  branches:
+    only:
+      - master # ignore PRs and branches
+      - v2
+      - v2-docs
+
+test:
+  override:
+    - echo "No tests to run"
+
+deployment:
+ staging:
+   branch: v2-docs
+   commands:
+     - ./scripts/update_docs.sh
