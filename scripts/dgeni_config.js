@@ -132,6 +132,10 @@ module.exports = function() {
 
     })
 
+    .config(function(log) {
+      log.level = 'error';
+    })
+
     .config(function (readFilesProcessor, readTypeScriptModules) {
       readFilesProcessor.$enabled = false;
       readFilesProcessor.basePath = path.resolve(__dirname, '..');
