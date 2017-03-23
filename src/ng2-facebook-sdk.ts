@@ -39,7 +39,7 @@ export class FacebookService {
                         }
                     });
                 } catch (err) {
-                    console.error(err);
+                    reject(err);
                 }
             }
         );
@@ -68,7 +68,7 @@ export class FacebookService {
                         else resolve(response);
                     });
                 } catch (err) {
-                    console.error(err);
+                    reject(err);
                 }
             }
         );
@@ -87,7 +87,7 @@ export class FacebookService {
                         else resolve(response);
                     });
                 } catch (err) {
-                    console.error(err);
+                    reject(err);
                 }
             }
         );
@@ -110,7 +110,7 @@ export class FacebookService {
                         }
                     }, options);
                 } catch (err) {
-                    console.error('FB is not defined');
+                    reject(err);
                 }
             }
         );
@@ -122,13 +122,13 @@ export class FacebookService {
      */
     logout(): Promise<any> {
         return new Promise<any>(
-            (resolve) => {
+            (resolve, reject) => {
                 try {
                     FB.logout((response: any) => {
                         resolve(response);
                     });
                 } catch (err) {
-                    console.error('FB is not defined');
+                    reject(err);
                 }
             }
         );
@@ -138,11 +138,12 @@ export class FacebookService {
      * This synchronous function returns back the current authResponse.
      * @returns {FacebookAuthResponse}
      */
-    getAuthResponse(): FacebookAuthResponse {
+    getAuthResponse(): FacebookAuthResponse | null {
         try {
             return <FacebookAuthResponse>FB.getAuthResponse();
         } catch (err) {
             console.error(err);
+            return null;
         }
     }
 
