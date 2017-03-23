@@ -1,10 +1,1 @@
-export {
-  FacebookService,
-  FacebookInitParams,
-  FacebookApiMethod,
-  FacebookUiParams,
-  FacebookAuthResponse,
-  FacebookLoginStatus,
-  FacebookLoginOptions,
-  FacebookLoginResponse
-} from './ng2-facebook-sdk';
+export * from './ng2-facebook-sdk';
