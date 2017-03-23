@@ -138,12 +138,11 @@ export class FacebookService {
      * This synchronous function returns back the current authResponse.
      * @returns {FacebookAuthResponse}
      */
-    getAuthResponse(): FacebookAuthResponse | null {
+    getAuthResponse(): FacebookAuthResponse {
         try {
             return <FacebookAuthResponse>FB.getAuthResponse();
         } catch (err) {
             console.error(err);
-            return null;
         }
     }
 
