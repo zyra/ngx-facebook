@@ -99,6 +99,11 @@ export interface UIParams extends ShareDialogParams, FeedDialogParams, SendDialo
     method: any;
 
     /**
+     * The UI dialog message.
+     */
+    message?: string;
+
+    /**
      * Your app's unique identifier. Required.
      */
     app_id?: string;
