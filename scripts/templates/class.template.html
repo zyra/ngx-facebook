@@ -45,6 +45,9 @@
 
 {% endif -%}
 
+{%- if export.members %}
+<a id="instance-methods" href="#instance-methods" class="h2">Instance Methods</a>
+{% endif -%}
 {%- for member in export.members %}
 <a id="{{ member.name }}" href="#{{member.name}}" class="h3">{{ member.name }}</a>
 {{ member.description | marked }}
