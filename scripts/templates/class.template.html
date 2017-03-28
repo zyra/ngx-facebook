@@ -25,7 +25,7 @@
 
 {% endif %}
 
-{%- if export.inputs %}
+{%- if export.inputs.length %}
 <a id="inputs" href="#inputs" class="h2 docs-title anchor">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   Inputs
@@ -43,7 +43,7 @@
 {% endif -%}
 
 
-{%- if export.outputs %}
+{%- if export.outputs.length %}
 <a id="outputs" href="#outputs" class="h2 docs-title anchor">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   Outputs
@@ -60,7 +60,7 @@
 
 {% endif -%}
 
-{%- if export.members %}
+{%- if export.members.length %}
 <a id="instance-methods" href="#instance-methods" class="h2 docs-title anchor">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   Instance Methods
