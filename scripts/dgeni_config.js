@@ -130,10 +130,10 @@ const collectIO = {
     }
 
     docs.forEach(doc => {
-      if (doc.name === 'Comments') {
-        console.log(doc.name);
-        process.exit();
-      }
+      // if (doc.name === 'Comments') {
+      //   console.log(doc);
+      //   process.exit();
+      // }
       if (doc.members && doc.members.length) {
 
         const members = [], inputs = [], outputs = [];
