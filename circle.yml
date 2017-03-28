@@ -8,11 +8,11 @@ jobs:
           - v2
       steps:
         - run:
-          name: Build module
-          command: npm run build
+           name: Build module
+           command: npm run build
         - run:
-          name: Build docs
-          command: node scripts/update_docs.js
+           name: Build docs
+           command: node scripts/update_docs.js
         - deploy:
-          name: Deploy docs to gh-pages
-          command: bash ./scripts/update_docs.sh
+           name: Deploy docs to gh-pages
+           command: bash ./scripts/update_docs.sh
