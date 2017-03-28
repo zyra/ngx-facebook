@@ -23,6 +23,15 @@ a.h2.docs-title {
   font-weight: 300;
 }
 
+a.h2.docs-title.after {
+  content: '';
+  background: #d8d8d8;
+  width: 50%;
+  height: 2px;
+  display: block;
+  margin-top: 20px;
+}
+
 a.back-to-home {
   display: inline-block;
   margin: 20px 0;
@@ -31,15 +40,16 @@ a.back-to-home {
   color: #232323;
   font-weight: 400;
   text-transform: uppercase;
+  text-decoration: none;
   letter-spacing: 1px;
-  transition: all .3s ease-in;
+  transition: all .2s ease-in;
 }
 
 a.back-to-home:before {
   content: "\00ab";
   display: inline-block;
   padding-right: 5px;
-  transition: padding-right .3s ease-in;
+  transition: padding-right .2s ease-in;
 }
 
 a.back-to-home:hover {
