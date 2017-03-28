@@ -82,10 +82,15 @@ hr {
   border-top: none;
 }
 
-a > img {
+.anchor {
+  position: relative;
+  left: -20px;
+}
+
+.anchor > img {
   opacity: 0.1;
 }
 
-a:hover > img {
+.anchor:hover > img {
   opacity: 1;
 }
