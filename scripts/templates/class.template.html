@@ -24,6 +24,27 @@
 
 {% endif %}
 
+{%- if export.inputs %}
+<a id="inputs" href="#inputs" class="h2">Inputs</a>
+
+{%- for input in export.inputs %}
+<a id="{{ input.name }}" href="#{{input.name}}" class="h3">{{ input.name }}</a>
+({{ input.returnType }}) {{ input.description | marked }}
+{% endfor -%}
+
+{% endif -%}
+
+
+{%- if export.outputs %}
+<a id="outputs" href="#outputs" class="h2">Outputs</a>
+
+{%- for output in export.outputs %}
+<a id="{{ output.name }}" href="#{{output.name}}" class="h3">{{ output.name }}</a>
+{{ output.description | marked }}
+{% endfor -%}
+
+{% endif -%}
+
 {%- for member in export.members %}
 <a id="{{ member.name }}" href="#{{member.name}}" class="h3">{{ member.name }}</a>
 {{ member.description | marked }}

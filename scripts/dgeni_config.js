@@ -113,6 +113,56 @@ const addPageTitle = {
   }
 };
 
+const collectIO = {
+  name: 'Collect IO',
+  $runBefore: ['rendering-docs'],
+  $process: docs => {
+    function parseMember(member) {
+      member.type = member.content.substring(
+        member.content.indexOf('{') + 1,
+        member.content.indexOf('}')
+      );
+      member.description = member.content.substring(
+        member.content.indexOf('}') + 1,
+        member.content.length
+      );
+      return member;
+    }
+
+    docs.forEach(doc => {
+      if (doc.members && doc.members.length) {
+
+        const members = [], inputs = [], outputs = [];
+
+        memberLoop:
+        for (let i in doc.members) {
+          if (typeof doc.members[i].parameters == 'undefined') {
+            doc.members[i].isProperty = true;
+          }
+          if (doc.members[i].decorators && doc.members[i].decorators.length) {
+            for (let ii in doc.members[i].decorators) {
+              switch(doc.members[i].decorators[ii].name) {
+                case 'Input':
+                  inputs.push(parseMember(doc.members[i]));
+                  continue memberLoop;
+                case 'Output':
+                  outputs.push(parseMember(doc.members[i]));
+                  continue memberLoop;
+              }
+            }
+          }
+          members.push(doc.members[i]);
+        }
+
+        doc.members = members;
+        doc.inputs = inputs;
+        doc.outputs = outputs;
+
+      }
+    });
+  }
+};
+
 module.exports = function() {
 
 
@@ -122,6 +172,7 @@ module.exports = function() {
     .processor(addPageTitle)
     .processor(hideStuff)
     .processor(generateIndex)
+    .processor(collectIO)
 
     .config(function (computePathsProcessor) {
       // set path for each doc page
