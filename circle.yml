@@ -1,19 +1,18 @@
-machine:
-  node:
-    version: 5.5.0
-
-general:
-  branches:
-    only:
-      - v2
-
-test:
-  override:
-    - npm run build
-    - node scripts/update_docs.js
-
-deployment:
- staging:
-   branch: v2
-   commands:
-     - bash ./scripts/update_docs.sh
+version: 2
+jobs:
+  build:
+      docker:
+        - image: node:7
+      branches:
+        - only:
+          - v2
+      steps:
+        - run:
+          name: Build module
+          command: npm run build
+        - run:
+          name: Build docs
+          command: node scripts/update_docs.js
+        - deploy:
+          name: Deploy docs to gh-pages
+          command: bash ./scripts/update_docs.sh
