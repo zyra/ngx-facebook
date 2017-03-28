@@ -108,13 +108,16 @@ import { FacebookService, UIParams, UIResponse } from 'ng2-facebook-sdk';
 ...
 
 share(url: string) {
+
   let params: UIParams = {
     href: 'https://github.com/zyramedia/ng2-facebook-sdk',
     method: 'share'
   };
+  
   this.fb.ui(params)
     .then((res: UIResponse) => console.log(res))
     .catch((e: any) => console.error(e));
+    
 }
 ```
 
