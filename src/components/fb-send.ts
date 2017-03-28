@@ -1,6 +1,9 @@
 import { Component, Input, ElementRef, Renderer } from '@angular/core';
 import { FBMLAttribute, FBMLComponent } from './fbml-component';
 
+/**
+ * @name Send Button
+ */
 @Component({
   selector: 'fb-send',
   template: ''

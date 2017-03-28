@@ -3,6 +3,8 @@ import { FBMLAttribute, FBMLComponent, FBMLInstanceMethod } from './fbml-compone
 declare var FB: any;
 
 /**
+ * @name Embedded Video
+ * @description Component to embed Facebook videos and control them.
  * @usage
  * ```html
  * <!-- basic usage -->

@@ -1,6 +1,12 @@
 import { Component, Input, ElementRef, Renderer } from '@angular/core';
 import { FBMLAttribute, FBMLComponent } from './fbml-component';
 
+/**
+ * @name Save Button
+ * @description
+ * Save button component. The Save button lets people save items or services to a private list on Facebook, share it with friends, and receive relevant notifications.
+ * @usage
+ */
 @Component({
   selector: 'fb-save',
   template: ''

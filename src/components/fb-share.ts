@@ -1,6 +1,12 @@
 import { Component, Input, ElementRef, Renderer } from '@angular/core';
 import { FBMLAttribute, FBMLComponent } from './fbml-component';
 
+/**
+ * @name Share Button
+ * @description
+ *
+ * @usage
+ */
 @Component({
   selector: 'fb-share',
   template: ''
