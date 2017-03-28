@@ -4,8 +4,8 @@ machine:
 
 general:
   branches:
-    ignore:
-      - gh-pages
+    only:
+      - v2
 
 test:
   override:
