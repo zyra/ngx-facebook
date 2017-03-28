@@ -31,6 +31,7 @@
 {%- for input in export.inputs %}
 <a id="{{ input.name }}" href="#{{input.name}}" class="h4">{{ input.name }}</a>
 ({{ input.returnType }}) {{ input.description | marked }}
+<hr>
 {% endfor -%}
 
 {% endif -%}
@@ -42,6 +43,7 @@
 {%- for output in export.outputs %}
 <a id="{{ output.name }}" href="#{{output.name}}" class="h4">{{ output.name }}</a>
 {{ output.description | marked }}
+<hr>
 {% endfor -%}
 
 {% endif -%}
