@@ -1,3 +1,6 @@
+/**
+ * Params that can be passed when creating a Share dialog.
+ */
 export interface ShareDialogParams {
     /**
      * The link attached to this post. Required when using method share. Include open graph meta tags in the page at this URL to customize the story that is shared.
@@ -31,6 +34,9 @@ export interface ShareDialogParams {
     action_properties?: string;
 }
 
+/**
+ * Params that can be passed when creating a Feed dialog.
+ */
 export interface FeedDialogParams {
     /**
      * The ID of the person posting the message. If this is unspecified, it defaults to the current person. If specified, it must be the ID of the person or of a page that the person administers.
@@ -78,6 +84,9 @@ export interface FeedDialogParams {
     ref?: string;
 }
 
+/**
+ * Params that can be passed when creating a send dialog
+ */
 export interface SendDialogParams {
 
     /**
@@ -91,6 +100,9 @@ export interface SendDialogParams {
     link?: string;
 }
 
+/**
+ * The object passed to the [ui](../FacebookService/#ui) method. The properties below can be passed to all three types of dialogs. Each type of dialog accepts additional parameters that are documented above.
+ */
 export interface UIParams extends ShareDialogParams, FeedDialogParams, SendDialogParams {
 
     /**

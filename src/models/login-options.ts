@@ -1,3 +1,6 @@
+/**
+ * Options that can be passed to the [login](../FacebookService/#login) method.
+ */
 export interface LoginOptions {
     /**
      * Optional key, only supports one value: rerequest. Use this when re-requesting a declined permission.

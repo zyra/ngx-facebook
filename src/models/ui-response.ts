@@ -1,3 +1,6 @@
+/**
+ * Response object received after a Feed dialog is closed
+ */
 export interface FeedDialogResponse {
 
     /**
@@ -7,6 +10,9 @@ export interface FeedDialogResponse {
 
 }
 
+/**
+ * Response object received after a share dialog is closed
+ */
 export interface ShareDialogResponse {
 
     /**

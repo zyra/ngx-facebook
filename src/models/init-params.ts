@@ -1,3 +1,6 @@
+/**
+ * This is the configuration that can be passed to the [init](../FacebookService/#init) method.
+ */
 export interface InitParams {
     /**
      * Your application ID. If you don't have one find it in the App dashboard or go there to create a new app. Defaults to null.

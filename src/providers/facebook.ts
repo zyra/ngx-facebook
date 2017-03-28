@@ -80,7 +80,7 @@ export class FacebookService {
    * - Send dialog
    * - Payments dialog
    * - Go Live dialog
-   * @param params A collection of parameters that control which dialog is loaded, and relevant settings.
+   * @param params {UIParams} A collection of parameters that control which dialog is loaded, and relevant settings.
    * @returns {Promise<UIResponse>}
    */
   ui(params: UIParams): Promise<UIResponse> {

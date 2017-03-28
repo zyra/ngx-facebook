@@ -1,3 +1,6 @@
+/**
+ * The response object returned by the [getAuthResponse](../FacebookService/#getAuthResponse) method, and is also used in [LoginResponse](../LoginResponse/) and [LoginStatus](../LoginStatus/).
+ */
 export interface AuthResponse {
     /**
      * User access token
