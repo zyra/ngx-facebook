@@ -10,6 +10,9 @@ jobs:
       steps:
         - checkout
         - run:
+           name: Install node modules
+           command: npm i
+        - run:
            name: Build module
            command: npm run build
         - run:
