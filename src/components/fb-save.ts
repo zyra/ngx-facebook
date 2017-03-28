@@ -4,6 +4,7 @@ import { FBMLAttribute, FBMLComponent } from './fbml-component';
 /**
  * @name Save Button
  * @shortdesc Save button component.
+ * @fbdoc https://developers.facebook.com/docs/plugins/save
  * @description
  * The Save button lets people save items or services to a private list on Facebook, share it with friends, and receive relevant notifications.
  * @usage

@@ -4,6 +4,8 @@ declare var FB: any;
 
 /**
  * @name Embedded Video
+ * @shortdesc Component to embed Facebook videos
+ * @fbdoc https://developers.facebook.com/docs/plugins/embedded-video-player
  * @description Component to embed Facebook videos and control them.
  * @usage
  * ```html

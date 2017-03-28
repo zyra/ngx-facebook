@@ -223,6 +223,7 @@ module.exports = function() {
       parseTagsProcessor.tagDefinitions.push({ name: 'shortdesc' });
       parseTagsProcessor.tagDefinitions.push({ name: 'usage' });
       parseTagsProcessor.tagDefinitions.push({ name: 'hidden' });
+      parseTagsProcessor.tagDefinitions.push({ name: 'fbdoc' });
     })
 
 };

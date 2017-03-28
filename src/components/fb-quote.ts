@@ -4,12 +4,13 @@ import { FBMLAttribute, FBMLComponent } from './fbml-component';
 /**
  * @name Quote Plugin
  * @shortdesc Quote plugin component
+ * @fbdoc https://developers.facebook.com/docs/plugins/quote
  * @description
  * The quote plugin lets people select text on your page and add it to their share, so they can tell a more expressive story.
  * Note that you do not need to implement Facebook login or request any additional permissions through app review in order to use this plugin.
  * @usage
  * ```html
- * <fb-quote href=""></fb-quote>
+ * <fb-quote></fb-quote>
  * ```
  */
 @Component({

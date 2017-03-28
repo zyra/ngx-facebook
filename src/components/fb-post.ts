@@ -2,14 +2,15 @@ import { Component, Input, ElementRef, Renderer } from '@angular/core';
 import { FBMLAttribute, FBMLComponent } from './fbml-component';
 
 /**
- * @name Embedded Post
+ * @name Embedded Posts
  * @shortdesc Embedded post component
+ * @fbdoc https://developers.facebook.com/docs/plugins/embedded-posts
  * @description
  * Embedded Posts are a simple way to put public posts - by a Page or a person on Facebook - into the content of your web site or web page.
  * Only public posts from Facebook Pages and profiles can be embedded.
  * @usage
  * ```html
- * <fb-post href=""></fb-post>
+ * <fb-post href="https://www.facebook.com/20531316728/posts/10154009990506729/"></fb-post>
  * ```
  */
 @Component({

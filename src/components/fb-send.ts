@@ -4,6 +4,7 @@ import { FBMLAttribute, FBMLComponent } from './fbml-component';
 /**
  * @name Send Button
  * @shortdesc Send button component
+ * @fbdoc https://developers.facebook.com/docs/plugins/send-button
  * @description
  * The Send button lets people privately send content on your site to one or more friends in a Facebook message.
  * @usage

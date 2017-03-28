@@ -13,7 +13,12 @@
   {{export.name}}
   <small>({{export.docType}} exported as {{export.exportSymbol.name}})</small>
 </h1>
+
 {{export.description | marked}}
+
+{% if export.fbdoc %}
+<p>Official Facebook documentation for this class can be <a href="{{ export.fbdoc }}">found here</a>.</p>
+{% endif %}
 
 {% if export.usage %}
 

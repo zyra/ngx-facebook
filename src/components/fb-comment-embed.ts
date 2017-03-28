@@ -4,6 +4,7 @@ import { FBMLAttribute, FBMLComponent } from './fbml-component';
 /**
  * @name Embedded Comments
  * @shortdesc Embedded comments component
+ * @fbdoc https://developers.facebook.com/docs/plugins/embedded-comments
  * @description
  * Embedded comments are a simple way to put public post comments - by a Page or a person on Facebook - into the content of your web site or web page.
  * Only public comments from Facebook Pages and profiles can be embedded.

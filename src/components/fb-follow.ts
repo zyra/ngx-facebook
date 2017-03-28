@@ -4,6 +4,7 @@ import { FBMLAttribute, FBMLComponent } from './fbml-component';
 /**
  * @name Follow Button
  * @shortdesc Follow button component
+ * @fbdoc https://developers.facebook.com/docs/plugins/follow-button
  * @description The Follow button lets people subscribe to the public updates of others on Facebook.
  * @usage
  * ```html
