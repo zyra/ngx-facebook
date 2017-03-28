@@ -25,7 +25,7 @@ h1.api-title small {
   color: #ccc;
 }
 
-a.h2:hover {
+a.h2:hover, a.h2:focus {
   text-decoration: none;
 }
 
