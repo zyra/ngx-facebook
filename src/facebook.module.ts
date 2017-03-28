@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import {
   FacebookService,
   FBCommentEmbedComponent,
@@ -41,7 +40,7 @@ const components: any[] = [
  * @NgModule({
  *   ...
  *   imports: [
- *     FacebookModule
+ *     FacebookModule.forRoot()
  *     ...
  *     ],
  *   ...
@@ -50,9 +49,16 @@ const components: any[] = [
  * ```
  */
 @NgModule({
-  providers: [FacebookService],
   declarations: components,
-  imports: [BrowserModule],
   exports: components
 })
-export class FacebookModule {}
+export class FacebookModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: FacebookModule,
+      providers: [
+        FacebookService
+      ]
+    }
+  }
+}
