@@ -5,7 +5,7 @@
 
 {% for export in doc.moduleDoc.exports %}
 
-<h2>{{export.name}}</h2>
+<a id="{{export.name}}" class="h2 docs-title" href="#{{export.name}}">{{export.name}}</a>
 {%- if export.heritage %}
 <h4>{{export.heritage}}</h4>
 {% endif -%}

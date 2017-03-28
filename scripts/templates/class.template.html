@@ -9,7 +9,7 @@
 
 {%- for export in doc.moduleDoc.exports %}
 
-<h1 class="display-4">
+<h1 class="display-4 api-title">
   {{export.name}}
   <small>({{export.docType}})</small>
 </h1>
@@ -17,7 +17,7 @@
 
 {% if export.usage %}
 
-<a href="#usage" class="h2" id="usage">
+<a href="#usage" class="h2 docs-title" id="usage">
   Usage
 </a>
 {{ doc.usage | marked}}
@@ -25,7 +25,7 @@
 {% endif %}
 
 {%- if export.inputs %}
-<a id="inputs" href="#inputs" class="h2">Inputs</a>
+<a id="inputs" href="#inputs" class="h2 docs-title">Inputs</a>
 
 {%- for input in export.inputs %}
 <a id="{{ input.name }}" href="#{{input.name}}" class="h3">{{ input.name }}</a>
@@ -36,7 +36,7 @@
 
 
 {%- if export.outputs %}
-<a id="outputs" href="#outputs" class="h2">Outputs</a>
+<a id="outputs" href="#outputs" class="h2 docs-title">Outputs</a>
 
 {%- for output in export.outputs %}
 <a id="{{ output.name }}" href="#{{output.name}}" class="h3">{{ output.name }}</a>
@@ -46,10 +46,10 @@
 {% endif -%}
 
 {%- if export.members %}
-<a id="instance-methods" href="#instance-methods" class="h2">Instance Methods</a>
+<a id="instance-methods" href="#instance-methods" class="h2 docs-title">Instance Methods</a>
 {% endif -%}
 {%- for member in export.members %}
-<a id="{{ member.name }}" href="#{{member.name}}" class="h3">{{ member.name }}</a>
+<a id="{{ member.name }}" href="#{{member.name}}" class="h3 docs-title">{{ member.name }}</a>
 {{ member.description | marked }}
 {% if member.params %}
 <table class="table table-striped table-bordered rounded">
