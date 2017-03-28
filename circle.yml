@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-      working_directory: ./ng2-facebook-sdk/
+      working_directory: ~/ng2-facebook-sdk/
       docker:
         - image: node:7
       branches:
