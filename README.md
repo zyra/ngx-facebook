@@ -67,6 +67,11 @@ export class MyComponentOrService {
 
 <br><br><br><br>
 
+## Documentation
+You can view complete and detailed documentation by visiting https://zyramedia.github.io/ng2-facebook-sdk/.
+
+<br><br><br><br>
+
 ## Example Usage
 
 You can view our example project here: https://github.com/zyramedia/ng2-facebook-sdk-example
