@@ -15,7 +15,7 @@ export function FBMLAttribute(target: any, key: string) {
 export function FBMLInstanceMethod(target: any, key: string) {
   return {
     enumerable: true,
-    value: function(...args) {
+    value: function(...args: any[]) {
       if (this._instance) {
         return this._instance[key].apply(this, args);
       } else {
