@@ -7,6 +7,8 @@
 # Angular2 Facebook SDK
 This is a wrapper for the official Facebook JavaScript SDK. It makes it easier to use Facebook SDK with Angular 2 by providing components, providers and types.
 
+<br><br>
+
 ## Installation
 
 #### 1. Install via NPM:
@@ -63,10 +65,13 @@ export class MyComponentOrService {
 }
 ```
 
+<br><br><br><br>
 
 ## Example Usage
 
 You can view our example project here: https://github.com/zyramedia/ng2-facebook-sdk-example
+
+<br><br>
 
 ### Example of login with Facebook
 
@@ -89,6 +94,8 @@ export class MyComponent {
 }
 ```
 
+<br><br>
+
 ### Example of sharing on Facebook
 ```typescript
 import { FacebookService, UIParams, UIResponse } from 'ng2-facebook-sdk';
@@ -106,12 +113,17 @@ share(url: string) {
 }
 ```
 
+<br><br>
+
 ### Example of adding a Facebook like button
 ```html
 <fb-like href="https://github.com/zyramedia/ng2-facebook-sdk"></fb-like>
 ```
 
+<br><br>
+
 ### Example of playing a Facebook video
+
 #### Basic video component usage:
 ```html
 <fb-video href="https://www.facebook.com/facebook/videos/10153231379946729/"></fb-video>
@@ -146,6 +158,8 @@ export class MyComponent {
 
 }
 ```
+
+<br><br><br><br>
 
 # Disclaimer
 A large portion of this module's documentation is copied from the official [Facebook Docs](https://developers.facebook.com/docs/). This is to make sure that everything is as clear as possible, and consistent with the way Facebook explains it.
