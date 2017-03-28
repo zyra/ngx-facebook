@@ -17,7 +17,7 @@
 
 {% if export.usage %}
 
-<a href="#usage" class="h2 docs-title" id="usage">
+<a href="#usage" class="h2 docs-title" id="usage anchor">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   Usage
 </a>
@@ -26,13 +26,13 @@
 {% endif %}
 
 {%- if export.inputs %}
-<a id="inputs" href="#inputs" class="h2 docs-title">
+<a id="inputs" href="#inputs" class="h2 docs-title anchor">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   Inputs
 </a>
 
 {%- for input in export.inputs %}
-<a id="{{ input.name }}" href="#{{input.name}}" class="h4">
+<a id="{{ input.name }}" href="#{{input.name}}" class="h4 anchor">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   {{ input.name }}
 </a>
@@ -44,13 +44,13 @@
 
 
 {%- if export.outputs %}
-<a id="outputs" href="#outputs" class="h2 docs-title">
+<a id="outputs" href="#outputs" class="h2 docs-title anchor">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   Outputs
 </a>
 
 {%- for output in export.outputs %}
-<a id="{{ output.name }}" href="#{{output.name}}" class="h4">
+<a id="{{ output.name }}" href="#{{output.name}}" class="h4 anchor">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   {{ output.name }}
 </a>
@@ -61,13 +61,13 @@
 {% endif -%}
 
 {%- if export.members %}
-<a id="instance-methods" href="#instance-methods" class="h2 docs-title">
+<a id="instance-methods" href="#instance-methods" class="h2 docs-title anchor">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   Instance Methods
 </a>
 {% endif -%}
 {%- for member in export.members %}
-<a id="{{ member.name }}" href="#{{member.name}}" class="h4">
+<a id="{{ member.name }}" href="#{{member.name}}" class="h4 anchor">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   {{ member.name }}
 </a>
