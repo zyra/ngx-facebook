@@ -14,3 +14,39 @@ h4, .h4 {
   display: block;
   margin-top: 10px;
 }
+
+a.h2:hover {
+  text-decoration: none;
+}
+
+a.h2.docs-title {
+  font-weight: 300;
+}
+
+a.back-to-home {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #232323;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all .3s ease-in;
+}
+
+a.back-to-home:before {
+  content: "\00ab";
+  display: inline-block;
+  padding-right: 5px;
+  transition: padding-right .3s ease-in;
+}
+
+a.back-to-home:hover {
+  background: #232323;
+  color: white;
+}
+
+a.back-to-home:hover:before {
+  padding-right: 10px;
+}
