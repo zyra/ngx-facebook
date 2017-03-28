@@ -87,14 +87,12 @@ export class FBVideoComponent extends FBMLComponent implements OnInit {
 
   /**
    * Fired when video starts to play.
-   * @type {EventEmitter<any>}
    */
   @Output()
   startedPlaying: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired when video pauses.
-   * @type {EventEmitter<any>}
    */
   @Output()
   paused: EventEmitter<any> = new EventEmitter<any>();
@@ -102,28 +100,24 @@ export class FBVideoComponent extends FBMLComponent implements OnInit {
   /**
    *
    Fired when video finishes playing.
-   * @type {EventEmitter<any>}
    */
   @Output()
   finishedPlaying: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired when video starts to buffer.
-   * @type {EventEmitter<any>}
    */
   @Output()
   startedBuffering: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired when video recovers from buffering.
-   * @type {EventEmitter<any>}
    */
   @Output()
   finishedBuffering: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired when an error occurs on the video.
-   * @type {EventEmitter<any>}
    */
   @Output()
   error: EventEmitter<any> = new EventEmitter<any>();

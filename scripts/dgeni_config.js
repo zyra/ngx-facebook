@@ -136,7 +136,7 @@ const collectIO = {
 
         memberLoop:
         for (let i in doc.members) {
-          if (typeof doc.members[i].parameters == 'undefined') {
+          if (typeof doc.members[i].parameters === 'undefined') {
             doc.members[i].isProperty = true;
           }
           if (doc.members[i].decorators && doc.members[i].decorators.length) {
