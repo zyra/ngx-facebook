@@ -10,7 +10,7 @@ declare var FB: any;
  * @usage
  * ```html
  * <!-- basic usage -->
- * <fb-video href="path/to/video"></fb-video>
+ * <fb-video href="https://www.facebook.com/facebook/videos/10153231379946729/"></fb-video>
  *
  * <!-- event emitters -->
  * <fb-video href="https://www.facebook.com/facebook/videos/10153231379946729/" (startPlaying)="onVideoStartPlaying($event)" (paused)="onVideoPaused($event)"></fb-video>
