@@ -69,3 +69,9 @@ a.back-to-home:hover {
 a.back-to-home:hover:before {
   padding-right: 10px;
 }
+
+.octicon {
+  display: inline-block;
+  vertical-align: text-top;
+  fill: currentColor;
+}
