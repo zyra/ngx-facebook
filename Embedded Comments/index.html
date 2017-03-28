@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>FBCommentsComponent | Angular2 Facebook SDK</title>
+  <title>Embedded Comments | Angular2 Facebook SDK</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link rel="stylesheet" href="//zyramedia.github.io/ng2-facebook-sdk/railscasts.css">
   <link rel="stylesheet" href="//zyramedia.github.io/ng2-facebook-sdk/style.css">
@@ -20,38 +20,36 @@
 
 
 <h1 class="display-4">
-  FBCommentsComponent
+  Embedded Comments
 </h1>
 <small>(class)</small>
+Embedded comments are a simple way to put public post comments - by a Page or a person on Facebook - into the content of your web site or web page.
+Only public comments from Facebook Pages and profiles can be embedded.
 
 
 
-<a id="colorscheme" href="#colorscheme" class="h3">colorscheme</a>
+<a href="#usage" class="h2" id="usage">
+  Usage
+</a>
+<pre><code class="rounded html">&lt;fb-comment-embed href=&quot;https://www.facebook.com/zuck/posts/10102735452532991?comment_id=1070233703036185&quot; width=&quot;500&quot;&gt;&lt;/fb-comment-embed&gt;
+</code></pre>
 
 
-<hr>
 
 <a id="href" href="#href" class="h3">href</a>
-
-
-<hr>
-
-<a id="mobile" href="#mobile" class="h3">mobile</a>
-
-
-<hr>
-
-<a id="numposts" href="#numposts" class="h3">numposts</a>
-
-
-<hr>
-
-<a id="orderBy" href="#orderBy" class="h3">orderBy</a>
+<p>The absolute URL of the comment.</p>
 
 
 <hr>
 
 <a id="width" href="#width" class="h3">width</a>
+<p>The width of the embedded comment container. Min. <code>220px</code>. Defaults to <code>560px</code>.</p>
+
+
+<hr>
+
+<a id="includeParent" href="#includeParent" class="h3">includeParent</a>
+<p>Set to <code>true</code> to include parent comment (if URL is a reply). Defaults to <code>false</code>.</p>
 
 
 <hr>
