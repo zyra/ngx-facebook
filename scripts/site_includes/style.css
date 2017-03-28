@@ -31,9 +31,10 @@ a.h2:hover {
 
 a.h2.docs-title {
   font-weight: 300;
+  margin-top: 140px;
 }
 
-a.h2.docs-title.after {
+a.h2.docs-title:after {
   content: '';
   background: #d8d8d8;
   width: 50%;

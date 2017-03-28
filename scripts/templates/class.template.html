@@ -28,7 +28,7 @@
 <a id="inputs" href="#inputs" class="h2 docs-title">Inputs</a>
 
 {%- for input in export.inputs %}
-<a id="{{ input.name }}" href="#{{input.name}}" class="h3">{{ input.name }}</a>
+<a id="{{ input.name }}" href="#{{input.name}}" class="h4">{{ input.name }}</a>
 ({{ input.returnType }}) {{ input.description | marked }}
 {% endfor -%}
 
@@ -39,7 +39,7 @@
 <a id="outputs" href="#outputs" class="h2 docs-title">Outputs</a>
 
 {%- for output in export.outputs %}
-<a id="{{ output.name }}" href="#{{output.name}}" class="h3">{{ output.name }}</a>
+<a id="{{ output.name }}" href="#{{output.name}}" class="h4">{{ output.name }}</a>
 {{ output.description | marked }}
 {% endfor -%}
 
@@ -49,7 +49,7 @@
 <a id="instance-methods" href="#instance-methods" class="h2 docs-title">Instance Methods</a>
 {% endif -%}
 {%- for member in export.members %}
-<a id="{{ member.name }}" href="#{{member.name}}" class="h3 docs-title">{{ member.name }}</a>
+<a id="{{ member.name }}" href="#{{member.name}}" class="h4">{{ member.name }}</a>
 {{ member.description | marked }}
 {% if member.params %}
 <table class="table table-striped table-bordered rounded">
