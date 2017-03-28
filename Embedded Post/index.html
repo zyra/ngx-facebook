@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>FBSendComponent | Angular2 Facebook SDK</title>
+  <title>Embedded Post | Angular2 Facebook SDK</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link rel="stylesheet" href="//zyramedia.github.io/ng2-facebook-sdk/railscasts.css">
   <link rel="stylesheet" href="//zyramedia.github.io/ng2-facebook-sdk/style.css">
@@ -20,38 +20,26 @@
 
 
 <h1 class="display-4">
-  FBSendComponent
+  Embedded Post
 </h1>
 <small>(class)</small>
 
 
 
-<a id="colorScheme" href="#colorScheme" class="h3">colorScheme</a>
-<p>The color scheme used by the plugin. Can be &quot;light&quot; or &quot;dark&quot;. Defaults to light.</p>
-
-
-<hr>
-
 <a id="href" href="#href" class="h3">href</a>
-<p>The absolute URL of the page that will be sent. Defaults to the current URL.</p>
+<p>The absolute URL of the post.</p>
 
 
 <hr>
 
-<a id="kidDirectedSite" href="#kidDirectedSite" class="h3">kidDirectedSite</a>
-<p>If your web site or online service, or a portion of your service, is directed to children under 13 you must enable this.</p>
+<a id="width" href="#width" class="h3">width</a>
+<p>The width of the post. Min. <code>350</code> pixel; Max. <code>750</code> pixel. Set to auto to use fluid width. Defaults to <code>auto</code>.</p>
 
 
 <hr>
 
-<a id="ref" href="#ref" class="h3">ref</a>
-<p>A label for tracking referrals which must be less than 50 characters, and can contain alphanumeric characters and some punctuation (currently +/=-.:_).</p>
-
-
-<hr>
-
-<a id="size" href="#size" class="h3">size</a>
-<p>Size of the button. Defaults to small.</p>
+<a id="showText" href="#showText" class="h3">showText</a>
+<p>Applied to photo post. Set to <code>true</code> to include the text from the Facebook post, if any. Defaults to <code>false</code>.</p>
 
 
 <hr>

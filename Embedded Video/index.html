@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Embedded Video | Angular2 Facebook SDK</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="//zyramedia.github.io/ng2-facebook-sdk/railscasts.css">
+  <link rel="stylesheet" href="//zyramedia.github.io/ng2-facebook-sdk/style.css">
+
+</head>
+<body>
+<div class="container">
+  
+
+<a href="../">Back to home</a>
+
+
+
+
+
+<h1 class="display-4">
+  Embedded Video
+</h1>
+<small>(class)</small>
+Component to embed Facebook videos and control them.
+
+
+
+<a href="#usage" class="h2" id="usage">
+  Usage
+</a>
+<pre><code class="rounded html">&lt;!-- basic usage --&gt;
+&lt;fb-video href=&quot;path/to/video&quot;&gt;&lt;/fb-video&gt;
+
+&lt;!-- event emitters --&gt;
+&lt;fb-video href=&quot;path/to/video&quot; (startPlaying)=&quot;onVideoStartPlaying($event)&quot; (paused)=&quot;onVideoPaused($event)&quot;&gt;&lt;/fb-video&gt;
+</code></pre>
+<p>To manually interact with the video player, fetch it using <code>ViewChild</code>.</p>
+<pre><code class="rounded ts">import { Component, ViewChild } from &#39;@angular/core&#39;;
+import { FBVideoComponent } from &#39;ng2-facebook-sdk&#39;;
+
+@Component(...)
+export class MyComponent {
+
+  @ViewChild(FBVideoComponent) video: FBVideoComponent;
+
+  ngAfterViewInit() {
+    this.video.play();
+    this.video.pause();
+    this.video.getVolume();
+  }
+
+}
+</code></pre>
+
+
+
+<a id="href" href="#href" class="h3">href</a>
+<p>The absolute URL of the video.</p>
+
+
+<hr>
+
+<a id="allowfullscreen" href="#allowfullscreen" class="h3">allowfullscreen</a>
+<p>Allow the video to be played in fullscreen mode. Can be false or true. Defaults to false;</p>
+
+
+<hr>
+
+<a id="autoplay" href="#autoplay" class="h3">autoplay</a>
+<p>Automatically start playing the video when the page loads. The video will be played without sound (muted). People can turn on sound via the video player controls. This setting does not apply to mobile devices. Can be false or true. Defaults to false.</p>
+
+
+<hr>
+
+<a id="width" href="#width" class="h3">width</a>
+<p>The width of the video container. Min. 220px.</p>
+
+
+<hr>
+
+<a id="showText" href="#showText" class="h3">showText</a>
+<p>Set to true to include the text from the Facebook post associated with the video, if any.</p>
+
+
+<hr>
+
+<a id="showCaptions" href="#showCaptions" class="h3">showCaptions</a>
+<p>Set to true to show captions (if available) by default. Captions are only available on desktop.</p>
+
+
+<hr>
+
+<a id="startedPlaying" href="#startedPlaying" class="h3">startedPlaying</a>
+<p>Fired when video starts to play.</p>
+
+
+<hr>
+
+<a id="paused" href="#paused" class="h3">paused</a>
+<p>Fired when video pauses.</p>
+
+
+<hr>
+
+<a id="finishedPlaying" href="#finishedPlaying" class="h3">finishedPlaying</a>
+<p>Fired when video finishes playing.</p>
+
+
+<hr>
+
+<a id="startedBuffering" href="#startedBuffering" class="h3">startedBuffering</a>
+<p>Fired when video starts to buffer.</p>
+
+
+<hr>
+
+<a id="finishedBuffering" href="#finishedBuffering" class="h3">finishedBuffering</a>
+<p>Fired when video recovers from buffering.</p>
+
+
+<hr>
+
+<a id="error" href="#error" class="h3">error</a>
+<p>Fired when an error occurs on the video.</p>
+
+
+<hr>
+
+<a id="play" href="#play" class="h3">play</a>
+<p>Plays the video.</p>
+
+
+<hr>
+
+<a id="pause" href="#pause" class="h3">pause</a>
+<p>Pauses the video.</p>
+
+
+<hr>
+
+<a id="seek" href="#seek" class="h3">seek</a>
+<p>Seeks to specified position.</p>
+
+
+<table class="table table-striped table-bordered rounded">
+  <thead>
+  <tr>
+    <th>Param</th>
+    <th>Type</th>
+    <th>Details</th>
+    <th>Default</th>
+  </tr>
+  </thead>
+  <tbody>
+  
+  <tr>
+    <td>
+      seconds
+      </td>
+    <td>
+      <code>number</code>
+    </td>
+    <td>
+      
+    </td>
+    <td></td>
+  </tr>
+  
+  </tbody>
+</table>
+
+<hr>
+
+<a id="mute" href="#mute" class="h3">mute</a>
+<p>Mute the video.</p>
+
+
+<hr>
+
+<a id="unmute" href="#unmute" class="h3">unmute</a>
+<p>Unmute the video.</p>
+
+
+<hr>
+
+<a id="isMuted" href="#isMuted" class="h3">isMuted</a>
+<p>Returns true if video is muted, false if not.</p>
+
+
+<hr>
+
+<a id="setVolume" href="#setVolume" class="h3">setVolume</a>
+<p>Set the volume</p>
+
+
+<table class="table table-striped table-bordered rounded">
+  <thead>
+  <tr>
+    <th>Param</th>
+    <th>Type</th>
+    <th>Details</th>
+    <th>Default</th>
+  </tr>
+  </thead>
+  <tbody>
+  
+  <tr>
+    <td>
+      volume
+      </td>
+    <td>
+      <code></code>
+    </td>
+    <td>
+      
+    </td>
+    <td></td>
+  </tr>
+  
+  </tbody>
+</table>
+
+<hr>
+
+<a id="getVolume" href="#getVolume" class="h3">getVolume</a>
+<p>Get the volume</p>
+
+
+<hr>
+
+<a id="getCurrentPosition" href="#getCurrentPosition" class="h3">getCurrentPosition</a>
+<p>Returns the current video time position in seconds</p>
+
+
+<hr>
+
+<a id="getDuration" href="#getDuration" class="h3">getDuration</a>
+<p>Returns the video duration in seconds</p>
+
+
+<hr>
+
+
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="//zyramedia.github.io/ng2-facebook-sdk/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+
