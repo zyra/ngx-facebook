@@ -162,6 +162,7 @@ module.exports = function() {
     })
 
     .config(function (parseTagsProcessor) {
+      parseTagsProcessor.tagDefinitions.push({ name: 'shortdesc' });
       parseTagsProcessor.tagDefinitions.push({ name: 'usage' });
       parseTagsProcessor.tagDefinitions.push({ name: 'hidden' });
     })
