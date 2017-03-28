@@ -36,8 +36,7 @@ a.h2.docs-title {
 
 a.h2.docs-title:after {
   content: '';
-  background: #d8d8d8;
-  width: 50%;
+  background: #f7f7f7;
   height: 2px;
   display: block;
   margin-top: 20px;
@@ -74,4 +73,19 @@ a.back-to-home:hover:before {
   display: inline-block;
   vertical-align: text-top;
   fill: currentColor;
+}
+
+hr {
+  margin-top: 0;
+  margin-bottom: 3rem;
+  border: 0;
+  border-top: none;
+}
+
+a > img {
+  opacity: 0.1;
+}
+
+a:hover > img {
+  opacity: 1;
 }
