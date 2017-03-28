@@ -56,9 +56,7 @@ export class FacebookModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: FacebookModule,
-      providers: [
-        FacebookService
-      ]
+      providers: [FacebookService]
     }
   }
 }
