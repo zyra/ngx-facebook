@@ -11,9 +11,9 @@
 
 <h1 class="display-4">
   {{export.name}}
+  <small>({{export.docType}})</small>
 </h1>
-<small>({{export.docType}})</small>
-{{export.description}}
+{{export.description | marked}}
 
 {% if export.usage %}
 
