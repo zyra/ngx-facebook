@@ -12,6 +12,20 @@ export function FBMLAttribute(target: any, key: string) {
   });
 }
 
+export function FBMLInstanceMethod(target: any, key: string) {
+  return {
+    enumerable: true,
+    value: function(...args) {
+      if (this._instance) {
+        return this._instance[key].apply(this, args);
+      } else {
+        console.warn('ng2-facebook-sdk: tried calling instance method before component is ready.');
+        return null;
+      }
+    }
+  }
+}
+
 /**
  * @hidden
  */
