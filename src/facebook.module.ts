@@ -1,6 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FacebookService, FBLikeComponent, FBFollowComponent, FBPageComponent } from './';
+import { FacebookService, FBLikeComponent, FBFollowComponent, FBPageComponent, FBQuoteComponent, FBSaveComponent, FBSendComponent, FBShareComponent } from './';
+
+const components: any[] = [
+  FBLikeComponent,
+  FBFollowComponent,
+  FBPageComponent,
+  FBQuoteComponent,
+  FBSaveComponent,
+  FBSendComponent,
+  FBShareComponent
+];
 
 /**
  * The main module to import into your application.
@@ -24,16 +34,8 @@ import { FacebookService, FBLikeComponent, FBFollowComponent, FBPageComponent } 
  */
 @NgModule({
   providers: [FacebookService],
-  declarations: [
-    FBLikeComponent,
-    FBFollowComponent,
-    FBPageComponent
-  ],
+  declarations: components,
   imports: [BrowserModule],
-  exports: [
-    FBLikeComponent,
-    FBFollowComponent,
-    FBPageComponent
-  ]
+  exports: components
 })
 export class FacebookModule {}
