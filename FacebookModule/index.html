@@ -23,9 +23,12 @@
   FacebookModule
   <small>(class exported as FacebookModule)</small>
 </h1>
+
 <p>The main module to import into your application.
 You only need to import this module if you wish to use the components in this library; otherwise, you could just import <a href="../FacebookService">FacebookService</a> into your module instead.
 This module will make all components and providers available in your application.</p>
+
+
 
 
 
@@ -39,7 +42,7 @@ This module will make all components and providers available in your application
 @NgModule({
   ...
   imports: [
-    FacebookModule
+    FacebookModule.forRoot()
     ...
     ],
   ...

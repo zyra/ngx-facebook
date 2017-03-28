@@ -23,9 +23,14 @@
   Comments
   <small>(class exported as FBCommentsComponent)</small>
 </h1>
+
 <p>The comments plugin lets people comment on content on your site using their Facebook account.
 People can choose to share their comment activity with their friends (and friends of their friends) on Facebook as well.
 The comments plugin also includes built-in moderation tools and social relevance ranking.</p>
+
+
+
+<p>Official Facebook documentation for this class can be <a href="https://developers.facebook.com/docs/plugins/comments">found here</a>.</p>
 
 
 
@@ -47,42 +52,54 @@ The comments plugin also includes built-in moderation tools and social relevance
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   colorscheme
 </a>
-(string) 
+(string) <p>The color scheme used by the comments plugin. Can be <code>light</code> or <code>dark</code>. Defaults to <code>light</code>.</p>
+
 <hr>
 
 <a id="href" href="#href" class="h4 anchor">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   href
 </a>
-(string) 
+(string) <p>The absolute URL that comments posted in the plugin will be permanently associated with.
+All stories shared on Facebook about comments posted using the comments plugin will link to this URL.
+Defaults to current URL.</p>
+
 <hr>
 
 <a id="mobile" href="#mobile" class="h4 anchor">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   mobile
 </a>
-(boolean) 
+(boolean) <p>A boolean value that specifies whether to show the mobile-optimized version or not. If no value is given, it will be automatically detected.</p>
+
 <hr>
 
 <a id="numposts" href="#numposts" class="h4 anchor">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   numposts
 </a>
-(number) 
+(number) <p>The number of comments to show by default. The minimum value is <code>1</code>. Defaults to <code>10</code>.</p>
+
 <hr>
 
 <a id="orderBy" href="#orderBy" class="h4 anchor">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   orderBy
 </a>
-(string) 
+(string) <p>The order to use when displaying comments. Can be <code>social</code>, <code>reverse_time</code>, or <code>time</code>. The different order types are explained <a href="https://developers.facebook.com/docs/plugins/comments#faqorder">in the FAQ</a>. Defaults to <code>social</code></p>
+
 <hr>
 
 <a id="width" href="#width" class="h4 anchor">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   width
 </a>
-(string) 
+(string) <p>The width of the comments plugin on the webpage.
+This can be either a pixel value or a percentage (such as 100%) for fluid width.
+The mobile version of the comments plugin ignores the width parameter and instead has a fluid width of 100%.
+The minimum width supported by the comments plugin is 320px.
+Defaults to <code>550px</code>.</p>
+
 <hr>
 
 
