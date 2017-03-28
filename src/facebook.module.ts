@@ -1,15 +1,32 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FacebookService, FBLikeComponent, FBFollowComponent, FBPageComponent, FBQuoteComponent, FBSaveComponent, FBSendComponent, FBShareComponent } from './';
-
-const components: any[] = [
-  FBLikeComponent,
+import {
+  FacebookService,
+  FBCommentEmbedComponent,
+  FBCommentsComponent,
   FBFollowComponent,
+  FBLikeComponent,
   FBPageComponent,
+  FBPostComponent,
   FBQuoteComponent,
   FBSaveComponent,
   FBSendComponent,
-  FBShareComponent
+  FBShareComponent,
+  FBVideoComponent
+} from './';
+
+const components: any[] = [
+  FBCommentEmbedComponent,
+  FBCommentsComponent,
+  FBFollowComponent,
+  FBLikeComponent,
+  FBPageComponent,
+  FBPostComponent,
+  FBQuoteComponent,
+  FBSaveComponent,
+  FBSendComponent,
+  FBShareComponent,
+  FBVideoComponent
 ];
 
 /**
