@@ -3,6 +3,13 @@ import { FBMLAttribute, FBMLComponent } from './fbml-component';
 
 /**
  * @name Send Button
+ * @shortdesc Send button component
+ * @description
+ * The Send button lets people privately send content on your site to one or more friends in a Facebook message.
+ * @usage
+ * ```html
+ * <fb-send href="https://github.com/zyramedia/ng2-facebook-sdk/"></fb-send>
+ * ```
  */
 @Component({
   selector: 'fb-send',

@@ -1,6 +1,15 @@
 import { Component, Input, ElementRef, Renderer } from '@angular/core';
 import { FBMLAttribute, FBMLComponent } from './fbml-component';
 
+/**
+ * @name Follow Button
+ * @shortdesc Follow button component
+ * @description The Follow button lets people subscribe to the public updates of others on Facebook.
+ * @usage
+ * ```html
+ * <fb-follow href=""></fb-follow>
+ * ```
+ */
 @Component({
   selector: 'fb-follow',
   template: ''

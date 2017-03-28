@@ -11,7 +11,7 @@ declare var FB: any;
  * <fb-video href="path/to/video"></fb-video>
  *
  * <!-- event emitters -->
- * <fb-video href="path/to/video" (startPlaying)="onVideoStartPlaying($event)" (paused)="onVideoPaused($event)"></fb-video>
+ * <fb-video href="https://www.facebook.com/facebook/videos/10153231379946729/" (startPlaying)="onVideoStartPlaying($event)" (paused)="onVideoPaused($event)"></fb-video>
  * ```
  *
  * To manually interact with the video player, fetch it using `ViewChild`.

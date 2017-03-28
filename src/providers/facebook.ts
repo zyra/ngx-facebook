@@ -11,7 +11,10 @@ declare var FB: any;
 export type ApiMethod = 'get' | 'post' | 'delete';
 
 /**
- * The service to inject to use Facebook's SDK
+ * @shortdesc
+ * Angular 2 service to inject to use Facebook's SDK
+ * @description
+ * You only need to inject this service in your application if you aren't using [`FacebookModule`](../FacebookModule).
  * @usage
  * ```typescript
  * import { FacebookService, InitParams } from 'ng2-facebook-sdk';

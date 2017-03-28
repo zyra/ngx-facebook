@@ -146,8 +146,11 @@ module.exports = function() {
     })
 
     .config(function (writeFilesProcessor) {
-      // TODO change this after finishing dev
-      writeFilesProcessor.outputFolder = '../ng2-facebook-sdk-site/';
+      if (process.env.test) {
+        writeFilesProcessor.outputFolder = './generated-docs/';
+      } else {
+        writeFilesProcessor.outputFolder = '../ng2-facebook-sdk-site/';
+      }
     })
 
     .config(function (templateFinder, templateEngine) {

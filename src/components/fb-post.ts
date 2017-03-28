@@ -3,6 +3,14 @@ import { FBMLAttribute, FBMLComponent } from './fbml-component';
 
 /**
  * @name Embedded Post
+ * @shortdesc Embedded post component
+ * @description
+ * Embedded Posts are a simple way to put public posts - by a Page or a person on Facebook - into the content of your web site or web page.
+ * Only public posts from Facebook Pages and profiles can be embedded.
+ * @usage
+ * ```html
+ * <fb-post href=""></fb-post>
+ * ```
  */
 @Component({
   selector: 'fb-post',

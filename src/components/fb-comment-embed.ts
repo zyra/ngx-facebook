@@ -1,6 +1,17 @@
 import { Component, Input, ElementRef, Renderer } from '@angular/core';
 import { FBMLAttribute, FBMLComponent } from './fbml-component';
 
+/**
+ * @name Embedded Comments
+ * @shortdesc Embedded comments component
+ * @description
+ * Embedded comments are a simple way to put public post comments - by a Page or a person on Facebook - into the content of your web site or web page.
+ * Only public comments from Facebook Pages and profiles can be embedded.
+ * @usage
+ * ```html
+ * <fb-comment-embed href="https://www.facebook.com/zuck/posts/10102735452532991?comment_id=1070233703036185" width="500"></fb-comment-embed>
+ * ```
+ */
 @Component({
   selector: 'fb-comment-embed',
   template: ''

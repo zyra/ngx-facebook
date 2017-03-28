@@ -3,9 +3,13 @@ import { FBMLAttribute, FBMLComponent } from './fbml-component';
 
 /**
  * @name Share Button
+ * @shortdesc Share button component
  * @description
- *
+ * The Share button lets people add a personalized message to links before sharing on their timeline, in groups, or to their friends via a Facebook Message.
  * @usage
+ * ```html
+ * <fb-share href="https://github.com/zyramedia/ng2-facebook-sdk/"></fb-share>
+ * ```
  */
 @Component({
   selector: 'fb-share',
