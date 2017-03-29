@@ -21,3 +21,4 @@ jobs:
         - deploy:
            name: Deploy docs to gh-pages
            command: bash ./scripts/update_docs.sh
+        - run: echo "${CIRCLE_BRANCH}"

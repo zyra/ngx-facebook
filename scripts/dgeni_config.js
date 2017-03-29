@@ -1,16 +1,4 @@
-"use strict";
-
-const Package = require('dgeni').Package,
-  jsdocPackage = require('dgeni-packages/jsdoc'),
-  nunjucksPackage = require('dgeni-packages/nunjucks'),
-  typescriptPackage = require('dgeni-packages/typescript'),
-  linksPackage = require('dgeni-packages/links'),
-  path = require('path'),
-  fs = require('fs'),
-  marked = require('marked');
-
-
-
+const [Package, path, fs, marked] = [require('dgeni').Package, require('path'), require('fs'), require('marked')];
 
 const stringifyFilter = {
   name: 'stringify',
@@ -33,10 +21,10 @@ const removeIndexFiles = {
   description: 'Document things from source instead of index',
   $runBefore: ['rendering-docs'],
   $process: docs => {
-   const goodDocs = [];
-   docs.forEach(doc => {
-     if (!!doc.name && doc.id.indexOf('index') === -1) goodDocs.push(doc);
-   });
+    const goodDocs = [];
+    docs.forEach(doc => {
+      if (!!doc.name && doc.id.indexOf('index') === -1) goodDocs.push(doc);
+    });
     return goodDocs;
   }
 };
@@ -117,113 +105,95 @@ const collectIO = {
   name: 'Collect IO',
   $runBefore: ['rendering-docs'],
   $process: docs => {
-    function parseMember(member) {
-      member.type = member.content.substring(
-        member.content.indexOf('{') + 1,
-        member.content.indexOf('}')
-      );
-      member.description = member.content.substring(
-        member.content.indexOf('}') + 1,
-        member.content.length
-      );
-      return member;
-    }
-
     docs.forEach(doc => {
-      // if (doc.name === 'Comments') {
-      //   console.log(doc);
-      //   process.exit();
-      // }
       if (doc.members && doc.members.length) {
+        const [members, inputs, outputs] = [[],[],[]];
 
-        const members = [], inputs = [], outputs = [];
+        _.forIn(doc.members, member => {
 
-        memberLoop:
-        for (let i in doc.members) {
-          if (typeof doc.members[i].parameters === 'undefined') {
-            doc.members[i].isProperty = true;
+          if (_.isUndefined(doc.members[i].parameters)) {
+            member.isProperty = true;
           }
-          if (doc.members[i].decorators && doc.members[i].decorators.length) {
-            for (let ii in doc.members[i].decorators) {
-              switch(doc.members[i].decorators[ii].name) {
+
+          if (member.decorators && member.decorators.length) {
+            _.forIn(member.decorators, decorator => {
+              switch (decorator.name) {
                 case 'Input':
-                  inputs.push(parseMember(doc.members[i]));
-                  continue memberLoop;
+                  inputs.push(member);
+                  return false;
                 case 'Output':
-                  outputs.push(parseMember(doc.members[i]));
-                  continue memberLoop;
+                  outputs.push(member);
+                  return false;
               }
-            }
+            });
           }
-          members.push(doc.members[i]);
-        }
+
+        });
 
         doc.members = members;
         doc.inputs = inputs;
         doc.outputs = outputs;
-
       }
     });
   }
 };
 
-module.exports = function() {
+module.exports = new Package('ng2-facebook-sdk', [
+  require('dgeni-packages/jsdoc'),
+  require('dgeni-packages/nunjucks'),
+  require('dgeni-packages/typescript'),
+  require('dgeni-packages/links')
+])
 
+  .processor(removeIndexFiles)
+  .processor(addPageTitle)
+  .processor(hideStuff)
+  .processor(generateIndex)
+  .processor(collectIO)
 
-  return new Package('ng2-facebook-sdk', [jsdocPackage, nunjucksPackage, typescriptPackage, linksPackage])
+  .config(function(computePathsProcessor) {
+    // set path for each doc page
+    computePathsProcessor.pathTemplates = [{
+      docTypes: ['class', 'interface'],
+      getOutputPath: doc => doc.name + '/index.html'
+    }];
 
-    .processor(removeIndexFiles)
-    .processor(addPageTitle)
-    .processor(hideStuff)
-    .processor(generateIndex)
-    .processor(collectIO)
+  })
 
-    .config(function (computePathsProcessor) {
-      // set path for each doc page
-      computePathsProcessor.pathTemplates = [{
-        docTypes: ['class', 'interface'],
-        getOutputPath: doc => doc.name + '/index.html'
-      }];
+  .config(function(log) {
+    log.level = 'error';
+  })
 
-    })
+  .config(function(readFilesProcessor, readTypeScriptModules) {
+    readFilesProcessor.$enabled = false;
+    readFilesProcessor.basePath = path.resolve(__dirname, '..');
+    readTypeScriptModules.basePath = path.resolve(__dirname, '..');
+    readTypeScriptModules.sourceFiles = ['./src/**/*.ts'];
+  })
 
-    .config(function(log) {
-      log.level = 'error';
-    })
+  .config(function(writeFilesProcessor) {
+    if (process.env.test) {
+      writeFilesProcessor.outputFolder = './generated-docs/';
+    } else {
+      writeFilesProcessor.outputFolder = '../ng2-facebook-sdk-site/';
+    }
+  })
 
-    .config(function (readFilesProcessor, readTypeScriptModules) {
-      readFilesProcessor.$enabled = false;
-      readFilesProcessor.basePath = path.resolve(__dirname, '..');
-      readTypeScriptModules.basePath = path.resolve(__dirname, '..');
-      readTypeScriptModules.sourceFiles = [
-        './src/**/*.ts'
-      ];
-    })
+  .config(function(templateFinder, templateEngine) {
+    templateEngine.filters.push(stringifyFilter);
+    templateEngine.filters.push(markedFilter);
+    templateFinder.templateFolders = [path.resolve(__dirname, 'templates')];
+    templateFinder.templatePatterns = [
+      '${ doc.template }',
+      '${ doc.docType }.template.html',
+      'common.template.html'
+    ];
+  })
 
-    .config(function (writeFilesProcessor) {
-      if (process.env.test) {
-        writeFilesProcessor.outputFolder = './generated-docs/';
-      } else {
-        writeFilesProcessor.outputFolder = '../ng2-facebook-sdk-site/';
-      }
-    })
-
-    .config(function (templateFinder, templateEngine) {
-      templateEngine.filters.push(stringifyFilter);
-      templateEngine.filters.push(markedFilter);
-      templateFinder.templateFolders = [path.resolve(__dirname, 'templates')];
-      templateFinder.templatePatterns = [
-        '${ doc.template }',
-        '${ doc.docType }.template.html',
-        'common.template.html'
-      ];
-    })
-
-    .config(function (parseTagsProcessor) {
-      parseTagsProcessor.tagDefinitions.push({ name: 'shortdesc' });
-      parseTagsProcessor.tagDefinitions.push({ name: 'usage' });
-      parseTagsProcessor.tagDefinitions.push({ name: 'hidden' });
-      parseTagsProcessor.tagDefinitions.push({ name: 'fbdoc' });
-    })
-
-};
+  .config(function(parseTagsProcessor) {
+    parseTagsProcessor.tagDefinitions.push({ name: 'shortdesc' });
+    parseTagsProcessor.tagDefinitions.push({ name: 'usage' });
+    parseTagsProcessor.tagDefinitions.push({ name: 'hidden' });
+    parseTagsProcessor.tagDefinitions.push({ name: 'fbdoc' });
+  })
+;
