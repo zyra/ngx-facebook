@@ -21,4 +21,9 @@ jobs:
         - deploy:
            name: Deploy docs to gh-pages
            command: bash ./scripts/update_docs.sh
-        - run: echo "${CIRCLE_BRANCH}"
+        - run: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              echo "hello world"
+            else
+              echo "hello two worlds ${CIRCLE_BRANCH}"
+            fi
