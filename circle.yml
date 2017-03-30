@@ -25,6 +25,7 @@ jobs:
         #   command: npm run build
         #- run: bash ./scripts/pre_docs.sh
         - run: npm run docs
+        - run: cat npm-debug.log
         #- run: bash ./scripts/post_docs.sh
         #- run: |
         #    if [ "${CIRCLE_BRANCH}" == "master" ]; then
