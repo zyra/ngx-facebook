@@ -9,17 +9,17 @@ jobs:
           - v2-modular-docs
       steps:
         - checkout
-        #- restore_cache:
-        #   key: node_modules_{{ .Branch }}_{{ checksum "package.json" }}
+        - restore_cache:
+           key: node_modules_{{ .Branch }}_{{ checksum "package.json" }}
         - run:
            name: Install node modules
            command: npm i
         - run: cat node_modules/@zyramedia/docs-gen/dist/zm-docs-gen.js
         - run: cat node_modules/.bin/zm-docs-gen
-        #- save_cache:
-        #   key: node_modules_{{ .Branch }}_{{ checksum "package.json" }}
-        #   paths:
-        #     - ~/ng2-facebook-sdk/node_modules/
+        - save_cache:
+           key: node_modules_{{ .Branch }}_{{ checksum "package.json" }}
+           paths:
+             - ~/ng2-facebook-sdk/node_modules/
         - run:
            name: Build module
            command: npm run build
