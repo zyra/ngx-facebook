@@ -24,7 +24,7 @@ jobs:
         #   name: Build module
         #   command: npm run build
         #- run: bash ./scripts/pre_docs.sh
-        - run: npm run docs 2> /dev/null
+        - run: npm run docs || true
         - run: cat npm-debug.log
         #- run: bash ./scripts/post_docs.sh
         #- run: |
