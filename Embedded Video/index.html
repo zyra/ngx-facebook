@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Embedded Video | Angular2 Facebook SDK</title>
+  <title>Embedded Video | Angular 2 Facebook SDK</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link rel="stylesheet" href="//zyramedia.github.io/ng2-facebook-sdk/railscasts.css">
   <link rel="stylesheet" href="//zyramedia.github.io/ng2-facebook-sdk/style.css">
@@ -37,14 +37,14 @@
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   Usage
 </a>
-<pre><code class="rounded html">&lt;!-- basic usage --&gt;
-&lt;fb-video href=&quot;path/to/video&quot;&gt;&lt;/fb-video&gt;
+<pre><code class="lang-html">&lt;!-- basic usage --&gt;
+&lt;fb-video href=&quot;https://www.facebook.com/facebook/videos/10153231379946729/&quot;&gt;&lt;/fb-video&gt;
 
 &lt;!-- event emitters --&gt;
 &lt;fb-video href=&quot;https://www.facebook.com/facebook/videos/10153231379946729/&quot; (startPlaying)=&quot;onVideoStartPlaying($event)&quot; (paused)=&quot;onVideoPaused($event)&quot;&gt;&lt;/fb-video&gt;
 </code></pre>
 <p>To manually interact with the video player, fetch it using <code>ViewChild</code>.</p>
-<pre><code class="rounded ts">import { Component, ViewChild } from &#39;@angular/core&#39;;
+<pre><code class="lang-ts">import { Component, ViewChild } from &#39;@angular/core&#39;;
 import { FBVideoComponent } from &#39;ng2-facebook-sdk&#39;;
 
 @Component(...)
@@ -164,155 +164,6 @@ export class MyComponent {
   error
 </a>
 <p>Fired when an error occurs on the video.</p>
-
-<hr>
-
-<a id="instance-methods" href="#instance-methods" class="h2 docs-title anchor">
-  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
-  Instance Methods
-</a>
-
-<a id="play" href="#play" class="h4 anchor">
-  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
-  play
-</a>
-<p>Plays the video.</p>
-
-
-<hr>
-
-<a id="pause" href="#pause" class="h4 anchor">
-  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
-  pause
-</a>
-<p>Pauses the video.</p>
-
-
-<hr>
-
-<a id="seek" href="#seek" class="h4 anchor">
-  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
-  seek
-</a>
-<p>Seeks to specified position.</p>
-
-
-<table class="table table-striped table-bordered rounded">
-  <thead>
-  <tr>
-    <th>Param</th>
-    <th>Type</th>
-    <th>Details</th>
-    <th>Default</th>
-  </tr>
-  </thead>
-  <tbody>
-  
-  <tr>
-    <td>
-      seconds
-      </td>
-    <td>
-      <code>number</code>
-    </td>
-    <td>
-      
-    </td>
-    <td></td>
-  </tr>
-  
-  </tbody>
-</table>
-
-<hr>
-
-<a id="mute" href="#mute" class="h4 anchor">
-  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
-  mute
-</a>
-<p>Mute the video.</p>
-
-
-<hr>
-
-<a id="unmute" href="#unmute" class="h4 anchor">
-  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
-  unmute
-</a>
-<p>Unmute the video.</p>
-
-
-<hr>
-
-<a id="isMuted" href="#isMuted" class="h4 anchor">
-  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
-  isMuted
-</a>
-<p>Returns true if video is muted, false if not.</p>
-
-
-<hr>
-
-<a id="setVolume" href="#setVolume" class="h4 anchor">
-  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
-  setVolume
-</a>
-<p>Set the volume</p>
-
-
-<table class="table table-striped table-bordered rounded">
-  <thead>
-  <tr>
-    <th>Param</th>
-    <th>Type</th>
-    <th>Details</th>
-    <th>Default</th>
-  </tr>
-  </thead>
-  <tbody>
-  
-  <tr>
-    <td>
-      volume
-      </td>
-    <td>
-      <code></code>
-    </td>
-    <td>
-      
-    </td>
-    <td></td>
-  </tr>
-  
-  </tbody>
-</table>
-
-<hr>
-
-<a id="getVolume" href="#getVolume" class="h4 anchor">
-  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
-  getVolume
-</a>
-<p>Get the volume</p>
-
-
-<hr>
-
-<a id="getCurrentPosition" href="#getCurrentPosition" class="h4 anchor">
-  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
-  getCurrentPosition
-</a>
-<p>Returns the current video time position in seconds</p>
-
-
-<hr>
-
-<a id="getDuration" href="#getDuration" class="h4 anchor">
-  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
-  getDuration
-</a>
-<p>Returns the video duration in seconds</p>
-
 
 <hr>
 

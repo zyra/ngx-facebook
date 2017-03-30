@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>FacebookService | Angular2 Facebook SDK</title>
+  <title>FacebookService | Angular 2 Facebook SDK</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link rel="stylesheet" href="//zyramedia.github.io/ng2-facebook-sdk/railscasts.css">
   <link rel="stylesheet" href="//zyramedia.github.io/ng2-facebook-sdk/style.css">
@@ -14,6 +14,17 @@
   
 
 <a class="back-to-home" href="../">Back to home</a>
+
+
+
+
+
+<h1 class="display-4 api-title">
+  ApiMethod
+  <small>(type-alias exported as ApiMethod)</small>
+</h1>
+
+
 
 
 
@@ -35,7 +46,7 @@
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   Usage
 </a>
-<pre><code class="rounded typescript">import { FacebookService, InitParams } from &#39;ng2-facebook-sdk&#39;;
+<pre><code class="lang-typescript">import { FacebookService, InitParams } from &#39;ng2-facebook-sdk&#39;;
 
 constructor(private fb: FacebookService) {
 
@@ -49,267 +60,6 @@ constructor(private fb: FacebookService) {
 </code></pre>
 
 
-
-<a id="instance-methods" href="#instance-methods" class="h2 docs-title anchor">
-  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
-  Instance Methods
-</a>
-
-<a id="init" href="#init" class="h4 anchor">
-  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
-  init
-</a>
-<p>This method is used to initialize and setup the SDK.</p>
-
-
-<table class="table table-striped table-bordered rounded">
-  <thead>
-  <tr>
-    <th>Param</th>
-    <th>Type</th>
-    <th>Details</th>
-    <th>Default</th>
-  </tr>
-  </thead>
-  <tbody>
-  
-  <tr>
-    <td>
-      params
-      </td>
-    <td>
-      <code>InitParams</code>
-    </td>
-    <td>
-      Initialization parameters
-    </td>
-    <td></td>
-  </tr>
-  
-  </tbody>
-</table>
-
-<hr>
-
-<a id="api" href="#api" class="h4 anchor">
-  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
-  api
-</a>
-<p>This method lets you make calls to the Graph API</p>
-
-
-<table class="table table-striped table-bordered rounded">
-  <thead>
-  <tr>
-    <th>Param</th>
-    <th>Type</th>
-    <th>Details</th>
-    <th>Default</th>
-  </tr>
-  </thead>
-  <tbody>
-  
-  <tr>
-    <td>
-      path
-      </td>
-    <td>
-      <code>string</code>
-    </td>
-    <td>
-      The Graph API endpoint path that you want to call.
-    </td>
-    <td></td>
-  </tr>
-  
-  <tr>
-    <td>
-      method
-      <em>(optional)</em></td>
-    <td>
-      <code>string</code>
-    </td>
-    <td>
-      The HTTP method that you want to use for the API request.
-    </td>
-    <td>
-      <code>get</code>
-      </td>
-  </tr>
-  
-  <tr>
-    <td>
-      params
-      <em>(optional)</em></td>
-    <td>
-      <code>Object</code>
-    </td>
-    <td>
-      An object consisting of any parameters that you want to pass into your Graph API call.
-    </td>
-    <td></td>
-  </tr>
-  
-  </tbody>
-</table>
-
-Example usage of <code>api</code>:
-<br>
-<br>
-<pre><code class="rounded typescript">this.fb.api(&#39;somepath&#39;)
-  .then(res =&gt; console.log(res))
-  .catch(e =&gt; console.log(e));
-</code></pre>
-
-
-<hr>
-
-<a id="ui" href="#ui" class="h4 anchor">
-  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
-  ui
-</a>
-<p>This method is used to trigger different forms of Facebook created UI dialogs.
-These dialogs include:</p>
-<ul>
-<li>Share dialog</li>
-<li>Login dialog</li>
-<li>Add page tab dialog</li>
-<li>Requests dialog</li>
-<li>Send dialog</li>
-<li>Payments dialog</li>
-<li>Go Live dialog</li>
-</ul>
-
-
-<table class="table table-striped table-bordered rounded">
-  <thead>
-  <tr>
-    <th>Param</th>
-    <th>Type</th>
-    <th>Details</th>
-    <th>Default</th>
-  </tr>
-  </thead>
-  <tbody>
-  
-  <tr>
-    <td>
-      params
-      </td>
-    <td>
-      <code>UIParams</code>
-    </td>
-    <td>
-      A collection of parameters that control which dialog is loaded, and relevant settings.
-    </td>
-    <td></td>
-  </tr>
-  
-  </tbody>
-</table>
-
-<hr>
-
-<a id="getLoginStatus" href="#getLoginStatus" class="h4 anchor">
-  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
-  getLoginStatus
-</a>
-<p>This method allows you to determine if a user is logged in to Facebook and has authenticated your app.</p>
-
-
-<hr>
-
-<a id="login" href="#login" class="h4 anchor">
-  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
-  login
-</a>
-<p>Login the user</p>
-
-
-<table class="table table-striped table-bordered rounded">
-  <thead>
-  <tr>
-    <th>Param</th>
-    <th>Type</th>
-    <th>Details</th>
-    <th>Default</th>
-  </tr>
-  </thead>
-  <tbody>
-  
-  <tr>
-    <td>
-      options
-      <em>(optional)</em></td>
-    <td>
-      <code>LoginOptions</code>
-    </td>
-    <td>
-      Login options
-    </td>
-    <td></td>
-  </tr>
-  
-  </tbody>
-</table>
-
-Example usage of <code>login</code>:
-<br>
-<br>
-<pre><code class="rounded typescript">// login without options
-this.fb.login()
-  .then((response: LoginResponse) =&gt; console.log(&#39;Logged in&#39;, response))
-  .catch(e =&gt; console.error(&#39;Error logging in&#39;));
-
-// login with options
-const options: LoginOptions = {
-  scope: &#39;public_profiel,user_friends,email,pages_show_list&#39;,
-  return_scopes: true,
-  enable_profile_selector: true
-};
-this.fb.login(options)
-  .then(...)
-  .catch(...);
-</code></pre>
-
-
-<hr>
-
-<a id="logout" href="#logout" class="h4 anchor">
-  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
-  logout
-</a>
-<p>Logout the user</p>
-
-
-Example usage of <code>logout</code>:
-<br>
-<br>
-<pre><code class="rounded typescript">this.fb.logout().then(() =&gt; console.log(&#39;Logged out!&#39;));
-</code></pre>
-
-
-<hr>
-
-<a id="getAuthResponse" href="#getAuthResponse" class="h4 anchor">
-  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
-  getAuthResponse
-</a>
-<p>This synchronous function returns back the current authResponse.</p>
-
-
-Example usage of <code>getAuthResponse</code>:
-<br>
-<br>
-<pre><code class="rounded typescript">import { AuthResponse, FacebookService } from &#39;ng2-facebook-sdk&#39;;
-
-...
-
-const authResponse: AuthResponse = this.fb.getAuthResponse();
-</code></pre>
-
-
-<hr>
 
 
 </div>
