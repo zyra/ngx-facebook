@@ -9,13 +9,13 @@ jobs:
           - v2-modular-docs
       steps:
         - checkout
-        - run: ls -al node_modules | grep zyramedia
-        - run: ls -al node_modules/@zyramedia/
         - restore_cache:
            key: node_modules_{{ .Branch }}_{{ checksum "package.json" }}
         - run:
            name: Install node modules
            command: npm i
+        - run: ls -al node_modules | grep zyramedia
+        - run: ls -al node_modules/@zyramedia/
         - save_cache:
            key: node_modules_{{ .Branch }}_{{ checksum "package.json" }}
            paths:
