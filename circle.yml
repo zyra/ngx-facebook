@@ -14,8 +14,6 @@ jobs:
         - run:
            name: Install node modules
            command: npm i
-        - run: ls -al node_modules | grep zyramedia
-        - run: ls -al node_modules/@zyramedia/
         - save_cache:
            key: node_modules_{{ .Branch }}_{{ checksum "package.json" }}
            paths:
@@ -23,9 +21,9 @@ jobs:
         - run:
            name: Build module
            command: npm run build
-        - deploy:
-           name: Update docs
-           command: bash ./scripts/update_docs.sh
+        - run: scripts/pre_docs.sh
+        - run: npm run docs
+        - run: scripts/post_docs.sh
         #- run: |
         #    if [ "${CIRCLE_BRANCH}" == "master" ]; then
         #      echo "hello world"
