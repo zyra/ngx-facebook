@@ -6,7 +6,7 @@ cd ../ng2-facebook-sdk-site
 git checkout gh-pages
 git pull
 git rm -rf * || true
-node ../ng2-facebook-sdk/scripts/update_docs.js
+npm run docs
 cp ../ng2-facebook-sdk/scripts/site_includes/* .
 git add . || true
 git commit -am "Automated docs update" || true
