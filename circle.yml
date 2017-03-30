@@ -6,7 +6,7 @@ jobs:
         - image: node:7
       branches:
         - only:
-          - v2
+          - v2-modular-docs
       steps:
         - checkout
         - restore_cache:
