@@ -21,9 +21,9 @@ jobs:
         - run:
            name: Build module
            command: npm run build
-        - run: scripts/pre_docs.sh
+        - run: bash ./scripts/pre_docs.sh
         - run: npm run docs
-        - run: scripts/post_docs.sh
+        - run: bash ./scripts/post_docs.sh
         #- run: |
         #    if [ "${CIRCLE_BRANCH}" == "master" ]; then
         #      echo "hello world"
