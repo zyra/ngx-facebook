@@ -14,18 +14,18 @@ jobs:
         - run:
            name: Install node modules
            command: npm i
-        - run: cat node_modules/@zyramedia/docs-gen/dist/zm-docs-gen.js
-        - run: cat node_modules/.bin/zm-docs-gen
-        - save_cache:
-           key: node_modules_{{ .Branch }}_{{ checksum "package.json" }}
-           paths:
-             - ~/ng2-facebook-sdk/node_modules/
-        - run:
-           name: Build module
-           command: npm run build
-        - run: bash ./scripts/pre_docs.sh
+        #- run: cat node_modules/@zyramedia/docs-gen/dist/zm-docs-gen.js
+        #- run: cat node_modules/.bin/zm-docs-gen
+        #- save_cache:
+        #   key: node_modules_{{ .Branch }}_{{ checksum "package.json" }}
+        #   paths:
+        #     - ~/ng2-facebook-sdk/node_modules/
+        #- run:
+        #   name: Build module
+        #   command: npm run build
+        #- run: bash ./scripts/pre_docs.sh
         - run: npm run docs
-        - run: bash ./scripts/post_docs.sh
+        #- run: bash ./scripts/post_docs.sh
         #- run: |
         #    if [ "${CIRCLE_BRANCH}" == "master" ]; then
         #      echo "hello world"
