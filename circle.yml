@@ -24,9 +24,9 @@ jobs:
         - deploy:
            name: Update docs
            command: bash ./scripts/update_docs.sh
-        - run: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              echo "hello world"
-            else
-              echo "hello two worlds ${CIRCLE_BRANCH}"
-            fi
+        #- run: |
+        #    if [ "${CIRCLE_BRANCH}" == "master" ]; then
+        #      echo "hello world"
+        #    else
+        #      echo "hello two worlds ${CIRCLE_BRANCH}"
+        #    fi
