@@ -113,13 +113,15 @@ module.exports = config => {
       },
       sl_ios10: {
         base: 'SauceLabs',
-        browserName: 'Safari',
-        platform: 'iOS 10.2'
+        browserName: 'iphone',
+        platform: 'OS X 10.10',
+        version: '10'
       },
       sl_android5: {
         base: 'SauceLabs',
-        browserName: 'Browser',
-        platform: 'Android 5.1'
+        browserName: 'android',
+        platform: 'Linux',
+        version: '5.1'
       },
       sl_safari: {
         base: 'SauceLabs',
