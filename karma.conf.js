@@ -1,4 +1,6 @@
 "use strict";
+
+console.log(!!process.env.SAUCE);
 module.exports = config => {
 
   const dist = 'dist/',
@@ -114,9 +116,8 @@ module.exports = config => {
     conf.reporters.push('saucelabs');
     conf.sauceLabs = {
       testName: 'ng2-facebook-sdk',
-      username: process.env.SAUCE_USERNAME,
-      accessKey: process.env.SAUCE_ACCESS_KEY,
-      public: 'public'
+      public: 'public',
+      recordScreenshots: false
     };
     conf.browsers = Object.keys(customLaunchers);
     conf.singleRun = true;
