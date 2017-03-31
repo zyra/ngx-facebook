@@ -14,7 +14,8 @@
     "lib": [
       "es6",
       "dom"
-    ]
+    ],
+    "newLine": "LF"
   },
   "exclude": [
     "node_modules"
