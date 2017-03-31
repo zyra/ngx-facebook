@@ -116,8 +116,8 @@ module.exports = config => {
       testName: 'ng2-facebook-sdk',
       public: 'public',
       recordScreenshots: false,
-      startConnect: false,
-      tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER
+      username: process.env.SAUCE_USERNAME,
+      accessKey: process.env.SAUCE_ACCESS_KEY
     };
     conf.browsers = Object.keys(customLaunchers);
     conf.singleRun = true;
