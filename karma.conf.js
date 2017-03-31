@@ -89,26 +89,43 @@ module.exports = config => {
       sl_chrome: {
         base: 'SauceLabs',
         browserName: 'chrome',
-        platform: 'Windows 7',
-        version: '35'
+        platform: 'Windows 10',
+        version: '49'
       },
       sl_firefox: {
         base: 'SauceLabs',
         browserName: 'firefox',
-        version: '30'
+        platform: 'Windows 10',
+        version: '40'
       },
-      /*sl_ios_safari: {
-        base: 'SauceLabs',
-        browserName: 'iphone',
-        platform: 'OS X 10.9',
-        version: '7.1'
-      },*/
       sl_ie_11: {
         base: 'SauceLabs',
         browserName: 'internet explorer',
-        platform: 'Windows 8.1',
+        platform: 'Windows 7',
         version: '11'
-      }
+      },
+      sl_edge: {
+        base: 'SauceLabs',
+        browserName: 'MicrosoftEdge',
+        platform: 'Windows 10',
+        version: '14'
+      },
+      sl_ios10: {
+        base: 'SauceLabs',
+        browserName: 'Safari',
+        platform: 'iOS 10.2'
+      },
+      sl_android5: {
+        base: 'SauceLabs',
+        browserName: 'Browser',
+        platform: 'Android 5.1'
+      },
+      sl_safari: {
+        base: 'SauceLabs',
+        browserName: 'safari',
+        platform: 'macOS 10.12',
+        version: '10'
+      },
     };
 
     conf.reporters = ['saucelabs', 'dots'];
