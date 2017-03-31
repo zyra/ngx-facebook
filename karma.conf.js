@@ -76,7 +76,7 @@ module.exports = config => {
 
     port: 9876,
     colors: true,
-    logLevel: config.LOG_DEBUG,
+    logLevel: config.INFO,
     autoWatch: true,
     browsers: ['PhantomJS'],
     singleRun: false
@@ -115,10 +115,9 @@ module.exports = config => {
     conf.sauceLabs = {
       testName: 'ng2-facebook-sdk',
       public: 'public',
-      recordScreenshots: false,
-      username: process.env.SAUCE_USERNAME,
-      accessKey: process.env.SAUCE_ACCESS_KEY
+      recordScreenshots: false
     };
+    conf.customLaunchers = customLaunchers;
     conf.browsers = Object.keys(customLaunchers);
     conf.singleRun = true;
   }
