@@ -113,7 +113,10 @@ module.exports = config => {
     conf.plugins.push(require('karma-sauce-launcher'));
     conf.reporters.push('saucelabs');
     conf.sauceLabs = {
-      testName: 'ng2-facebook-sdk'
+      testName: 'ng2-facebook-sdk',
+      username: process.env.SAUCE_USERNAME,
+      accessKey: process.env.SAUCE_ACCESS_KEY,
+      public: 'public'
     };
     conf.browsers = Object.keys(customLaunchers);
     conf.singleRun = true;
