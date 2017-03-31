@@ -85,34 +85,33 @@ module.exports = config => {
 
     // Browsers to run on Sauce Labs
     const customLaunchers = {
-      'SL_Chrome': {
+      sl_chrome: {
         base: 'SauceLabs',
         browserName: 'chrome',
-        version: '48.0',
-        platform: 'Linux'
+        platform: 'Windows 7',
+        version: '35'
       },
-      'SL_Firefox': {
+      sl_firefox: {
         base: 'SauceLabs',
         browserName: 'firefox',
-        version: '50.0',
-        platform: 'Windows 10'
+        version: '30'
       },
-      'SL_InternetExplorer': {
+      sl_ios_safari: {
+        base: 'SauceLabs',
+        browserName: 'iphone',
+        platform: 'OS X 10.9',
+        version: '7.1'
+      },
+      sl_ie_11: {
         base: 'SauceLabs',
         browserName: 'internet explorer',
-        version: '11.0',
-        platform: 'Windows 7'
-      },
-      'SL_Safari': {
-        base: 'SauceLabs',
-        browserName: 'safari',
-        platform: 'OS X 10.11',
-        version: '10.0'
+        platform: 'Windows 8.1',
+        version: '11'
       }
     };
 
     conf.plugins.push('karma-sauce-launcher');
-    conf.reporters.push('saucelabs');
+    conf.reporters = ['saucelabs', 'dots'];
     conf.sauceLabs = {
       testName: 'ng2-facebook-sdk',
       public: 'public',
