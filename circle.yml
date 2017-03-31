@@ -4,7 +4,6 @@ jobs:
       working_directory: ~/ng2-facebook-sdk/
       docker:
         - image: node:7
-        - image: docker-sauce-connect:4.4
       branches:
         - only:
           - v2-tests

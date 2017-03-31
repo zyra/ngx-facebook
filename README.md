@@ -3,6 +3,11 @@
 [![NPM](https://nodei.co/npm/ng2-facebook-sdk.png?stars&downloads)](https://nodei.co/npm/ng2-facebook-sdk/)
 [![NPM](https://nodei.co/npm-dl/ng2-facebook-sdk.png?months=6&height=2)](https://nodei.co/npm/ng2-facebook-sdk/)
 
+[![Travis](https://img.shields.io/travis/zyramedia/ng2-facebook-sdk.svg)](https://travis-ci.org/zyramedia/ng2-facebook-sdk)
+[![CircleCI](https://img.shields.io/circleci/project/github/zyramedia/ng2-facebook-sdk.svg)](https://circleci.com/gh/zyramedia/ng2-facebook-sdk)
+
+[![Sauce Test Status](https://saucelabs.com/buildstatus/ibby93)](https://saucelabs.com/u/ibby93)
+
 
 # Angular2 Facebook SDK
 This is a wrapper for the official Facebook JavaScript SDK. It makes it easier to use Facebook SDK with Angular 2 by providing components, providers and types.
@@ -113,11 +118,11 @@ share(url: string) {
     href: 'https://github.com/zyramedia/ng2-facebook-sdk',
     method: 'share'
   };
-  
+
   this.fb.ui(params)
     .then((res: UIResponse) => console.log(res))
     .catch((e: any) => console.error(e));
-    
+
 }
 ```
 
@@ -155,11 +160,11 @@ export class MyComponent {
     this.video.pause();
     this.video.getVolume();
   }
-  
+
   onVideoStartPlaying(ev: any) {
     console.log('User started playing video'):
   }
-  
+
   onVideoPaused(ev: any) {
     console.log('User paused the video');
   }

@@ -78,8 +78,7 @@ module.exports = config => {
     logLevel: config.INFO,
     autoWatch: true,
     browsers: ['PhantomJS'],
-    singleRun: false,
-    concurrency: 5
+    singleRun: false
   };
 
   if (process.env.SAUCE) {
@@ -142,6 +141,10 @@ module.exports = config => {
     conf.customLaunchers = customLaunchers;
     conf.browsers = Object.keys(customLaunchers);
     conf.singleRun = true;
+    conf.concurrency = 5;
+    conf.browserNoActivityTimeout = 20000;
+    conf.browserDisconnectTimeout = 5000;
+    conf.browserDisconnectTolerance = 2;
   }
 
   config.set(conf);
