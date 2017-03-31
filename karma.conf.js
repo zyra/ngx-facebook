@@ -13,8 +13,7 @@ module.exports = config => {
       'karma-jasmine',
       'karma-chrome-launcher',
       'karma-phantomjs-launcher',
-      'karma-jasmine-html-reporter',
-      'karma-sauce-launcher'
+      'karma-jasmine-html-reporter'
     ],
 
     // client: {
@@ -127,10 +126,11 @@ module.exports = config => {
         base: 'SauceLabs',
         browserName: 'safari',
         platform: 'macOS 10.12',
-        version: '10'
+        version: '10.0'
       },
     };
 
+    conf.plugins.push('karma-sauce-launcher');
     conf.reporters = ['saucelabs', 'dots'];
     conf.sauceLabs = {
       testName: 'ng2-facebook-sdk',
