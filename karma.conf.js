@@ -10,10 +10,10 @@ module.exports = config => {
     frameworks: ['jasmine'],
 
     plugins: [
-      require('karma-jasmine'),
-      require('karma-chrome-launcher'),
-      require('karma-phantomjs-launcher'),
-      require('karma-jasmine-html-reporter')
+      'karma-jasmine',
+      'karma-chrome-launcher',
+      'karma-phantomjs-launcher',
+      'karma-jasmine-html-reporter'
     ],
 
     // client: {
@@ -111,7 +111,7 @@ module.exports = config => {
       }
     };
 
-    conf.plugins.push(require('karma-sauce-launcher'));
+    conf.plugins.push('karma-sauce-launcher');
     conf.reporters.push('saucelabs');
     conf.sauceLabs = {
       testName: 'ng2-facebook-sdk',
