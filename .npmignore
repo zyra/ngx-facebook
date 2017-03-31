@@ -4,6 +4,7 @@ node_modules
 aot
 generated-docs
 
+.travis
 circle.yml
 
 src/**/*.spec.ts
