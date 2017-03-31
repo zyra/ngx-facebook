@@ -11,6 +11,7 @@ module.exports = config => {
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
+      require('karma-phantomjs-launcher'),
       require('karma-jasmine-html-reporter')
     ],
 
@@ -27,8 +28,10 @@ module.exports = config => {
     },
 
     files: [
+      'node_modules/babel-polyfill/dist/polyfill.js',
 
       'node_modules/systemjs/dist/system.src.js',
+      // 'node_modules/reflect-metadata/Reflect.js',
 
       // Polyfills
       'node_modules/core-js/client/shim.js',
@@ -75,7 +78,7 @@ module.exports = config => {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
     singleRun: false
   };
 
