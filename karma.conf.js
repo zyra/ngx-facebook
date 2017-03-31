@@ -1,6 +1,5 @@
 "use strict";
 
-console.log(!!process.env.SAUCE);
 module.exports = config => {
 
   const dist = 'dist/',
