@@ -115,7 +115,9 @@ module.exports = config => {
     conf.sauceLabs = {
       testName: 'ng2-facebook-sdk',
       public: 'public',
-      recordScreenshots: false
+      recordScreenshots: false,
+      startConnect: false,
+      tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER
     };
     conf.customLaunchers = customLaunchers;
     conf.browsers = Object.keys(customLaunchers);
