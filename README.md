@@ -1,3 +1,8 @@
+# Angular2 Facebook SDK
+This is a wrapper for the official Facebook JavaScript SDK. It makes it easier to use Facebook SDK with Angular 2 by providing components, providers and types.
+
+<br><br>
+
 [![npm](https://img.shields.io/npm/l/express.svg)](https://www.npmjs.com/package/ng2-facebook-sdk)
 
 [![NPM](https://nodei.co/npm/ng2-facebook-sdk.png?stars&downloads)](https://nodei.co/npm/ng2-facebook-sdk/)
@@ -5,12 +10,9 @@
 
 [![Travis](https://img.shields.io/travis/zyramedia/ng2-facebook-sdk.svg)](https://travis-ci.org/zyramedia/ng2-facebook-sdk)
 [![CircleCI](https://img.shields.io/circleci/project/github/zyramedia/ng2-facebook-sdk.svg)](https://circleci.com/gh/zyramedia/ng2-facebook-sdk)
+[![Sauce Test Status](https://saucelabs.com/buildstatus/ng2facebooksdk)](https://saucelabs.com/u/ng2facebooksdk)
 
-[![Sauce Test Status](https://saucelabs.com/buildstatus/ibby93)](https://saucelabs.com/u/ibby93)
-
-
-# Angular2 Facebook SDK
-This is a wrapper for the official Facebook JavaScript SDK. It makes it easier to use Facebook SDK with Angular 2 by providing components, providers and types.
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/ng2facebooksdk.svg)](https://saucelabs.com/u/ng2facebooksdk)
 
 <br><br>
 
