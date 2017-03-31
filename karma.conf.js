@@ -29,9 +29,7 @@ module.exports = config => {
 
     files: [
       'node_modules/babel-polyfill/dist/polyfill.js',
-
       'node_modules/systemjs/dist/system.src.js',
-      // 'node_modules/reflect-metadata/Reflect.js',
 
       // Polyfills
       'node_modules/core-js/client/shim.js',
