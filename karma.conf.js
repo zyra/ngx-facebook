@@ -79,7 +79,8 @@ module.exports = config => {
     logLevel: config.INFO,
     autoWatch: true,
     browsers: ['PhantomJS'],
-    singleRun: false
+    singleRun: false,
+    concurrency: 5
   };
 
   if (process.env.SAUCE) {
