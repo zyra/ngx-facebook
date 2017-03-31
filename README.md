@@ -18,12 +18,12 @@ This is a wrapper for the official Facebook JavaScript SDK. It makes it easier t
 
 #### 1. Install via NPM:
 
-```
+```shell
 npm i --save ng2-facebook-sdk
 ```
 
 #### 2. Add the Facebook JavaScript SDK to your index.html
-```
+```html
 <script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js"></script>
 ```
 
