@@ -1,5 +1,5 @@
 import { Component, Input, ElementRef, Renderer } from '@angular/core';
-import { FBMLAttribute, FBMLComponent } from './fbml-component';
+import { FBMLAttribute, FBMLComponent } from '../fbml-component';
 
 /**
  * @name Comments

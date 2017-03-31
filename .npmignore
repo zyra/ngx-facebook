@@ -1,6 +1,16 @@
 node_modules
 .gitignore
 .npmignore
-tsconfig.json
 aot
 generated-docs
+
+circle.yml
+
+src/**/*.spec.ts
+dist/**/*.spec.js
+
+docs.config.js
+karma.conf.js
+karma-test-shim.js
+systemjs.config.js
+tsconfig.json

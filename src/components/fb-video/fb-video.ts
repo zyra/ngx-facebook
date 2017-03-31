@@ -1,5 +1,5 @@
 import { Component, Input, Output, ElementRef, Renderer, OnInit, EventEmitter } from '@angular/core';
-import { FBMLAttribute, FBMLComponent, FBMLInstanceMethod } from './fbml-component';
+import { FBMLAttribute, FBMLComponent, FBMLInstanceMethod } from '../fbml-component';
 declare var FB: any;
 
 /**
