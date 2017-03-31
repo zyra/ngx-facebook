@@ -6,7 +6,7 @@ jobs:
         - image: node:7
       branches:
         - only:
-          - v2-modular-docs
+          - v2
       steps:
         - checkout
         - restore_cache:
@@ -21,12 +21,10 @@ jobs:
         - run:
            name: Build module
            command: npm run build
-        - run:
+        - add_ssh_keys
+        - deploy:
            name: Update docs
-           command: bash ./scripts/update_docs.sh
-        #- run: |
-        #    if [ "${CIRCLE_BRANCH}" == "master" ]; then
-        #      echo "hello world"
-        #    else
-        #      echo "hello two worlds ${CIRCLE_BRANCH}"
-        #    fi
+           command: |
+            if [ "${CIRCLE_BRANCH}" == "v2" ]; then
+              bash ./scripts/update_docs.sh
+            fi
