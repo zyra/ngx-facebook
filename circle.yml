@@ -10,26 +10,21 @@ jobs:
       steps:
         - checkout
         - restore_cache:
-           key: node_modules_{{ checksum "package.json" }}
+           key: node_modules_{{ .Branch }}_{{ checksum "package.json" }}
         - run:
            name: Install node modules
            command: npm i
         - save_cache:
-           key: node_modules_{{ checksum "package.json" }}
+           key: node_modules_{{ .Branch }}_{{ checksum "package.json" }}
            paths:
              - ~/ng2-facebook-sdk/node_modules/
         - run:
            name: Build module
            command: npm run build
-        - run:
-           name: Build docs
-           command: node scripts/update_docs.js
+        - add_ssh_keys
         - deploy:
-           name: Deploy docs to gh-pages
-           command: bash ./scripts/update_docs.sh
-        - run: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              echo "hello world"
-            else
-              echo "hello two worlds ${CIRCLE_BRANCH}"
+           name: Update docs
+           command: |
+            if [ "${CIRCLE_BRANCH}" == "v2" ]; then
+              bash ./scripts/update_docs.sh
             fi
