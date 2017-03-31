@@ -109,12 +109,6 @@ module.exports = config => {
         platform: 'Windows 10',
         version: '14'
       },
-      sl_ios10: {
-        base: 'SauceLabs',
-        browserName: 'iphone',
-        platform: 'OS X 10.10',
-        version: '10.0'
-      },
       sl_android5: {
         base: 'SauceLabs',
         browserName: 'android',
@@ -142,9 +136,6 @@ module.exports = config => {
     conf.browsers = Object.keys(customLaunchers);
     conf.singleRun = true;
     conf.concurrency = 5;
-    conf.browserNoActivityTimeout = 20000;
-    conf.browserDisconnectTimeout = 5000;
-    conf.browserDisconnectTolerance = 2;
   }
 
   config.set(conf);
