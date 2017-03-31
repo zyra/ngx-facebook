@@ -6,7 +6,7 @@ jobs:
         - image: node:7
       branches:
         - only:
-          - v2
+          - v2-tests
       steps:
         - checkout
         - restore_cache:
@@ -21,6 +21,9 @@ jobs:
         - run:
            name: Build module
            command: npm run build
+        - run:
+           name: Test
+           command: npm test
         - add_ssh_keys
         - deploy:
            name: Update docs
