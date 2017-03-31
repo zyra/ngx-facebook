@@ -1,25 +1,25 @@
-import { FBLikeComponent } from './fb-like';
+import { FBCommentsComponent } from './fb-comments';
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
 
-describe('FBLikeComponent', () => {
+describe('FBCommentsComponent', () => {
 
 
   let de: DebugElement,
-    comp: FBLikeComponent,
-    fixture: ComponentFixture<FBLikeComponent>;
+    comp: FBCommentsComponent,
+    fixture: ComponentFixture<FBCommentsComponent>;
 
   beforeEach(async(() => {
 
     TestBed.configureTestingModule({
-      declarations: [ FBLikeComponent ]
+      declarations: [ FBCommentsComponent ]
     }).compileComponents();
 
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FBLikeComponent);
+    fixture = TestBed.createComponent(FBCommentsComponent);
     comp = fixture.componentInstance;
     de = fixture.debugElement;
   });
@@ -27,7 +27,6 @@ describe('FBLikeComponent', () => {
   it('should create component', () => expect(comp).toBeDefined());
 
   it('should have data-href property', () => {
-
     comp.href = 'https://zyramedia.com';
     fixture.detectChanges();
     expect(Object.keys(de.attributes).indexOf('data-href')).toBeDefined();

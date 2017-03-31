@@ -1,25 +1,25 @@
-import { FBLikeComponent } from './fb-like';
+import { FBPostComponent } from './fb-post';
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
 
-describe('FBLikeComponent', () => {
+describe('FBPostComponent', () => {
 
 
   let de: DebugElement,
-    comp: FBLikeComponent,
-    fixture: ComponentFixture<FBLikeComponent>;
+    comp: FBPostComponent,
+    fixture: ComponentFixture<FBPostComponent>;
 
   beforeEach(async(() => {
 
     TestBed.configureTestingModule({
-      declarations: [ FBLikeComponent ]
+      declarations: [ FBPostComponent ]
     }).compileComponents();
 
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FBLikeComponent);
+    fixture = TestBed.createComponent(FBPostComponent);
     comp = fixture.componentInstance;
     de = fixture.debugElement;
   });

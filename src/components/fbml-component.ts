@@ -1,14 +1,16 @@
 import { ElementRef, Renderer } from '@angular/core';
 
 export function FBMLAttribute(target: any, key: string) {
+  const processKey = (_k: string) => 'data-' + _k.toString().replace(/([a-z\d])([A-Z])/g, '$1-$2').toLowerCase();
   Object.defineProperty(target, key, {
     set: function(value) {
-      key = key.toString();
-      key = key.replace(/([a-z\d])([A-Z])/g, '$1-$2');
-      key = key.toLowerCase();
       value = value.toString();
-      this.setAttribute(key, value);
-    }
+      this.setAttribute(processKey(key), value);
+    },
+    get: function() {
+      return this.getAttribute(processKey(key));
+    },
+    enumerable: true
   });
 }
 
@@ -44,7 +46,12 @@ export class FBMLComponent {
 
   protected setAttribute(name: string, value: string) {
     if (!name || !value) return;
-    this.rnd.setElementAttribute(this.nativeElement, 'data-' + name, value);
+    this.rnd.setElementAttribute(this.nativeElement, name, value);
+  }
+
+  protected getAttribute(name: string): string {
+    if (!name) return;
+    return this.nativeElement.getAttribute(name);
   }
 
 }

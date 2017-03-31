@@ -63,6 +63,7 @@ module.exports = config => {
       { pattern: 'node_modules/@angular/**/*.js.map', included: false, watched: false },
 
       { pattern: 'systemjs.config.js', included: false, watched: false },
+      'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8'
     ],
 
     // Proxied base paths for loading assets
