@@ -15,7 +15,7 @@ cd ../ng2-facebook-sdk
 
 npm run docs
 
-cp ../ng2-facebook-sdk/scripts/site_includes/* ../ng2-facebook-sdk-site/
+cp scripts/site_includes/* circle.yml ../ng2-facebook-sdk-site/
 
 cd ../ng2-facebook-sdk-site
 
