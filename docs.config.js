@@ -21,7 +21,17 @@ module.exports = {
       $runBefore: ['rendering-docs'],
       $process: docs => {
         docs = docs.filter(doc => (!!doc.name && !!doc.outputPath));
-        docs = _.sortBy(docs, ['name']);
+        docs = _(docs).sortBy(['name']).sortBy([d => {
+          if (d.name === 'FacebookModule') {
+            return 0;
+          } else if (d.name === 'FacebookService') {
+            return 1;
+          } else if (d.docType === 'class') {
+            return 2;
+          } else {
+            return 3;
+          }
+        }]);
         docs = docs.map(doc => {
           doc.URL = doc.outputPath.replace('index.html', '');
           return doc;
