@@ -33,4 +33,10 @@ describe('FBCommentEmbedComponent', () => {
     expect(de.attributes['data-href']).toEqual('https://zyramedia.com');
   });
 
+  it('should render an embedded comment element', () => {
+    comp.href = 'https://www.facebook.com/zuck/posts/10102735452532991?comment_id=1070233703036185';
+    fixture.detectChanges();
+    expect(de.nativeElement);
+  });
+
 });

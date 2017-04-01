@@ -1,13 +1,20 @@
 import { FacebookService } from './facebook';
 import { async } from '@angular/core/testing';
-import {InitParams} from '../models/init-params';
-declare var FB: any;
+import { InitParams } from '../models/init-params';
+
+declare var window: any;
 
 describe('FacebookService', () => {
 
   let service: FacebookService;
 
-  beforeAll(() => service = new FacebookService());
+  beforeAll(() => {
+    service = new FacebookService();
+    (window as any)['FB'] = {
+      init: (params: InitParams) => params,
+      login: () => {}
+    };
+  });
 
   it('should create an instance of the service', () => {
     expect(service).toBeDefined();
@@ -20,19 +27,19 @@ describe('FacebookService', () => {
   }));
 
   it('should init', () => {
-    spyOn(FB, 'init').and.callThrough();
+    spyOn(window.FB, 'init').and.callThrough();
     const options: InitParams = {
       appId: '1927971220769787',
       version: 'v2.8'
     };
     service.init(options);
-    expect(FB.init).toHaveBeenCalledWith(options);
+    expect(window.FB.init).toHaveBeenCalledWith(options);
   });
 
   it('should call login', () => {
-    spyOn(FB, 'login');
+    spyOn(window.FB, 'login');
     service.login();
-    expect(FB.login).toHaveBeenCalled();
+    expect(window.FB.login).toHaveBeenCalled();
   });
 
 });
