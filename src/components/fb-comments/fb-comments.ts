@@ -12,7 +12,7 @@ import { FBMLAttribute, FBMLComponent } from '../fbml-component';
  *
  * @usage
  * ```html
- * <fb-comments></fb-components>
+ * <fb-comments></fb-comments>
  * ```
  */
 @Component({
