@@ -1,4 +1,4 @@
-import { Component, Input, Output, ElementRef, Renderer, OnInit, EventEmitter } from '@angular/core';
+import { Component, Input, Output, ElementRef, Renderer, OnInit, OnDestroy, EventEmitter } from '@angular/core';
 import { FBMLAttribute, FBMLComponent, FBMLInstanceMethod } from '../fbml-component';
 declare var FB: any;
 
@@ -41,7 +41,7 @@ declare var FB: any;
   selector: 'fb-video',
   template: ''
 })
-export class FBVideoComponent extends FBMLComponent implements OnInit {
+export class FBVideoComponent extends FBMLComponent implements OnInit, OnDestroy {
 
   private _instance: any;
 
@@ -126,6 +126,8 @@ export class FBVideoComponent extends FBMLComponent implements OnInit {
 
   private _id: string;
 
+  private _listeners: any[] = [];
+
   constructor(
     el: ElementRef,
     rnd: Renderer
@@ -141,14 +143,27 @@ export class FBVideoComponent extends FBMLComponent implements OnInit {
     FB.Event.subscribe('xfbml.ready', (msg: any) => {
       if (msg.type === 'video' && msg.id === this._id) {
         this._instance = msg.instance;
-        this._instance.subscribe('startedPlaying', (e: any) => this.startedPlaying.emit(e));
-        this._instance.subscribe('paused', (e: any) => this.paused.emit(e));
-        this._instance.subscribe('finishedPlaying', (e: any) => this.finishedPlaying.emit(e));
-        this._instance.subscribe('startedBuffering', (e: any) => this.startedBuffering.emit(e));
-        this._instance.subscribe('finishedBuffering', (e: any) => this.finishedBuffering.emit(e));
-        this._instance.subscribe('error', (e: any) => this.error.emit(e));
+        this._listeners.push(
+          this._instance.subscribe('startedPlaying', (e: any) => this.startedPlaying.emit(e)),
+          this._instance.subscribe('paused', (e: any) => this.paused.emit(e)),
+          this._instance.subscribe('finishedPlaying', (e: any) => this.finishedPlaying.emit(e)),
+          this._instance.subscribe('startedBuffering', (e: any) => this.startedBuffering.emit(e)),
+          this._instance.subscribe('finishedBuffering', (e: any) => this.finishedBuffering.emit(e)),
+          this._instance.subscribe('error', (e: any) => this.error.emit(e))
+        );
       }
     });
+  }
+
+  /**
+   * @hidden
+   */
+  ngOnDestroy() {
+    this._listeners.forEach(l => {
+      if (typeof l.release === 'function') {
+        l.release();
+      }
+    })
   }
 
   /**
