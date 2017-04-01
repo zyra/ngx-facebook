@@ -1,17 +1,18 @@
-node_modules
-.gitignore
+.idea
+.editorconfig
 .npmignore
+
 aot
-generated-docs
+src
+scripts
 
-.travis
-circle.yml
+*.yml
+*.spec.js
+*.spec.js.map
 
-src/**/*.spec.ts
-dist/**/*.spec.js
-
-docs.config.js
 karma.conf.js
 karma-test-shim.js
-systemjs.config.js
+docs.config.js
+
 tsconfig.json
+tsconfig-es5.json

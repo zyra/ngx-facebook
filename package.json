@@ -2,19 +2,20 @@
   "name": "ng2-facebook-sdk",
   "version": "2.0.0-beta.1",
   "description": "Facebook TypeScript SDK for Angular2",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
+  "main": "dist/es5/index.js",
+  "typings": "dist/es5/index.d.ts",
+  "module": "dist/esm/index.js",
   "scripts": {
-    "build": "rm -rf aot dist && ngc",
-    "pretest": "rm -rf aot dist && tsc",
+    "prebuild": "rm -rf dist aot",
+    "build": "npm run build:esm && npm run build:es5",
+    "prebuild:es5": "rm -rf dist/es5",
+    "build:es5": "ngc -p tsconfig-es5.json",
+    "prebuild:esm": "rm -rf aot dist/esm",
+    "build:esm": "ngc",
+    "pretest": "rm -rf dist/es5 && tsc -p tsconfig-es5.json",
     "test": "karma start karma.conf.js --single-run",
-    "pretest:watch": "tsc",
-    "test:watch": "concurrently \"tsc -w\" \"karma start karma.conf.js\"",
-    "link": "cd dist && npm link",
+    "pretest:watch": "npm run pretest",
+    "test:watch": "concurrently \"tsc -w -p tsconfig-es5.json\" \"karma start karma.conf.js\"",
     "docs": "zm-docs-gen"
   },
   "repository": {

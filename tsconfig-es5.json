@@ -1,16 +1,14 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "es2015",
+    "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": true,
-    "inlineSources": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": true,
-    "declaration": true,
-    "outDir": "dist/esm",
+    "outDir": "dist/es5",
     "lib": [
       "es6",
       "dom"
@@ -20,9 +18,6 @@
   "exclude": [
     "node_modules",
     "dist",
-    "src/**/*.spec.ts"
-  ],
-  "angularCompilerOptions": {
-    "genDir": "aot"
-  }
+    "aot"
+  ]
 }

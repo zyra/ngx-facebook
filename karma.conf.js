@@ -2,9 +2,6 @@
 
 module.exports = config => {
 
-  const dist = 'dist/',
-    src = 'src/';
-
   const conf = {
     basePath: '',
     frameworks: ['jasmine'],
@@ -47,11 +44,11 @@ module.exports = config => {
       {pattern: 'karma-test-shim.js', included: true, watched: true},
 
       // paths loaded via module imports
-      {pattern: 'dist/**/*.js', included: false, watched: true},
+      {pattern: 'dist/es5/**/*.js', included: false, watched: true},
 
       // paths to support debugging with source maps in dev tools
       {pattern: 'src/**/*.ts', included: false, watched: false},
-      {pattern: 'dist/**/*.js.map', included: false, watched: false},
+      {pattern: 'dist/es5/**/*.js.map', included: false, watched: false},
 
       // RxJs
       { pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false },
@@ -67,7 +64,7 @@ module.exports = config => {
 
     // Proxied base paths for loading assets
     proxies: {
-      '/dist/': '/base/dist/'
+      '/dist/': '/base/dist/es5/'
     },
     exclude: [],
     preprocessors: {},
