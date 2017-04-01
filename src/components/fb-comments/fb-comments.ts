@@ -35,7 +35,7 @@ export class FBCommentsComponent extends FBMLComponent {
    */
   @Input()
   @FBMLAttribute
-  href: string;
+  href: string = window.location.href;
 
   /**
    * A boolean value that specifies whether to show the mobile-optimized version or not. If no value is given, it will be automatically detected.
