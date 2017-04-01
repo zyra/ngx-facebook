@@ -1,7 +1,7 @@
 import { AuthResponse } from './auth-response';
 
 /**
- * The object returned by the [getLoginStatus](../FacebookService/#getLoginStatus) method.
+ * The object returned by the [getLoginStatus](../facebook-service/#getLoginStatus) method.
  */
 export interface LoginStatus {
   /**

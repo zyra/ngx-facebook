@@ -21,7 +21,7 @@ export type ApiMethod = 'get' | 'post' | 'delete';
  * @shortdesc
  * Angular 2 service to inject to use Facebook's SDK
  * @description
- * You only need to inject this service in your application if you aren't using [`FacebookModule`](../FacebookModule).
+ * You only need to inject this service in your application if you aren't using [`FacebookModule`](../facebook-module).
  * @usage
  * ```typescript
  * import { FacebookService, InitParams } from 'ng2-facebook-sdk';
@@ -140,7 +140,7 @@ export class FacebookService {
    *   .catch(...);
    * ```
    * @param [options] {LoginOptions} Login options
-   * @returns {Promise<LoginResponse>} returns a promise that resolves with [LoginResponse](../LoginResponse) object, or rejects with an error
+   * @returns {Promise<LoginResponse>} returns a promise that resolves with [LoginResponse](../login-response) object, or rejects with an error
    */
   login(options?: LoginOptions): Promise<LoginResponse> {
     return new Promise<LoginResponse>((resolve, reject) => {
@@ -184,7 +184,7 @@ export class FacebookService {
    *
    * const authResponse: AuthResponse = this.fb.getAuthResponse();
    * ```
-   * @returns {AuthResponse} returns an [AuthResponse](../AuthResponse) object
+   * @returns {AuthResponse} returns an [AuthResponse](../auth-response) object
    */
   getAuthResponse(): AuthResponse {
     return <AuthResponse>FB.getAuthResponse();

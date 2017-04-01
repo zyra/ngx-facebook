@@ -1,5 +1,5 @@
 /**
- * Options that can be passed to the [login](../FacebookService/#login) method.
+ * Options that can be passed to the [login](../facebook-service/#login) method.
  */
 export interface LoginOptions {
     /**

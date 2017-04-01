@@ -1,5 +1,5 @@
 /**
- * This is the configuration that can be passed to the [init](../FacebookService/#init) method.
+ * This is the configuration that can be passed to the [init](../facebook-service/#init) method.
  */
 export interface InitParams {
     /**

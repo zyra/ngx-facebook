@@ -1,5 +1,5 @@
 /**
- * The response object returned by the [getAuthResponse](../FacebookService/#getAuthResponse) method, and is also used in [LoginResponse](../LoginResponse/) and [LoginStatus](../LoginStatus/).
+ * The response object returned by the [getAuthResponse](../facebook-service/#getAuthResponse) method, and is also used in [LoginResponse](../login-response/) and [LoginStatus](../login-status/).
  */
 export interface AuthResponse {
     /**

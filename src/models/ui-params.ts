@@ -101,7 +101,7 @@ export interface SendDialogParams {
 }
 
 /**
- * The object passed to the [ui](../FacebookService/#ui) method. The properties below can be passed to all three types of dialogs. Each type of dialog accepts additional parameters that are documented above.
+ * The object passed to the [ui](../facebook-service/#ui) method. The properties below can be passed to all three types of dialogs. Each type of dialog accepts additional parameters that are documented above.
  */
 export interface UIParams extends ShareDialogParams, FeedDialogParams, SendDialogParams {
 
