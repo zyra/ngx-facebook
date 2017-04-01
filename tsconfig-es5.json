@@ -8,6 +8,7 @@
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": true,
+    "declaration": true,
     "outDir": "dist/es5",
     "lib": [
       "es6",
@@ -17,7 +18,9 @@
   },
   "exclude": [
     "node_modules",
-    "dist",
-    "aot"
-  ]
+    "dist"
+  ],
+  "angularCompilerOptions": {
+    "genDir": "aot"
+  }
 }
