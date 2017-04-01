@@ -19,7 +19,7 @@ export function FBMLInstanceMethod(target: any, key: string) {
     enumerable: true,
     value: function(...args: any[]) {
       if (this._instance) {
-        return this._instance[key].apply(this, args);
+        return this._instance[key].apply(this._instance, args);
       } else {
         console.warn('ng2-facebook-sdk: tried calling instance method before component is ready.');
         return null;

@@ -12,15 +12,14 @@
     "declaration": true,
     "outDir": "dist/esm",
     "lib": [
-      "es6",
+      "es2015",
       "dom"
     ],
     "newLine": "LF"
   },
   "exclude": [
     "node_modules",
-    "dist",
-    "src/**/*.spec.ts"
+    "dist"
   ],
   "angularCompilerOptions": {
     "genDir": "aot"

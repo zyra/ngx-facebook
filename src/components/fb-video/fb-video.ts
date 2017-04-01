@@ -124,11 +124,14 @@ export class FBVideoComponent extends FBMLComponent implements OnInit {
   @Output()
   error: EventEmitter<any> = new EventEmitter<any>();
 
+  private _id: string;
+
   constructor(
     el: ElementRef,
     rnd: Renderer
   ) {
     super(el, rnd, 'fb-video');
+    this.nativeElement.id = this._id = 'video-' + String(Math.floor((Math.random() * 10000) + 1));
   }
 
   /**
@@ -136,11 +139,8 @@ export class FBVideoComponent extends FBMLComponent implements OnInit {
    */
   ngOnInit() {
     FB.Event.subscribe('xfbml.ready', (msg: any) => {
-      if (msg.type === 'video') {
+      if (msg.type === 'video' && msg.id === this._id) {
         this._instance = msg.instance;
-        console.log(msg);
-        // TODO make sure that we getting the right instance, in case we have more than one player
-
         this._instance.subscribe('startedPlaying', (e: any) => this.startedPlaying.emit(e));
         this._instance.subscribe('paused', (e: any) => this.paused.emit(e));
         this._instance.subscribe('finishedPlaying', (e: any) => this.finishedPlaying.emit(e));
