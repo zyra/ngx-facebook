@@ -8,7 +8,7 @@ import { FBMLAttribute, FBMLComponent } from '../fbml-component';
  * @description The Follow button lets people subscribe to the public updates of others on Facebook.
  * @usage
  * ```html
- * <fb-follow href=""></fb-follow>
+ * <fb-follow href="https://www.facebook.com/zuck"></fb-follow>
  * ```
  */
 @Component({
