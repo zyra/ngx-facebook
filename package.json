@@ -8,6 +8,7 @@
   "scripts": {
     "prebuild": "rm -rf dist aot",
     "build": "npm run build:esm && npm run build:es5",
+    "build:dev": "npm run build && cp -r dist ../ng2-facebook-sdk-example/node_modules/ng2-facebook-sdk/",
     "prebuild:es5": "rm -rf dist/es5",
     "build:es5": "ngc -p tsconfig-es5.json",
     "prebuild:esm": "rm -rf aot dist/esm",

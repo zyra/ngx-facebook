@@ -13,6 +13,7 @@ scripts
 karma.conf.js
 karma-test-shim.js
 docs.config.js
+systemjs.config.js
 
 tsconfig.json
 tsconfig-es5.json
