@@ -31,7 +31,7 @@ module.exports = {
           } else {
             return 3;
           }
-        }]);
+        }]).valueOf();
         docs = docs.map(doc => {
           doc.URL = doc.outputPath.replace('index.html', '');
           return doc;
