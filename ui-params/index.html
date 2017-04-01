@@ -15,14 +15,120 @@
 
 
 
-
-
 <a id="UIParams" class="h2 docs-title anchor" href="#UIParams">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   UIParams
 </a>
 <h4> extends ShareDialogParams, FeedDialogParams, SendDialogParams</h4>
+<table class="table table-striped table-bordered rounded">
+  <thead>
+  <tr>
+    <th>Param</th>
+    <th>Type</th>
+    <th>Details</th>
+  </tr>
+  </thead>
+  <tbody>
+  
+  <tr>
+    <td>
+      method
+      </td>
+    <td>
+      <code>any</code>
+    </td>
+    <td>
+      The UI dialog that is being invoked. This is a required field.
 
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      message
+      <em>(optional)</em></td>
+    <td>
+      <code>string</code>
+    </td>
+    <td>
+      The UI dialog message.
+
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      app_id
+      <em>(optional)</em></td>
+    <td>
+      <code>string</code>
+    </td>
+    <td>
+      Your app's unique identifier. Required.
+
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      redirect_uri
+      <em>(optional)</em></td>
+    <td>
+      <code>string</code>
+    </td>
+    <td>
+      The URL to redirect to after a person clicks a button on the dialog. Required when using URL redirection.
+
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      display
+      <em>(optional)</em></td>
+    <td>
+      <code>string</code>
+    </td>
+    <td>
+      Determines how the dialog is rendered.
+- If you are using the URL redirect dialog implementation, then this will be a full page display, shown within Facebook.com. This display type is called page
+- If you are using one of our iOS or Android SDKs to invoke the dialog, this is automatically specified and chooses an appropriate display type for the device.
+- If you are using the Facebook SDK for JavaScript, this will default to a modal iframe type for people logged into your app or async when using within a game on Facebook.com, and a popup window for everyone else. You can also force the popup type when when you use the Facebook SDK for JavaScript, if necessary.
+- Mobile web apps will always default to the touch display type.
+
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      phase
+      <em>(optional)</em></td>
+    <td>
+      <code>string</code>
+    </td>
+    <td>
+      - Dialog in create phase allows you to get stream url to upload video; Dialog in publish phase will provide preview and go live button. required
+- phase = create | publish
+
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      broadcast_data
+      <em>(optional)</em></td>
+    <td>
+      <code>any</code>
+    </td>
+    <td>
+      - This parameter is required for publish phase.
+- The response object returned from either API or create phase.
+
+    </td>
+  </tr>
+  
+  </tbody>
+</table>
 
 
 </div>
