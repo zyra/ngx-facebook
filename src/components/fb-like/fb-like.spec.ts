@@ -26,10 +26,10 @@ describe('FBLikeComponent', () => {
 
   it('should create component', () => expect(comp).toBeDefined());
 
-  it('should have data-href property', () => {
+  it('should have fb-like class', () => expect(de.classes['fb-like']).toBeTruthy());
 
+  it('should have data-href property', () => {
     comp.href = 'https://zyramedia.com';
-    fixture.detectChanges();
     expect(Object.keys(de.attributes).indexOf('data-href')).toBeDefined();
     expect(de.attributes['data-href']).toEqual('https://zyramedia.com');
   });

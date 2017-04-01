@@ -26,17 +26,12 @@ describe('FBCommentEmbedComponent', () => {
 
   it('should create component', () => expect(comp).toBeDefined());
 
+  it('should have fb-comment-embed class', () => expect(de.classes['fb-comment-embed']).toBeTruthy());
+
   it('should have data-href property', () => {
     comp.href = 'https://zyramedia.com';
-    fixture.detectChanges();
-    expect(Object.keys(de.attributes).indexOf('data-href')).toBeDefined();
+    expect(de.attributes['data-href']).toBeDefined();
     expect(de.attributes['data-href']).toEqual('https://zyramedia.com');
-  });
-
-  it('should render an embedded comment element', () => {
-    comp.href = 'https://www.facebook.com/zuck/posts/10102735452532991?comment_id=1070233703036185';
-    fixture.detectChanges();
-    expect(de.nativeElement);
   });
 
 });

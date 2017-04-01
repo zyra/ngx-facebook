@@ -26,6 +26,8 @@ describe('FBFollowComponent', () => {
 
   it('should create component', () => expect(comp).toBeDefined());
 
+  it('should have fb-follow class', () => expect(de.classes['fb-follow']).toBeTruthy());
+
   it('should have data-href property', () => {
     comp.href = 'https://zyramedia.com';
     fixture.detectChanges();
