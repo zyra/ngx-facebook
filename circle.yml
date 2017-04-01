@@ -1,0 +1,33 @@
+version: 2
+jobs:
+  build:
+      working_directory: ~/ng2-facebook-sdk/
+      docker:
+        - image: node:7
+      branches:
+        - only:
+          - v2-tests
+      steps:
+        - checkout
+        - restore_cache:
+           key: node_modules_{{ .Branch }}_{{ checksum "package.json" }}
+        - run:
+           name: Install node modules
+           command: npm i
+        - save_cache:
+           key: node_modules_{{ .Branch }}_{{ checksum "package.json" }}
+           paths:
+             - ~/ng2-facebook-sdk/node_modules/
+        - run:
+           name: Build module
+           command: npm run build
+        - run:
+           name: Test
+           command: npm test
+        - add_ssh_keys
+        - deploy:
+           name: Update docs
+           command: |
+            if [ "${CIRCLE_BRANCH}" == "v2" ]; then
+              bash ./scripts/update_docs.sh
+            fi
