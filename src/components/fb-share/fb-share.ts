@@ -23,7 +23,7 @@ export class FBShareComponent extends FBMLComponent {
    */
   @Input()
   @FBMLAttribute
-  href: string;
+  href: string = window.location.href;
 
   /**
    * Selects one of the different layouts that are available for the plugin. Can be one of `box_count`, `button_count`, `button`. Defaults to `icon_link`.

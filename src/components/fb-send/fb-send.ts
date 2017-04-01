@@ -30,7 +30,7 @@ export class FBSendComponent extends FBMLComponent {
    */
   @Input()
   @FBMLAttribute
-  href: string;
+  href: string = window.location.href;
 
   /**
    * If your web site or online service, or a portion of your service, is directed to children under 13 you must enable this.

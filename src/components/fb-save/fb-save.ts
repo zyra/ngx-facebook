@@ -24,7 +24,7 @@ export class FBSaveComponent extends FBMLComponent {
    */
   @Input()
   @FBMLAttribute
-  uri: string;
+  uri: string = window.location.href;
 
   constructor(
     el: ElementRef,
