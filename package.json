@@ -39,7 +39,7 @@
     "@angular/platform-browser-dynamic": "2.4.10",
     "@types/jasmine": "^2.5.47",
     "@types/node": "^7.0.12",
-    "@zyramedia/docs-gen": "^1.1.3",
+    "@zyramedia/docs-gen": "^1.2.0",
     "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.24.0",
     "concurrently": "^3.4.0",
