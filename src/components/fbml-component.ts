@@ -1,5 +1,8 @@
 import { ElementRef, Renderer } from '@angular/core';
 
+/**
+ * @hidden
+ */
 export function FBMLAttribute(target: any, key: string) {
   const processKey = (_k: string) => 'data-' + _k.toString().replace(/([a-z\d])([A-Z])/g, '$1-$2').toLowerCase();
   Object.defineProperty(target, key, {
@@ -14,6 +17,9 @@ export function FBMLAttribute(target: any, key: string) {
   });
 }
 
+/**
+ * @hidden
+ */
 export function FBMLInstanceMethod(target: any, key: string) {
   return {
     enumerable: true,
@@ -38,10 +44,10 @@ export class FBMLComponent {
   constructor(
     private el: ElementRef,
     private rnd: Renderer,
-    fbClass: string
+    private fbClass: string
   ) {
     this.nativeElement = this.el.nativeElement;
-    this.rnd.setElementClass(this.nativeElement, fbClass, true);
+    this.rnd.setElementClass(this.nativeElement, this.fbClass, true);
   }
 
   protected setAttribute(name: string, value: string) {
