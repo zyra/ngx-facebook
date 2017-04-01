@@ -80,7 +80,8 @@ You can view complete and detailed documentation by visiting https://zyramedia.g
 
 ## Example Usage
 
-You can view our example project here: https://github.com/zyramedia/ng2-facebook-sdk-example
+You can view our example project here: https://zyramedia.github.io/ng2-facebook-sdk-example/
+and/or view its source code here: https://github.com/zyramedia/ng2-facebook-sdk-example/
 
 <br><br>
 
