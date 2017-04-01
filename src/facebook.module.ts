@@ -1,18 +1,18 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import {
-  FacebookService,
-  FBCommentEmbedComponent,
-  FBCommentsComponent,
-  FBFollowComponent,
-  FBLikeComponent,
-  FBPageComponent,
-  FBPostComponent,
-  FBQuoteComponent,
-  FBSaveComponent,
-  FBSendComponent,
-  FBShareComponent,
-  FBVideoComponent
-} from './';
+
+import { FacebookService } from './providers/facebook';
+
+import { FBCommentEmbedComponent } from './components/fb-comment-embed/fb-comment-embed';
+import { FBCommentsComponent } from './components/fb-comments/fb-comments';
+import { FBFollowComponent } from './components/fb-follow/fb-follow';
+import { FBLikeComponent } from './components/fb-like/fb-like';
+import { FBPageComponent } from './components/fb-page/fb-page';
+import { FBPostComponent } from './components/fb-post/fb-post';
+import { FBQuoteComponent } from './components/fb-quote/fb-quote';
+import { FBSaveComponent } from './components/fb-save/fb-save';
+import { FBSendComponent } from './components/fb-send/fb-send';
+import { FBShareComponent } from './components/fb-share/fb-share';
+import { FBVideoComponent } from './components/fb-video/fb-video';
 
 const components: any[] = [
   FBCommentEmbedComponent,
@@ -27,6 +27,10 @@ const components: any[] = [
   FBShareComponent,
   FBVideoComponent
 ];
+
+export function getComponents() {
+  return components;
+}
 
 /**
  * The main module to import into your application.
@@ -49,8 +53,8 @@ const components: any[] = [
  * ```
  */
 @NgModule({
-  declarations: components,
-  exports: components
+  declarations: getComponents(),
+  exports: getComponents()
 })
 export class FacebookModule {
   static forRoot(): ModuleWithProviders {

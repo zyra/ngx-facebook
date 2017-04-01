@@ -1,5 +1,12 @@
 import { Injectable } from '@angular/core';
-import { AuthResponse, InitParams, LoginOptions, LoginResponse, LoginStatus, UIParams, UIResponse } from '../models';
+import { AuthResponse } from '../models/auth-response';
+import { InitParams } from '../models/init-params';
+import { LoginOptions } from '../models/login-options';
+import { LoginResponse } from '../models/login-response';
+import { LoginStatus } from '../models/login-status';
+import { UIParams } from '../models/ui-params';
+import { UIResponse } from '../models/ui-response';
+
 
 declare var FB: any;
 
