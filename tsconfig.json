@@ -18,8 +18,7 @@
     "newLine": "LF"
   },
   "exclude": [
-    "node_modules",
-    "dist"
+    "node_modules"
   ],
   "angularCompilerOptions": {
     "genDir": "aot"
