@@ -1,13 +1,7 @@
 // /*global jasmine, __karma__, window*/
-Error.stackTraceLimit = 0; // "No stacktrace"" is usually best for app testing.
-
-// Uncomment to get full stacktrace output. Sometimes helpful, usually not.
-// Error.stackTraceLimit = Infinity; //
-
+Error.stackTraceLimit = 0;
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000;
 
-// builtPaths: root paths for output ("built") files
-// get from karma.config.js, then prefix with '/base/' (default is 'src/')
 var builtPaths = (__karma__.config.builtPaths || ['dist/'])
   .map(function(p) { return '/base/'+p;});
 
@@ -34,13 +28,8 @@ var allSpecFiles = Object.keys(window.__karma__.files)
   .filter(isBuiltFile);
 
 System.config({
-  // Base URL for System.js calls. 'base/' is where Karma serves files from.
   baseURL: 'base/',
-  // Extend usual application package list with test folder
   packages: { 'testing': { main: 'index.js', defaultExtension: 'js' } },
-
-  // Assume npm: is set in `paths` in systemjs.config
-  // Map the angular testing umd bundles
   map: {
     '@angular/core/testing': 'npm:@angular/core/bundles/core-testing.umd.js',
     '@angular/common/testing': 'npm:@angular/common/bundles/common-testing.umd.js',
@@ -51,20 +40,8 @@ System.config({
 });
 
 System.import('systemjs.config.js')
-  .then(importSystemJsExtras)
   .then(initTestBed)
   .then(initTesting);
-
-/** Optional SystemJS configuration extras. Keep going w/o it */
-function importSystemJsExtras(){
-  return System.import('systemjs.config.extras.js')
-    .catch(function(reason) {
-      console.log(
-        'Warning: System.import could not load the optional "systemjs.config.extras.js". Did you omit it by accident? Continuing without it.'
-      );
-      console.log(reason);
-    });
-}
 
 function initTestBed(){
   return Promise.all([

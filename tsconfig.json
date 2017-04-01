@@ -10,7 +10,7 @@
     "removeComments": false,
     "noImplicitAny": true,
     "declaration": true,
-    "outDir": "dist/esm",
+    "outDir": "dist",
     "lib": [
       "es2015",
       "dom"
