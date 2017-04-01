@@ -1,12 +1,13 @@
 version: 2
+general:
+  branches:
+    - only:
+      - v2
 jobs:
   build:
       working_directory: ~/ng2-facebook-sdk/
       docker:
         - image: node:7
-      branches:
-        - only:
-          - v2-tests
       steps:
         - checkout
         - restore_cache:
