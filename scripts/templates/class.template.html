@@ -97,7 +97,7 @@
       <code>{{ param.typeList | escape }}</code>
     </td>
     <td>
-      {{ param.description }}
+      {{ param.description | marked }}
     </td>
     <td>
       {%- if param.defaultValue %}
