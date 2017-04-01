@@ -23,7 +23,7 @@ export class FBShareComponent extends FBMLComponent {
    */
   @Input()
   @FBMLAttribute
-  href: string = window.location.href;
+  href: string;
 
   /**
    * Selects one of the different layouts that are available for the plugin. Can be one of `box_count`, `button_count`, `button`. Defaults to `icon_link`.
@@ -50,7 +50,7 @@ export class FBShareComponent extends FBMLComponent {
     el: ElementRef,
     rnd: Renderer
   ) {
-    super(el, rnd, 'fb-share');
+    super(el, rnd, 'fb-share-button');
   }
 
 }
