@@ -20,6 +20,6 @@ cp scripts/site_includes/* circle.yml ../ng2-facebook-sdk-site/
 cd ../ng2-facebook-sdk-site
 
 git add .
-git commit -am "Automated docs update zyramedia/ng2-facebook-sdk@$CIRCLE_SHA1"
+git commit -am "Automated docs update zyramedia/ng2-facebook-sdk@$CIRCLE_SHA1" -m "[ci skip]"
 
 git push origin gh-pages || true
