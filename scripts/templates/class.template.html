@@ -7,20 +7,19 @@
 {% for type in types %}{{ separator() }}{{ type | code }}{% endfor %}
 {%- endmacro -%}
 
-{%- for export in doc.moduleDoc.exports %}
 
 <h1 class="display-4 api-title">
-  {{export.name}}
-  <small>({{export.docType}} exported as {{export.exportSymbol.name}})</small>
+  {{doc.name}}
+  <small>({{doc.docType}} exported as {{doc.exportSymbol.name}})</small>
 </h1>
 
-{{export.description | marked}}
+{{doc.description | marked}}
 
-{% if export.fbdoc %}
-<p>Official Facebook documentation for this class can be <a href="{{ export.fbdoc }}">found here</a>.</p>
+{% if doc.fbdoc %}
+<p>Official Facebook documentation for this class can be <a href="{{ doc.fbdoc }}">found here</a>.</p>
 {% endif %}
 
-{% if export.usage %}
+{% if doc.usage %}
 
 <a href="#usage" class="h2 docs-title" id="usage anchor">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
@@ -30,13 +29,13 @@
 
 {% endif %}
 
-{%- if export.inputs.length %}
+{%- if doc.inputs.length %}
 <a id="inputs" href="#inputs" class="h2 docs-title anchor">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   Inputs
 </a>
 
-{%- for input in export.inputs %}
+{%- for input in doc.inputs %}
 <a id="{{ input.name }}" href="#{{input.name}}" class="h4 anchor">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   {{ input.name }}
@@ -48,13 +47,13 @@
 {% endif -%}
 
 
-{%- if export.outputs.length %}
+{%- if doc.outputs.length %}
 <a id="outputs" href="#outputs" class="h2 docs-title anchor">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   Outputs
 </a>
 
-{%- for output in export.outputs %}
+{%- for output in doc.outputs %}
 <a id="{{ output.name }}" href="#{{output.name}}" class="h4 anchor">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   {{ output.name }}
@@ -65,13 +64,13 @@
 
 {% endif -%}
 
-{%- if export.members.length %}
+{%- if doc.members.length %}
 <a id="instance-methods" href="#instance-methods" class="h2 docs-title anchor">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   Instance Methods
 </a>
 {% endif -%}
-{%- for member in export.members %}
+{%- for member in doc.members %}
 <a id="{{ member.name }}" href="#{{member.name}}" class="h4 anchor">
   <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
   {{ member.name }}
@@ -118,8 +117,6 @@ Example usage of <code>{{ member.name }}</code>:
 {{ member.usage | marked }}
 {% endif %}
 <hr>
-{% endfor -%}
-
 {% endfor -%}
 
 {% endblock %}
