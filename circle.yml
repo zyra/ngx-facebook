@@ -16,6 +16,9 @@ jobs:
            paths:
              - ~/ng2-facebook-sdk/node_modules/
         - run:
+           name: Lint
+           command: npm run lint
+        - run:
            name: Build module
            command: npm run build
         - run:
