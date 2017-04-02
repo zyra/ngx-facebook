@@ -44,10 +44,10 @@ export class AppModule { }
 
 ```
 
-If you only want to use [FacebookService](https://zyramedia.github.io/ng2-facebook-sdk/FacebookService) only, without using the other components, then you can import it in your app's module instead of `FacebookModule`.
+If you only want to use [FacebookService](https://zyramedia.github.io/ng2-facebook-sdk/facebook-service) only, without using the other components, then you can import it in your app's module instead of `FacebookModule`.
 
 #### 4. Inject `FacebookService` and call the `init` method (optional):
-This method must be called before using [`login`](http://zyramedia.github.io/ng2-facebook-sdk/FacebookService/#login) or [`api`](http://zyramedia.github.io/ng2-facebook-sdk/FacebookService/#api) methods. It is not required for other methods/components.
+This method must be called before using [`login`](http://zyramedia.github.io/ng2-facebook-sdk/facebook-service/#login) or [`api`](http://zyramedia.github.io/ng2-facebook-sdk/facebook-service/#api) methods. It is not required for other methods/components.
 
 ```typescript
 import { FacebookService, InitParams } from 'ng2-facebook-sdk';
@@ -80,8 +80,7 @@ You can view complete and detailed documentation by visiting https://zyramedia.g
 
 ## Example Usage
 
-You can view our example project here: https://zyramedia.github.io/ng2-facebook-sdk-example/
-and/or view its source code here: https://github.com/zyramedia/ng2-facebook-sdk-example/
+You can view our [example project here](https://zyramedia.github.io/ng2-facebook-sdk-example/) and/or view its [source code here](https://github.com/zyramedia/ng2-facebook-sdk-example/)
 
 <br><br>
 
@@ -146,7 +145,7 @@ share(url: string) {
 
 #### Advanced video component usage:
 ```html
-<fb-video href="https://www.facebook.com/facebook/videos/10153231379946729/" (startPlaying)="onVideoStartPlaying($event)" (paused)="onVideoPaused($event)"></fb-video>
+<fb-video href="https://www.facebook.com/facebook/videos/10153231379946729/" (paused)="onVideoPaused($event)"></fb-video>
 ```
 ```typescript
 import { Component, ViewChild } from '@angular/core';
@@ -161,10 +160,6 @@ export class MyComponent {
     this.video.play();
     this.video.pause();
     this.video.getVolume();
-  }
-
-  onVideoStartPlaying(ev: any) {
-    console.log('User started playing video'):
   }
 
   onVideoPaused(ev: any) {
