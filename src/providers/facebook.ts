@@ -7,10 +7,7 @@ import { LoginStatus } from '../models/login-status';
 import { UIParams } from '../models/ui-params';
 import { UIResponse } from '../models/ui-response';
 
-
 declare var FB: any;
-
-// TODO create an interface (type) for the response instead of any
 
 /**
  * @hidden
