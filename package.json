@@ -17,7 +17,8 @@
     "postversion": "npm run changelog",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "postchangelog": "git commit -am \"chore(): update changelog\"",
-    "lint": "tslint \"src/**/*.ts\""
+    "lint": "tslint \"src/**/*.ts\"",
+    "prepublish": "npm run lint && npm run build"
   },
   "repository": {
     "type": "git",
