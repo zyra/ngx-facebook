@@ -65,6 +65,6 @@ export class FacebookModule {
     return {
       ngModule: FacebookModule,
       providers: [FacebookService]
-    }
+    };
   }
 }

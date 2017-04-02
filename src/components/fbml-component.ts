@@ -31,7 +31,7 @@ export function FBMLInstanceMethod(target: any, key: string) {
         return null;
       }
     }
-  }
+  };
 }
 
 /**

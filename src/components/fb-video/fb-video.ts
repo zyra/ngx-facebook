@@ -163,7 +163,7 @@ export class FBVideoComponent extends FBMLComponent implements OnInit, OnDestroy
       if (typeof l.release === 'function') {
         l.release();
       }
-    })
+    });
   }
 
   /**
