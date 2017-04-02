@@ -1,8 +1,4 @@
 version: 2
-general:
-  branches:
-    - only:
-      - v2
 jobs:
   build:
       working_directory: ~/ng2-facebook-sdk/
@@ -29,6 +25,6 @@ jobs:
         - deploy:
            name: Update docs
            command: |
-            if [ "${CIRCLE_BRANCH}" == "v2" ]; then
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
               bash ./scripts/update_docs.sh
             fi
