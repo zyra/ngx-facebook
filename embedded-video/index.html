@@ -37,7 +37,7 @@
 &lt;fb-video href=&quot;https://www.facebook.com/facebook/videos/10153231379946729/&quot;&gt;&lt;/fb-video&gt;
 
 &lt;!-- event emitters --&gt;
-&lt;fb-video href=&quot;https://www.facebook.com/facebook/videos/10153231379946729/&quot; (startPlaying)=&quot;onVideoStartPlaying($event)&quot; (paused)=&quot;onVideoPaused($event)&quot;&gt;&lt;/fb-video&gt;
+&lt;fb-video href=&quot;https://www.facebook.com/facebook/videos/10153231379946729/&quot; (paused)=&quot;onVideoPaused($event)&quot;&gt;&lt;/fb-video&gt;
 </code></pre>
 <p>To manually interact with the video player, fetch it using <code>ViewChild</code>.</p>
 <pre><code class="lang-ts">import { Component, ViewChild } from &#39;@angular/core&#39;;
