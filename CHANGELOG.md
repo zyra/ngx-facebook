@@ -1,3 +1,13 @@
+<a name="2.1.1"></a>
+## [2.1.1](https://github.com/zyramedia/ng2-facebook-sdk/compare/v2.1.0...v2.1.1) (2017-04-02)
+
+
+### Features
+
+* **facebook-service:** better error handling ([d5a1061](https://github.com/zyramedia/ng2-facebook-sdk/commit/d5a1061))
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/zyramedia/ng2-facebook-sdk/compare/v2.1.0-rc.1...v2.1.0) (2017-04-02)
 
