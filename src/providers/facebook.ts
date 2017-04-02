@@ -45,7 +45,11 @@ export class FacebookService {
    * @param params {InitParams} Initialization parameters
    */
   init(params: InitParams): void {
-    FB.init(params);
+    try {
+      FB.init(params);
+    } catch (e) {
+      console.error('ng2-facebook-sdk: ', e);
+    }
   }
 
   /**
@@ -64,15 +68,19 @@ export class FacebookService {
   api(path: string, method: ApiMethod = 'get', params: any = {}): Promise<any> {
     return new Promise<any>((resolve, reject) => {
 
-      FB.api(path, method, params, (response: any) => {
-        if(!response){
-          reject();
-        }else if(response.error){
-          reject(response.error);
-        }else{
-          resolve(response);
-        }
-      });
+      try {
+        FB.api(path, method, params, (response: any) => {
+          if (!response) {
+            reject();
+          } else if (response.error) {
+            reject(response.error);
+          } else {
+            resolve(response);
+          }
+        });
+      } catch (e) {
+        reject(e);
+      }
 
     });
   }
@@ -93,11 +101,15 @@ export class FacebookService {
   ui(params: UIParams): Promise<UIResponse> {
     return new Promise<any>((resolve, reject) => {
 
-      FB.ui(params, (response: any) => {
-        if(!response) reject();
-        else if(response.error) reject(response.error);
-        else resolve(response);
-      });
+      try {
+        FB.ui(params, (response: any) => {
+          if(!response) reject();
+          else if(response.error) reject(response.error);
+          else resolve(response);
+        });
+      } catch (e) {
+        reject(e);
+      }
 
     });
   }
@@ -109,13 +121,17 @@ export class FacebookService {
   getLoginStatus(): Promise<LoginStatus> {
     return new Promise<LoginStatus>((resolve, reject) => {
 
-      FB.getLoginStatus((response: LoginStatus) => {
-        if (!response) {
-          reject();
-        } else {
-          resolve(response);
-        }
-      });
+      try {
+        FB.getLoginStatus((response: LoginStatus) => {
+          if (!response) {
+            reject();
+          } else {
+            resolve(response);
+          }
+        });
+      } catch (e) {
+        reject(e);
+      }
 
     });
   }
@@ -145,13 +161,17 @@ export class FacebookService {
   login(options?: LoginOptions): Promise<LoginResponse> {
     return new Promise<LoginResponse>((resolve, reject) => {
 
-      FB.login((response: LoginResponse) => {
-        if (response.authResponse) {
-          resolve(response);
-        }else{
-          reject();
-        }
-      }, options);
+      try {
+        FB.login((response: LoginResponse) => {
+          if (response.authResponse) {
+            resolve(response);
+          }else{
+            reject();
+          }
+        }, options);
+      } catch (e) {
+        reject(e);
+      }
 
     });
   }
@@ -165,11 +185,15 @@ export class FacebookService {
    * @returns {Promise<any>} returns a promise that resolves when the user is logged out
    */
   logout(): Promise<any> {
-    return new Promise<any>((resolve) => {
+    return new Promise<any>((resolve, reject) => {
 
-      FB.logout((response: any) => {
-        resolve(response);
-      });
+      try {
+        FB.logout((response: any) => {
+          resolve(response);
+        });
+      } catch (e) {
+        reject(e);
+      }
 
     });
   }
@@ -187,7 +211,11 @@ export class FacebookService {
    * @returns {AuthResponse} returns an [AuthResponse](../auth-response) object
    */
   getAuthResponse(): AuthResponse {
-    return <AuthResponse>FB.getAuthResponse();
+    try {
+      return <AuthResponse>FB.getAuthResponse();
+    } catch (e) {
+      console.error('ng2-facebook-sdk: ', e);
+    }
   }
 
 }
