@@ -1,0 +1,38 @@
+{% extends "doc.layout.html" %}
+
+{% block content %}
+
+<a id="{{doc.name}}" class="h2 docs-title anchor" href="#{{doc.name}}">
+  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
+  {{doc.name}}
+  {%- if doc.heritage %}<small>{{doc.heritage}}</small>{% endif -%}
+</a>
+
+<p>{{ doc.description | marked }}</p>
+<table class="table table-striped table-bordered rounded">
+  <thead>
+  <tr>
+    <th>Param</th>
+    <th>Type</th>
+    <th>Details</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for param in doc.members %}
+  <tr>
+    <td>
+      {{param.name}}
+      {% if param.optional %}<em>(optional)</em>{% endif -%}
+    </td>
+    <td>
+      <code>{{ param.returnType }}</code>
+    </td>
+    <td>
+      {{ param.description | marked }}
+    </td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

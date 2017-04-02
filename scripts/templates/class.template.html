@@ -1,0 +1,122 @@
+{% extends "doc.layout.html" %}
+
+{% block content %}
+
+{% macro typeList(types) -%}
+{% set separator = joiner("|") %}
+{% for type in types %}{{ separator() }}{{ type | code }}{% endfor %}
+{%- endmacro -%}
+
+
+<h1 class="display-4 api-title">
+  {{doc.name}}
+  <small>({{doc.docType}} exported as {{doc.exportSymbol.name}})</small>
+</h1>
+
+{{doc.description | marked}}
+
+{% if doc.fbdoc %}
+<p>Official Facebook documentation for this class can be <a href="{{ doc.fbdoc }}">found here</a>.</p>
+{% endif %}
+
+{% if doc.usage %}
+
+<a href="#usage" class="h2 docs-title" id="usage anchor">
+  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
+  Usage
+</a>
+{{ doc.usage | marked}}
+
+{% endif %}
+
+{%- if doc.inputs.length %}
+<a id="inputs" href="#inputs" class="h2 docs-title anchor">
+  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
+  Inputs
+</a>
+
+{%- for input in doc.inputs %}
+<a id="{{ input.name }}" href="#{{input.name}}" class="h4 anchor">
+  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
+  {{ input.name }}
+</a>
+({{ input.returnType }}) {{ input.description | marked }}
+<hr>
+{% endfor -%}
+
+{% endif -%}
+
+
+{%- if doc.outputs.length %}
+<a id="outputs" href="#outputs" class="h2 docs-title anchor">
+  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
+  Outputs
+</a>
+
+{%- for output in doc.outputs %}
+<a id="{{ output.name }}" href="#{{output.name}}" class="h4 anchor">
+  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
+  {{ output.name }}
+</a>
+{{ output.description | marked }}
+<hr>
+{% endfor -%}
+
+{% endif -%}
+
+{%- if doc.members.length %}
+<a id="instance-methods" href="#instance-methods" class="h2 docs-title anchor">
+  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
+  Instance Methods
+</a>
+{% endif -%}
+{%- for member in doc.members %}
+<a id="{{ member.name }}" href="#{{member.name}}" class="h4 anchor">
+  <img src="https://zyramedia.github.io/ng2-facebook-sdk/link.svg" alt="link">
+  {{ member.name }}
+</a>
+{{ member.description | marked }}
+{% if member.params %}
+<table class="table table-striped table-bordered rounded">
+  <thead>
+  <tr>
+    <th>Param</th>
+    <th>Type</th>
+    <th>Details</th>
+    <th>Default</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for param in member.params %}
+  <tr>
+    <td>
+      {{param.name}}
+      {% if param.optional %}<em>(optional)</em>{% endif -%}
+    </td>
+    <td>
+      <code>{{ param.typeList | escape }}</code>
+    </td>
+    <td>
+      {{ param.description | marked }}
+    </td>
+    <td>
+      {%- if param.defaultValue %}
+      <code>{{ param.defaultValue | escape }}</code>
+      {% endif -%}
+    </td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endif -%}
+
+{% if member.usage %}
+Example usage of <code>{{ member.name }}</code>:
+<br>
+<br>
+{{ member.usage | marked }}
+{% endif %}
+<hr>
+{% endfor -%}
+
+{% endblock %}
