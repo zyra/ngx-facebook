@@ -176,13 +176,7 @@ module.exports = config => {
         browserName: 'safari',
         platform: 'macOS 10.12',
         version: '10'
-      },
-      sl_safari_9: {
-        base: 'SauceLabs',
-        browserName: 'safari',
-        platform: 'macOS 10.11',
-        version: '9'
-      },
+      }
     };
 
     conf.plugins.push('karma-sauce-launcher');
