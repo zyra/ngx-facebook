@@ -138,6 +138,9 @@ module.exports = config => {
     conf.browsers = Object.keys(customLaunchers);
     conf.singleRun = true;
     conf.concurrency = 5;
+    conf.browserDisconnectTolerance = 2;
+    conf.browserNoActivityTimeout = 20000;
+    conf.browserDisconnectTimeout = 5000;
   }
 
   config.set(conf);
