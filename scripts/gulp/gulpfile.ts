@@ -65,14 +65,7 @@ task('build:esm', <any>series('clean:aot', getCleanTask('esm'), done => {
     .catch(e => done(e));
 }));
 
-task('build:es6', <any>series('clean:aot', getCleanTask('es6'), done => {
-  console.log('Building ES6');
-  return ngc('es2015', 'es2015', 'es6')
-    .then(() => done())
-    .catch(e => done(e));
-}));
-
-task('build', <any>series('build:umd', 'build:esm', 'build:es6', done => {
+task('build', <any>series('build:umd', 'build:esm', done => {
   console.log('Done building');
   done();
 }));
