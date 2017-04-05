@@ -17,3 +17,4 @@ systemjs.config.js
 gulpfile.js
 
 tsconfig.json
+tslint.json
