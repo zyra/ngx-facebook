@@ -123,18 +123,6 @@ module.exports = config => {
         platform: 'Windows 7',
         version: '10'
       },
-      sl_ie_9: {
-        base: 'SauceLabs',
-        browserName: 'internet explorer',
-        platform: 'Windows 7',
-        version: '9'
-      },
-      sl_ie_8: {
-        base: 'SauceLabs',
-        browserName: 'internet explorer',
-        platform: 'Windows 7',
-        version: '8'
-      },
       sl_edge: {
         base: 'SauceLabs',
         browserName: 'MicrosoftEdge',
@@ -152,24 +140,6 @@ module.exports = config => {
         browserName: 'android',
         platform: 'Linux',
         version: '4.4'
-      },
-      SL_IOS_8: {
-        base: 'SauceLabs',
-        browserName: 'iphone',
-        platform: 'OS X 10.10',
-        version: '8.4'
-      },
-      SL_IOS_9: {
-        base: 'SauceLabs',
-        browserName: 'iphone',
-        platform: 'OS X 10.10',
-        version: '9.3'
-      },
-      SL_IOS_10: {
-        base: 'SauceLabs',
-        browserName: 'iphone',
-        platform: 'OS X 10.10',
-        version: '10.0'
       },
       sl_safari: {
         base: 'SauceLabs',
