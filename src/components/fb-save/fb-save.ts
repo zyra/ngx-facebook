@@ -9,7 +9,7 @@ import { FBMLAttribute, FBMLComponent } from '../fbml-component';
  * The Save button lets people save items or services to a private list on Facebook, share it with friends, and receive relevant notifications.
  * @usage
  * ```html
- * <fb-save uri="https://github.com/zyramedia/ng2-facebook-sdk/"></fb-save>
+ * <fb-save uri="https://github.com/zyra/ng2-facebook-sdk/"></fb-save>
  * ```
  */
 @Component({

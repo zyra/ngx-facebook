@@ -1,13 +1,16 @@
-# Angular2 Facebook SDK
-This is a wrapper for the official Facebook JavaScript SDK. It makes it easier to use Facebook SDK with Angular 2 by providing components, providers and types.
+# ngx-facebook
+
+# This package has been renamed to ngx-facebook
+
+This is a wrapper for the official Facebook JavaScript SDK. It makes it easier to use Facebook SDK with Angular 2+ by providing components, providers and types.
 
 <br><br>
 
-[![NPM](https://nodei.co/npm/ng2-facebook-sdk.png?stars&downloads)](https://nodei.co/npm/ng2-facebook-sdk/)
-[![NPM](https://nodei.co/npm-dl/ng2-facebook-sdk.png?months=6&height=2)](https://nodei.co/npm/ng2-facebook-sdk/)
+[![NPM](https://nodei.co/npm/ngx-facebook.png?stars&downloads)](https://nodei.co/npm/ngx-facebook/)
+[![NPM](https://nodei.co/npm-dl/ngx-facebook.png?months=6&height=2)](https://nodei.co/npm/ngx-facebook/)
 
-[![npm](https://img.shields.io/npm/l/express.svg)](https://www.npmjs.com/package/ng2-facebook-sdk)
-[![CircleCI](https://img.shields.io/circleci/project/github/zyra/ng2-facebook-sdk.svg)](https://circleci.com/gh/zyra/ng2-facebook-sdk)
+[![npm](https://img.shields.io/npm/l/express.svg)](https://www.npmjs.com/package/ngx-facebook)
+[![CircleCI](https://img.shields.io/circleci/project/github/zyra/ngx-facebook.svg)](https://circleci.com/gh/zyra/ngx-facebook)
 [![Sauce Test Status](https://saucelabs.com/buildstatus/ng2facebooksdk)](https://saucelabs.com/u/ng2facebooksdk)
 
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/ng2facebooksdk.svg)](https://saucelabs.com/u/ng2facebooksdk)
@@ -19,7 +22,7 @@ This is a wrapper for the official Facebook JavaScript SDK. It makes it easier t
 #### 1. Install via NPM:
 
 ```shell
-npm i --save ng2-facebook-sdk
+npm i --save ngx-facebook
 ```
 
 #### 2. Add the Facebook JavaScript SDK to your index.html
@@ -30,7 +33,7 @@ npm i --save ng2-facebook-sdk
 #### 3. Import `FacebookModule` into your app's root module
 ```typescript
 
-import { FacebookModule } from 'ng2-facebook-sdk';
+import { FacebookModule } from 'ngx-facebook';
 
 @NgModule({
   ...
@@ -43,13 +46,13 @@ export class AppModule { }
 
 ```
 
-If you only want to use [FacebookService](https://zyramedia.github.io/ng2-facebook-sdk/facebook-service) only, without using the other components, then you can import it in your app's module instead of `FacebookModule`.
+If you only want to use [FacebookService](https://zyra.github.io/ngx-facebook/facebook-service) only, without using the other components, then you can import it in your app's module instead of `FacebookModule`.
 
 #### 4. Inject `FacebookService` and call the `init` method (optional):
-This method must be called before using [`login`](http://zyramedia.github.io/ng2-facebook-sdk/facebook-service/#login) or [`api`](http://zyramedia.github.io/ng2-facebook-sdk/facebook-service/#api) methods. It is not required for other methods/components.
+This method must be called before using [`login`](http://zyra.github.io/ngx-facebook/facebook-service/#login) or [`api`](http://zyra.github.io/ngx-facebook/facebook-service/#api) methods. It is not required for other methods/components.
 
 ```typescript
-import { FacebookService, InitParams } from 'ng2-facebook-sdk';
+import { FacebookService, InitParams } from 'ngx-facebook';
 
 ...
 
@@ -73,20 +76,20 @@ export class MyComponentOrService {
 <br><br><br><br>
 
 ## Documentation
-You can view complete and detailed documentation by visiting https://zyramedia.github.io/ng2-facebook-sdk/.
+You can view complete and detailed documentation by visiting https://zyra.github.io/ngx-facebook/.
 
 <br><br><br><br>
 
 ## Example Usage
 
-You can view our [example project here](https://zyramedia.github.io/ng2-facebook-sdk-example/) and/or view its [source code here](https://github.com/zyramedia/ng2-facebook-sdk-example/)
+You can view our [example project here](https://zyra.github.io/ngx-facebook-example/) and/or view its [source code here](https://github.com/zyra/ngx-facebook-example/)
 
 <br><br>
 
 ### Example of login with Facebook
 
 ```typescript
-import { FacebookService, LoginResponse } from 'ng2-facebook-sdk';
+import { FacebookService, LoginResponse } from 'ngx-facebook';
 
 @Component(...)
 export class MyComponent {
@@ -108,14 +111,14 @@ export class MyComponent {
 
 ### Example of sharing on Facebook
 ```typescript
-import { FacebookService, UIParams, UIResponse } from 'ng2-facebook-sdk';
+import { FacebookService, UIParams, UIResponse } from 'ngx-facebook';
 
 ...
 
 share(url: string) {
 
   let params: UIParams = {
-    href: 'https://github.com/zyramedia/ng2-facebook-sdk',
+    href: 'https://github.com/zyra/ngx-facebook',
     method: 'share'
   };
 
@@ -130,7 +133,7 @@ share(url: string) {
 
 ### Example of adding a Facebook like button
 ```html
-<fb-like href="https://github.com/zyramedia/ng2-facebook-sdk"></fb-like>
+<fb-like href="https://github.com/zyra/ngx-facebook"></fb-like>
 ```
 
 <br><br>
@@ -148,7 +151,7 @@ share(url: string) {
 ```
 ```typescript
 import { Component, ViewChild } from '@angular/core';
-import { FBVideoComponent } from 'ng2-facebook-sdk';
+import { FBVideoComponent } from 'ngx-facebook';
 
 @Component(...)
 export class MyComponent {

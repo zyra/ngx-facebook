@@ -9,7 +9,7 @@
     "prebuild": "rm -rf aot dist",
     "build": "gulp build",
     "postbuild": "rm -rf aot",
-    "build:dev": "npm run build && cp -r dist ../ng2-facebook-sdk-example/node_modules/ng2-facebook-sdk/",
+    "build:dev": "npm run build && cp -r dist ../ng2-facebook-sdk-example/node_modules/ngx-facebook/",
     "pretest": "rm -rf dist && tsc",
     "test": "karma start karma.conf.js --single-run",
     "pretest:watch": "npm run pretest",
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zyramedia/ng2-facebook-sdk.git"
+    "url": "git+https://github.com/zyra/ngx-facebook.git"
   },
   "keywords": [
     "facebook",
@@ -33,9 +33,9 @@
   "author": "Zyra Media Inc.",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zyramedia/ng2-facebook-sdk/issues"
+    "url": "https://github.com/zyra/ngx-facebook/issues"
   },
-  "homepage": "https://github.com/zyramedia/ng2-facebook-sdk",
+  "homepage": "https://github.com/zyra/ngx-facebook",
   "devDependencies": {
     "@angular/common": "4.0.0",
     "@angular/compiler": "4.0.0",
