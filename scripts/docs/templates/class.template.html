@@ -22,7 +22,7 @@
 {% if doc.usage %}
 
 <a href="#usage" class="h2 docs-title" id="usage anchor">
-  <img src="https://zyra.github.io/ng2-facebook-sdk/link.svg" alt="link">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
   Usage
 </a>
 {{ doc.usage | marked}}
@@ -31,13 +31,13 @@
 
 {%- if doc.inputs.length %}
 <a id="inputs" href="#inputs" class="h2 docs-title anchor">
-  <img src="https://zyra.github.io/ng2-facebook-sdk/link.svg" alt="link">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
   Inputs
 </a>
 
 {%- for input in doc.inputs %}
 <a id="{{ input.name }}" href="#{{input.name}}" class="h4 anchor">
-  <img src="https://zyra.github.io/ng2-facebook-sdk/link.svg" alt="link">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
   {{ input.name }}
 </a>
 ({{ input.returnType }}) {{ input.description | marked }}
@@ -49,13 +49,13 @@
 
 {%- if doc.outputs.length %}
 <a id="outputs" href="#outputs" class="h2 docs-title anchor">
-  <img src="https://zyra.github.io/ng2-facebook-sdk/link.svg" alt="link">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
   Outputs
 </a>
 
 {%- for output in doc.outputs %}
 <a id="{{ output.name }}" href="#{{output.name}}" class="h4 anchor">
-  <img src="https://zyra.github.io/ng2-facebook-sdk/link.svg" alt="link">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
   {{ output.name }}
 </a>
 {{ output.description | marked }}
@@ -66,13 +66,13 @@
 
 {%- if doc.members.length %}
 <a id="instance-methods" href="#instance-methods" class="h2 docs-title anchor">
-  <img src="https://zyra.github.io/ng2-facebook-sdk/link.svg" alt="link">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
   Instance Methods
 </a>
 {% endif -%}
 {%- for member in doc.members %}
 <a id="{{ member.name }}" href="#{{member.name}}" class="h4 anchor">
-  <img src="https://zyra.github.io/ng2-facebook-sdk/link.svg" alt="link">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
   {{ member.name }}
 </a>
 {{ member.description | marked }}
