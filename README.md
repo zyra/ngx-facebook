@@ -71,12 +71,12 @@ export class MyComponentOrService {
 }
 ```
 
-<br><br><br><br>
+<br><br>
 
 ## Documentation
 You can view complete and detailed documentation by visiting https://zyra.github.io/ngx-facebook/.
 
-<br><br><br><br>
+<br><br>
 
 ## Example Usage
 
@@ -168,8 +168,3 @@ export class MyComponent {
 
 }
 ```
-
-<br><br><br><br>
-
-# Disclaimer
-A large portion of this module's documentation is copied from the official [Facebook Docs](https://developers.facebook.com/docs/). This is to make sure that everything is as clear as possible, and consistent with the way Facebook explains it.
