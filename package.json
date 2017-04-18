@@ -37,12 +37,12 @@
   },
   "homepage": "https://github.com/zyramedia/ng2-facebook-sdk",
   "devDependencies": {
-    "@angular/common": "2.4.10",
-    "@angular/compiler": "2.4.10",
-    "@angular/compiler-cli": "2.4.10",
-    "@angular/core": "2.4.10",
-    "@angular/platform-browser": "2.4.10",
-    "@angular/platform-browser-dynamic": "2.4.10",
+    "@angular/common": "4.0.0",
+    "@angular/compiler": "4.0.0",
+    "@angular/compiler-cli": "4.0.0",
+    "@angular/core": "4.0.0",
+    "@angular/platform-browser": "4.0.0",
+    "@angular/platform-browser-dynamic": "4.0.0",
     "@types/fs-extra": "^2.0.0",
     "@types/gulp": "^4.0.2",
     "@types/jasmine": "^2.5.47",
@@ -66,13 +66,12 @@
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-sauce-launcher": "^1.1.0",
     "lodash": "^4.17.4",
-    "rxjs": "5.0.1",
+    "rxjs": "5.1.1",
     "systemjs": "^0.20.11",
     "ts-node": "^3.0.2",
     "tslint": "4.5.1",
     "tslint-eslint-rules": "^3.5.1",
     "typescript": "^2.2.2",
-    "zone.js": "0.7.2"
-  },
-  "dependencies": {}
+    "zone.js": "0.8.5"
+  }
 }
