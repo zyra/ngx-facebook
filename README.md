@@ -1,7 +1,5 @@
 # ngx-facebook
 
-# This package has been renamed to ngx-facebook
-
 This is a wrapper for the official Facebook JavaScript SDK. It makes it easier to use Facebook SDK with Angular 2+ by providing components, providers and types.
 
 <br><br>
