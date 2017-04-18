@@ -145,7 +145,7 @@ export class FacebookService {
    *
    * // login with options
    * const options: LoginOptions = {
-   *   scope: 'public_profiel,user_friends,email,pages_show_list',
+   *   scope: 'public_profile,user_friends,email,pages_show_list',
    *   return_scopes: true,
    *   enable_profile_selector: true
    * };
