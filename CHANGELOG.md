@@ -1,3 +1,8 @@
+<a name="2.4.0"></a>
+# [2.4.0](https://github.com/zyra/ngx-facebook/compare/v2.3.0...v2.4.0) (2017-04-18)
+
+
+
 <a name="2.3.0"></a>
 # [2.3.0](https://github.com/zyra/ngx-facebook/compare/v2.2.0...v2.3.0) (2017-04-18)
 
