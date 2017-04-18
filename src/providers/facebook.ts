@@ -41,11 +41,11 @@ export class FacebookService {
    * This method is used to initialize and setup the SDK.
    * @param params {InitParams} Initialization parameters
    */
-  init(params: InitParams): void {
+  init(params: InitParams): Promise<any> {
     try {
-      FB.init(params);
+      return Promise.resolve(FB.init(params));
     } catch (e) {
-      console.error('ng2-facebook-sdk: ', e);
+      return Promise.reject(e);
     }
   }
 
