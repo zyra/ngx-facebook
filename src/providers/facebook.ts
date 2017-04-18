@@ -40,6 +40,7 @@ export class FacebookService {
   /**
    * This method is used to initialize and setup the SDK.
    * @param params {InitParams} Initialization parameters
+   * @returns {Promise<any>}
    */
   init(params: InitParams): Promise<any> {
     try {
