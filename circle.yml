@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-      working_directory: ~/ng2-facebook-sdk/
+      working_directory: ~/ngx-facebook/
       docker:
         - image: node:7
       steps:
@@ -14,7 +14,7 @@ jobs:
         - save_cache:
            key: node_modules_{{ .Branch }}_{{ checksum "package.json" }}
            paths:
-             - ~/ng2-facebook-sdk/node_modules/
+             - ~/ngx-facebook/node_modules/
         - run:
            name: Lint
            command: npm run lint
