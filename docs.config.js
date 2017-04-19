@@ -11,7 +11,7 @@ module.exports = {
     'shortdesc',
     'fbdoc'
   ],
-  outputFolder: '../ng2-facebook-sdk-site/',
+  outputFolder: '../ngx-facebook-site/',
   sourceFiles: ['./src/**/*.ts'],
   customProcessors: [
     {
