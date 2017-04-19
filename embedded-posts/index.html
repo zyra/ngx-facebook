@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Embedded Posts | Angular 2 Facebook SDK</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="//zyra.github.io/ngx-facebook/railscasts.css">
+  <link rel="stylesheet" href="//zyra.github.io/ngx-facebook/style.css">
+</head>
+<body>
+<div class="container">
+
+<a class="back-to-home" href="../">Back to home</a>
+
+
+
+<h1 class="display-4 api-title">
+  Embedded Posts
+  <small>(class exported as FBPostComponent)</small>
+</h1>
+
+<p>Embedded Posts are a simple way to put public posts - by a Page or a person on Facebook - into the content of your web site or web page.
+Only public posts from Facebook Pages and profiles can be embedded.</p>
+
+
+
+<p>Official Facebook documentation for this class can be <a href="https://developers.facebook.com/docs/plugins/embedded-posts">found here</a>.</p>
+
+
+
+
+<a href="#usage" class="h2 docs-title" id="usage anchor">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
+  Usage
+</a>
+<pre><code class="lang-html">&lt;fb-post href=&quot;https://www.facebook.com/20531316728/posts/10154009990506729/&quot;&gt;&lt;/fb-post&gt;
+</code></pre>
+
+
+
+<a id="inputs" href="#inputs" class="h2 docs-title anchor">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
+  Inputs
+</a>
+<a id="href" href="#href" class="h4 anchor">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
+  href
+</a>
+(string) <p>The absolute URL of the post.</p>
+
+<hr>
+
+<a id="width" href="#width" class="h4 anchor">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
+  width
+</a>
+(string) <p>The width of the post. Min. <code>350</code> pixel; Max. <code>750</code> pixel. Set to auto to use fluid width. Defaults to <code>auto</code>.</p>
+
+<hr>
+
+<a id="showText" href="#showText" class="h4 anchor">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
+  showText
+</a>
+(boolean) <p>Applied to photo post. Set to <code>true</code> to include the text from the Facebook post, if any. Defaults to <code>false</code>.</p>
+
+<hr>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="//zyra.github.io/ngx-facebook/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

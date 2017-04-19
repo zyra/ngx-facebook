@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Like Button | Angular 2 Facebook SDK</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="//zyra.github.io/ngx-facebook/railscasts.css">
+  <link rel="stylesheet" href="//zyra.github.io/ngx-facebook/style.css">
+</head>
+<body>
+<div class="container">
+
+<a class="back-to-home" href="../">Back to home</a>
+
+
+
+<h1 class="display-4 api-title">
+  Like Button
+  <small>(class exported as FBLikeComponent)</small>
+</h1>
+
+<p>A single click on the Like button will &#39;like&#39; pieces of content on the web and share them on Facebook.
+You can also display a Share button next to the Like button to let people add a personal message and customize who they share with.</p>
+
+
+
+<p>Official Facebook documentation for this class can be <a href="https://developers.facebook.com/docs/plugins/like-button">found here</a>.</p>
+
+
+
+
+<a href="#usage" class="h2 docs-title" id="usage anchor">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
+  Usage
+</a>
+<pre><code class="lang-html">&lt;fb-like href=&quot;https://www.facebook.com/zuck&quot;&gt;&lt;/fb-like&gt;
+</code></pre>
+
+
+
+<a id="inputs" href="#inputs" class="h2 docs-title anchor">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
+  Inputs
+</a>
+<a id="action" href="#action" class="h4 anchor">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
+  action
+</a>
+(string) <p>The verb to display on the button. Can be either <code>like</code> or <code>recommend</code>.
+Defaults to <code>like</code>.</p>
+
+<hr>
+
+<a id="colorScheme" href="#colorScheme" class="h4 anchor">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
+  colorScheme
+</a>
+(string) <p>The color scheme used by the plugin for any text outside of the button itself. Can be <code>light</code> or <code>dark</code>.
+Defaults to <code>light</code>.</p>
+
+<hr>
+
+<a id="href" href="#href" class="h4 anchor">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
+  href
+</a>
+(string) <p>The absolute URL of the page that will be liked.
+Defaults to the current URL.</p>
+
+<hr>
+
+<a id="kidDirectedSite" href="#kidDirectedSite" class="h4 anchor">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
+  kidDirectedSite
+</a>
+(boolean) <p>If your web site or online service, or a portion of your service, is directed to children under 13 <a href="https://developers.facebook.com/docs/plugins/restrictions/">you must enable this</a>.
+Defaults to <code>false</code>.</p>
+
+<hr>
+
+<a id="layout" href="#layout" class="h4 anchor">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
+  layout
+</a>
+(string) <p>Selects one of the different layouts that are available for the plugin.
+Can be one of <code>standard</code>, <code>button_count</code>, <code>button</code> or <code>box_count</code>.
+See the <a href="https://developers.facebook.com/docs/plugins/like-button#faqlayout">FAQ</a> for more details.
+Defaults to <code>standard</code>.</p>
+
+<hr>
+
+<a id="ref" href="#ref" class="h4 anchor">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
+  ref
+</a>
+(string) <p>A label for tracking referrals which must be less than 50 characters and can contain alphanumeric characters and some punctuation (currently +/=-.:_).
+See the <a href="https://developers.facebook.com/docs/plugins/faqs#ref">FAQ</a> for more details.</p>
+
+<hr>
+
+<a id="share" href="#share" class="h4 anchor">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
+  share
+</a>
+(boolean) <p>Specifies whether to include a share button beside the Like button.
+This only works with the XFBML version.
+Defaults to <code>false</code>.</p>
+
+<hr>
+
+<a id="showFaces" href="#showFaces" class="h4 anchor">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
+  showFaces
+</a>
+(boolean) <p>Specifies whether to display profile photos below the button (standard layout only).
+You must not enable this on child-directed sites.
+Defaults to <code>false</code>.</p>
+
+<hr>
+
+<a id="size" href="#size" class="h4 anchor">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
+  size
+</a>
+(string) <p>The button is offered in 2 sizes i.e. <code>large</code> and <code>small</code>.
+Defaults to <code>small</code>.</p>
+
+<hr>
+
+<a id="width" href="#width" class="h4 anchor">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
+  width
+</a>
+(string) <p>The width of the plugin (standard layout only), which is subject to the minimum and default width.
+See <a href="https://developers.facebook.com/docs/plugins/like-button#faqlayout">Layout Settings</a> in the official docs for more details.</p>
+
+<hr>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="//zyra.github.io/ngx-facebook/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

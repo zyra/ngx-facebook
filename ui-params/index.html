@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>UIParams | Angular 2 Facebook SDK</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="//zyra.github.io/ngx-facebook/railscasts.css">
+  <link rel="stylesheet" href="//zyra.github.io/ngx-facebook/style.css">
+</head>
+<body>
+<div class="container">
+
+<a class="back-to-home" href="../">Back to home</a>
+
+
+
+<a id="UIParams" class="h2 docs-title anchor" href="#UIParams">
+  <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
+  UIParams<small> extends ShareDialogParams, FeedDialogParams, SendDialogParams</small></a>
+
+<p><p>The object passed to the <a href="../facebook-service/#ui">ui</a> method. The properties below can be passed to all three types of dialogs. Each type of dialog accepts additional parameters that are documented above.</p>
+</p>
+<table class="table table-striped table-bordered rounded">
+  <thead>
+  <tr>
+    <th>Param</th>
+    <th>Type</th>
+    <th>Details</th>
+  </tr>
+  </thead>
+  <tbody>
+  
+  <tr>
+    <td>
+      method
+      </td>
+    <td>
+      <code>any</code>
+    </td>
+    <td>
+      <p>The UI dialog that is being invoked. This is a required field.</p>
+
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      message
+      <em>(optional)</em></td>
+    <td>
+      <code>string</code>
+    </td>
+    <td>
+      <p>The UI dialog message.</p>
+
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      app_id
+      <em>(optional)</em></td>
+    <td>
+      <code>string</code>
+    </td>
+    <td>
+      <p>Your app&#39;s unique identifier. Required.</p>
+
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      redirect_uri
+      <em>(optional)</em></td>
+    <td>
+      <code>string</code>
+    </td>
+    <td>
+      <p>The URL to redirect to after a person clicks a button on the dialog. Required when using URL redirection.</p>
+
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      display
+      <em>(optional)</em></td>
+    <td>
+      <code>string</code>
+    </td>
+    <td>
+      <p>Determines how the dialog is rendered.</p>
+<ul>
+<li>If you are using the URL redirect dialog implementation, then this will be a full page display, shown within Facebook.com. This display type is called page</li>
+<li>If you are using one of our iOS or Android SDKs to invoke the dialog, this is automatically specified and chooses an appropriate display type for the device.</li>
+<li>If you are using the Facebook SDK for JavaScript, this will default to a modal iframe type for people logged into your app or async when using within a game on Facebook.com, and a popup window for everyone else. You can also force the popup type when when you use the Facebook SDK for JavaScript, if necessary.</li>
+<li>Mobile web apps will always default to the touch display type.</li>
+</ul>
+
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      phase
+      <em>(optional)</em></td>
+    <td>
+      <code>string</code>
+    </td>
+    <td>
+      <ul>
+<li>Dialog in create phase allows you to get stream url to upload video; Dialog in publish phase will provide preview and go live button. required</li>
+<li>phase = create | publish</li>
+</ul>
+
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      broadcast_data
+      <em>(optional)</em></td>
+    <td>
+      <code>any</code>
+    </td>
+    <td>
+      <ul>
+<li>This parameter is required for publish phase.</li>
+<li>The response object returned from either API or create phase.</li>
+</ul>
+
+    </td>
+  </tr>
+  
+  </tbody>
+</table>
+
+
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="//zyra.github.io/ngx-facebook/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

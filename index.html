@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Angular2 Facebook SDK</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="//zyra.github.io/ngx-facebook/railscasts.css">
+  <link rel="stylesheet" href="//zyra.github.io/ngx-facebook/style.css">
+</head>
+<body>
+<div class="container"><div style="max-width: 600px; float: none; margin: 30px auto;">
+  <h1 class="display-4">Angular 2 Facebook SDK</h1>
+  <p class="lead">
+    This is a wrapper for the official Facebook JavaScript SDK. It makes it easier to use Facebook SDK with Angular 2 by providing components, providers and types.
+  </p>
+  <a class="h2 anchor" id="installation" href="#installation">
+    <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
+    Installation
+  </a>
+  <a class="h4" id="install-via-npm" href="#install-via-npm">
+    Install via NPM
+  </a>
+  <pre>
+  <code>
+    npm i --save ngx-facebook
+  </code>
+  </pre>
+  <h4>Add the Facebook JavaScript SDK to your <code>index.html</code></h4>
+  <pre>
+  <code>
+    &lt;script type=&quot;text/javascript&quot; src=&quot;https://connect.facebook.net/en_US/sdk.js&quot;&gt;&lt;/script&gt;
+  </code>
+  </pre>
+  <a class="h2 anchor" id="documentation" href="#documentation">
+    <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
+    Documentation
+  </a>
+  <div class="list-group"><a class="list-group-item" href="facebook-module/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">FacebookModule</h5>
+        <small>class</small>
+      </div>
+      <p class="mb-1">The module to import to add this library</p>
+    </a><a class="list-group-item" href="facebook-service/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">FacebookService</h5>
+        <small>class</small>
+      </div>
+      <p class="mb-1">Angular 2 service to inject to use Facebook's SDK</p>
+    </a><a class="list-group-item" href="comments/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Comments</h5>
+        <small>class</small>
+      </div>
+      <p class="mb-1">Comments component</p>
+    </a><a class="list-group-item" href="embedded-comments/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Embedded Comments</h5>
+        <small>class</small>
+      </div>
+      <p class="mb-1">Embedded comments component</p>
+    </a><a class="list-group-item" href="embedded-posts/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Embedded Posts</h5>
+        <small>class</small>
+      </div>
+      <p class="mb-1">Embedded post component</p>
+    </a><a class="list-group-item" href="embedded-video/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Embedded Video</h5>
+        <small>class</small>
+      </div>
+      <p class="mb-1">Component to embed Facebook videos</p>
+    </a><a class="list-group-item" href="follow-button/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Follow Button</h5>
+        <small>class</small>
+      </div>
+      <p class="mb-1">Follow button component</p>
+    </a><a class="list-group-item" href="like-button/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Like Button</h5>
+        <small>class</small>
+      </div>
+      <p class="mb-1">Like button component</p>
+    </a><a class="list-group-item" href="page-plugin/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Page Plugin</h5>
+        <small>class</small>
+      </div>
+      <p class="mb-1">Page plugin component</p>
+    </a><a class="list-group-item" href="quote-plugin/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Quote Plugin</h5>
+        <small>class</small>
+      </div>
+      <p class="mb-1">Quote plugin component</p>
+    </a><a class="list-group-item" href="save-button/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Save Button</h5>
+        <small>class</small>
+      </div>
+      <p class="mb-1">Save button component.</p>
+    </a><a class="list-group-item" href="send-button/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Send Button</h5>
+        <small>class</small>
+      </div>
+      <p class="mb-1">Send button component</p>
+    </a><a class="list-group-item" href="share-button/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Share Button</h5>
+        <small>class</small>
+      </div>
+      <p class="mb-1">Share button component</p>
+    </a><a class="list-group-item" href="auth-response/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">AuthResponse</h5>
+        <small>interface</small>
+      </div>
+      <p class="mb-1"></p>
+    </a><a class="list-group-item" href="feed-dialog-params/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">FeedDialogParams</h5>
+        <small>interface</small>
+      </div>
+      <p class="mb-1"></p>
+    </a><a class="list-group-item" href="feed-dialog-response/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">FeedDialogResponse</h5>
+        <small>interface</small>
+      </div>
+      <p class="mb-1"></p>
+    </a><a class="list-group-item" href="init-params/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">InitParams</h5>
+        <small>interface</small>
+      </div>
+      <p class="mb-1"></p>
+    </a><a class="list-group-item" href="login-options/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">LoginOptions</h5>
+        <small>interface</small>
+      </div>
+      <p class="mb-1"></p>
+    </a><a class="list-group-item" href="login-response/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">LoginResponse</h5>
+        <small>interface</small>
+      </div>
+      <p class="mb-1"></p>
+    </a><a class="list-group-item" href="login-status/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">LoginStatus</h5>
+        <small>interface</small>
+      </div>
+      <p class="mb-1"></p>
+    </a><a class="list-group-item" href="send-dialog-params/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">SendDialogParams</h5>
+        <small>interface</small>
+      </div>
+      <p class="mb-1"></p>
+    </a><a class="list-group-item" href="share-dialog-params/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">ShareDialogParams</h5>
+        <small>interface</small>
+      </div>
+      <p class="mb-1"></p>
+    </a><a class="list-group-item" href="share-dialog-response/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">ShareDialogResponse</h5>
+        <small>interface</small>
+      </div>
+      <p class="mb-1"></p>
+    </a><a class="list-group-item" href="ui-params/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">UIParams</h5>
+        <small>interface</small>
+      </div>
+      <p class="mb-1"></p>
+    </a><a class="list-group-item" href="ui-response/">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">UIResponse</h5>
+        <small>interface</small>
+      </div>
+      <p class="mb-1"></p>
+    </a></div>
+</div></div>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="//zyra.github.io/ngx-facebook/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+
