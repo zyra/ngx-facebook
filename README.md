@@ -170,3 +170,11 @@ export class MyComponent {
 
 }
 ```
+
+<br><br>
+## Contribution
+- Having an issue? or looking for support? [Open an issue](/zyra/ngx-facebook/issues/new) and we will get you the help you need.
+- Would like to contribute to this project? Fork the repo, make your changes, and submit a pull request.
+
+## Support this project
+If you find this project useful, please star the repo to let people know that it's reliable. Also, share it with friends and colleagues that might find this useful as well. Thank you :smile:
