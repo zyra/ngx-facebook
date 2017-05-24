@@ -4,12 +4,14 @@ This is a wrapper for the official Facebook JavaScript SDK. It makes it easier t
 
 <br><br>
 
-[![NPM](https://nodei.co/npm/ng2-facebook-sdk.png?stars&downloads)](https://nodei.co/npm/ng2-facebook-sdk/)
-[![NPM](https://nodei.co/npm-dl/ng2-facebook-sdk.png?months=6&height=2)](https://nodei.co/npm/ng2-facebook-sdk/)
+*(this package was renamed recently from [ng2-facebook-sdk](https://www.npmjs.com/package/ng2-facebook-sdk) and these stats numbers are less than the actual numbers)*
+[![NPM](https://nodei.co/npm/ngx-facebook.png?stars&downloads)](https://nodei.co/npm/ngx-facebook/)
+[![NPM](https://nodei.co/npm-dl/ngx-facebook.png?months=6&height=2)](https://nodei.co/npm/ngx-facebook/)
 
 [![npm](https://img.shields.io/npm/l/express.svg)](https://www.npmjs.com/package/ngx-facebook)
 [![CircleCI](https://img.shields.io/circleci/project/github/zyra/ngx-facebook.svg)](https://circleci.com/gh/zyra/ngx-facebook)
 [![Sauce Test Status](https://saucelabs.com/buildstatus/ng2facebooksdk)](https://saucelabs.com/u/ng2facebooksdk)
+[![npm](https://img.shields.io/npm/dt/ng2-facebook-sdk.svg)](https://www.npmjs.com/package/ng2-facebook-sdk)
 
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/ng2facebooksdk.svg)](https://saucelabs.com/u/ng2facebooksdk)
 
