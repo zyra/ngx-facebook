@@ -101,9 +101,25 @@ export interface SendDialogParams {
 }
 
 /**
+ * Params that can be passed when using the Lead Form Builder for forms on Facebook Lead Ads
+ */
+export interface LeadFormBuilderDialogParams {
+
+    /**
+     * The Facebook like page that the dialog will build forms for
+     */
+    page_id?: string;
+
+    /**
+     * The ad account ID associated with the like page
+     */
+    ad_account_id?: string;
+}
+
+/**
  * The object passed to the [ui](../facebook-service/#ui) method. The properties below can be passed to all three types of dialogs. Each type of dialog accepts additional parameters that are documented above.
  */
-export interface UIParams extends ShareDialogParams, FeedDialogParams, SendDialogParams {
+export interface UIParams extends ShareDialogParams, FeedDialogParams, SendDialogParams, LeadFormBuilderDialogParams {
 
     /**
      * The UI dialog that is being invoked. This is a required field.
