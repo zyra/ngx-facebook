@@ -114,9 +114,10 @@ export class FacebookService {
 
   /**
    * This method allows you to determine if a user is logged in to Facebook and has authenticated your app.
+   * @param [forceFreshResponse=false] {boolean} Force a fresh response.
    * @returns {Promise<LoginStatus>}
    */
-  getLoginStatus(forceFreshResponse: boolean): Promise<LoginStatus> {
+  getLoginStatus(forceFreshResponse?: boolean): Promise<LoginStatus> {
     return new Promise<LoginStatus>((resolve, reject) => {
 
       try {
