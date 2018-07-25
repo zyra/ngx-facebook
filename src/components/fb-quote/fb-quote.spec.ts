@@ -1,7 +1,7 @@
-import { FBQuoteComponent } from './fb-quote';
-
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { FBQuoteComponent } from './fb-quote';
 
 describe('FBQuoteComponent', () => {
 

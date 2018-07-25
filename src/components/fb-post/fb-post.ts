@@ -1,4 +1,5 @@
-import { Component, Input, ElementRef, Renderer } from '@angular/core';
+import { Component, ElementRef, Input, Renderer2 } from '@angular/core';
+
 import { FBMLAttribute, FBMLComponent } from '../fbml-component';
 
 /**
@@ -18,7 +19,6 @@ import { FBMLAttribute, FBMLComponent } from '../fbml-component';
   template: ''
 })
 export class FBPostComponent extends FBMLComponent {
-
   /**
    * The absolute URL of the post.
    */
@@ -40,11 +40,7 @@ export class FBPostComponent extends FBMLComponent {
   @FBMLAttribute
   showText: boolean;
 
-  constructor(
-    el: ElementRef,
-    rnd: Renderer
-  ) {
+  constructor(el: ElementRef, rnd: Renderer2) {
     super(el, rnd, 'fb-post');
   }
-
 }

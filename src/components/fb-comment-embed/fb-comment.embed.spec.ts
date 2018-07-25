@@ -1,7 +1,7 @@
-import { FBCommentEmbedComponent } from './fb-comment-embed';
-
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { FBCommentEmbedComponent } from './fb-comment-embed';
 
 describe('FBCommentEmbedComponent', () => {
 

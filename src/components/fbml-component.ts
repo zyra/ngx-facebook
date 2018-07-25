@@ -1,10 +1,15 @@
-import { ElementRef, Renderer } from '@angular/core';
+import { ElementRef, Renderer2 } from '@angular/core';
 
 /**
  * @hidden
  */
 export function FBMLAttribute(target: any, key: string) {
-  const processKey = (_k: string) => 'data-' + _k.toString().replace(/([a-z\d])([A-Z])/g, '$1-$2').toLowerCase();
+  const processKey = (_k: string) =>
+    'data-' +
+    _k
+      .toString()
+      .replace(/([a-z\d])([A-Z])/g, '$1-$2')
+      .toLowerCase();
   Object.defineProperty(target, key, {
     set: function(value) {
       value = value.toString();
@@ -27,7 +32,9 @@ export function FBMLInstanceMethod(target: any, key: string) {
       if (this._instance) {
         return this._instance[key].apply(this._instance, args);
       } else {
-        console.warn('ng2-facebook-sdk: tried calling instance method before component is ready.');
+        console.warn(
+          'ng2-facebook-sdk: tried calling instance method before component is ready.'
+        );
         return null;
       }
     }
@@ -38,26 +45,24 @@ export function FBMLInstanceMethod(target: any, key: string) {
  * @hidden
  */
 export class FBMLComponent {
-
   protected nativeElement: HTMLElement;
 
   constructor(
     private el: ElementRef,
-    private rnd: Renderer,
+    private rnd: Renderer2,
     private fbClass: string
   ) {
     this.nativeElement = this.el.nativeElement;
-    this.rnd.setElementClass(this.nativeElement, this.fbClass, true);
+    this.rnd.addClass(this.nativeElement, this.fbClass);
   }
 
   protected setAttribute(name: string, value: string) {
     if (!name || !value) return;
-    this.rnd.setElementAttribute(this.nativeElement, name, value);
+    this.rnd.setAttribute(this.nativeElement, name, value);
   }
 
   protected getAttribute(name: string): string {
     if (!name) return;
     return this.nativeElement.getAttribute(name);
   }
-
 }

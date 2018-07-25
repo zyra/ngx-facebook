@@ -1,5 +1,5 @@
 import { FBMLAttribute, FBMLComponent, FBMLInstanceMethod } from './fbml-component';
-import { Component, ElementRef, Renderer, DebugElement } from '@angular/core';
+import { Component, ElementRef, Renderer2, DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 @Component({
@@ -15,7 +15,7 @@ class FBTestComponent extends FBMLComponent {
   @FBMLAttribute
   testAttr: string;
 
-  constructor(el: ElementRef, rnd: Renderer) {
+  constructor(el: ElementRef, rnd: Renderer2) {
     super(el, rnd, 'fb-test');
   }
 

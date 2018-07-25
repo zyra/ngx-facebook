@@ -1,4 +1,5 @@
-import { Component, Input, ElementRef, Renderer } from '@angular/core';
+import { Component, ElementRef, Input, Renderer2 } from '@angular/core';
+
 import { FBMLAttribute, FBMLComponent } from '../fbml-component';
 
 /**
@@ -18,7 +19,6 @@ import { FBMLAttribute, FBMLComponent } from '../fbml-component';
   template: ''
 })
 export class FBQuoteComponent extends FBMLComponent {
-
   /**
    * The absolute URL of the page that will be quoted.
    * Defaults to the current URL
@@ -34,11 +34,7 @@ export class FBQuoteComponent extends FBMLComponent {
   @FBMLAttribute
   layout: string;
 
-  constructor(
-    el: ElementRef,
-    rnd: Renderer
-  ) {
+  constructor(el: ElementRef, rnd: Renderer2) {
     super(el, rnd, 'fb-quote');
   }
-
 }

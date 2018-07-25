@@ -1,7 +1,7 @@
-import { FBFollowComponent } from './fb-follow';
-
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { FBFollowComponent } from './fb-follow';
 
 describe('FBFollowComponent', () => {
 

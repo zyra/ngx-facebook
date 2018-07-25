@@ -1,4 +1,5 @@
-import { Component, Input, ElementRef, Renderer } from '@angular/core';
+import { Component, ElementRef, Input, Renderer2 } from '@angular/core';
+
 import { FBMLAttribute, FBMLComponent } from '../fbml-component';
 
 /**
@@ -17,7 +18,6 @@ import { FBMLAttribute, FBMLComponent } from '../fbml-component';
   template: ''
 })
 export class FBPageComponent extends FBMLComponent {
-
   /**
    * The URL of the Facebook Page
    */
@@ -89,11 +89,7 @@ export class FBPageComponent extends FBMLComponent {
   @FBMLAttribute
   adaptContainerWidth: boolean;
 
-  constructor(
-    el: ElementRef,
-    rnd: Renderer
-  ) {
+  constructor(el: ElementRef, rnd: Renderer2) {
     super(el, rnd, 'fb-page');
   }
-
 }

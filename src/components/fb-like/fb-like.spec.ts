@@ -1,7 +1,7 @@
-import { FBLikeComponent } from './fb-like';
-
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { FBLikeComponent } from './fb-like';
 
 describe('FBLikeComponent', () => {
 

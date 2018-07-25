@@ -1,4 +1,5 @@
-import { Component, Input, ElementRef, Renderer } from '@angular/core';
+import { Component, ElementRef, Input, Renderer2 } from '@angular/core';
+
 import { FBMLAttribute, FBMLComponent } from '../fbml-component';
 
 /**
@@ -18,7 +19,6 @@ import { FBMLAttribute, FBMLComponent } from '../fbml-component';
   template: ''
 })
 export class FBLikeComponent extends FBMLComponent {
-
   /**
    * The verb to display on the button. Can be either `like` or `recommend`.
    * Defaults to `like`.
@@ -103,8 +103,7 @@ export class FBLikeComponent extends FBMLComponent {
   @FBMLAttribute
   width: string;
 
-  constructor(el: ElementRef, rnd: Renderer) {
+  constructor(el: ElementRef, rnd: Renderer2) {
     super(el, rnd, 'fb-like');
   }
-
 }
