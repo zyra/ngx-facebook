@@ -1,6 +1,7 @@
-import { FacebookService } from './facebook';
 import { async } from '@angular/core/testing';
+
 import { InitParams } from '../models/init-params';
+import { FacebookService } from './facebook';
 
 declare var window: any;
 

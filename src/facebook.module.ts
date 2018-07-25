@@ -1,6 +1,4 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
-
-import { FacebookService } from './providers/facebook';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 
 import { FBCommentEmbedComponent } from './components/fb-comment-embed/fb-comment-embed';
 import { FBCommentsComponent } from './components/fb-comments/fb-comments';
@@ -13,6 +11,7 @@ import { FBSaveComponent } from './components/fb-save/fb-save';
 import { FBSendComponent } from './components/fb-send/fb-send';
 import { FBShareComponent } from './components/fb-share/fb-share';
 import { FBVideoComponent } from './components/fb-video/fb-video';
+import { FacebookService } from './providers/facebook';
 
 const components: any[] = [
   FBCommentEmbedComponent,

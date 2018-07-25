@@ -1,7 +1,7 @@
-import { FBSendComponent } from './fb-send';
-
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { FBSendComponent } from './fb-send';
 
 describe('FBSendComponent', () => {
 

@@ -4,3 +4,5 @@ dist
 aot
 generated-docs
 dev
+
+tsconfig-es5-umd\.json

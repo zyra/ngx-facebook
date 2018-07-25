@@ -1,7 +1,7 @@
-import { FBShareComponent } from './fb-share';
-
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { FBShareComponent } from './fb-share';
 
 describe('FBShareComponent', () => {
 

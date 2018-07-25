@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import { AuthResponse } from '../models/auth-response';
 import { InitParams } from '../models/init-params';
 import { LoginOptions } from '../models/login-options';
@@ -16,7 +17,7 @@ export type ApiMethod = 'get' | 'post' | 'delete';
 
 /**
  * @shortdesc
- * Angular 2 service to inject to use Facebook's SDK
+ * Angular service to inject to use Facebook's SDK
  * @description
  * You only need to inject this service in your application if you aren't using [`FacebookModule`](../facebook-module).
  * @usage

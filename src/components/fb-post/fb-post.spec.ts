@@ -1,7 +1,7 @@
-import { FBPostComponent } from './fb-post';
-
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { FBPostComponent } from './fb-post';
 
 describe('FBPostComponent', () => {
 
