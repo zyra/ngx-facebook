@@ -1,6 +1,6 @@
 const _ = require('lodash');
 module.exports = {
-  docTitle: 'Angular 2 Facebook SDK',
+  docTitle: 'Angular Facebook SDK',
   templateDir: './scripts/docs/templates/',
   templates: [
     '${ doc.template }',
