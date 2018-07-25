@@ -36,4 +36,9 @@ export interface InitParams {
      * This specifies a function that is called whenever it is necessary to hide Adobe Flash objects on a page. This is used when .api() requests are made, as Flash objects will always have a higher z-index than any other DOM element. See our Custom Flash Hide Callback for more details on what to put in this function. Defaults to null.
      */
     hideFlashCallback?: any;
+
+    /**
+     * Determines whether events related to user interaction with the app are collected automatically. Defaults to true.
+     */
+    autoLogAppEvents?: boolean;
 }
