@@ -83,89 +83,91 @@ module.exports = config => {
     singleRun: false
   };
 
-  if (process.env.SAUCE) {
+  // Disabled until Sauce Labs fixed
 
-    // Browsers to run on Sauce Labs
-    const customLaunchers = {
-      sl_chrome: {
-        base: 'SauceLabs',
-        browserName: 'chrome',
-        platform: 'Windows 10',
-        version: '49'
-      },
-      sl_firefox_dev: {
-        base: 'SauceLabs',
-        browserName: 'firefox',
-        platform: 'Windows 10',
-        version: 'dev'
-      },
-      sl_firefox_52: {
-        base: 'SauceLabs',
-        browserName: 'firefox',
-        platform: 'Windows 10',
-        version: '52'
-      },
-      sl_firefox_40: {
-        base: 'SauceLabs',
-        browserName: 'firefox',
-        platform: 'Windows 10',
-        version: '40'
-      },
-      sl_ie_11: {
-        base: 'SauceLabs',
-        browserName: 'internet explorer',
-        platform: 'Windows 7',
-        version: '11'
-      },
-      sl_ie_10: {
-        base: 'SauceLabs',
-        browserName: 'internet explorer',
-        platform: 'Windows 7',
-        version: '10'
-      },
-      sl_edge: {
-        base: 'SauceLabs',
-        browserName: 'MicrosoftEdge',
-        platform: 'Windows 10',
-        version: '14'
-      },
-      sl_android_5: {
-        base: 'SauceLabs',
-        browserName: 'android',
-        platform: 'Linux',
-        version: '5.1'
-      },
-      'sl_android_4.4': {
-        base: 'SauceLabs',
-        browserName: 'android',
-        platform: 'Linux',
-        version: '4.4'
-      },
-      sl_safari: {
-        base: 'SauceLabs',
-        browserName: 'safari',
-        platform: 'macOS 10.12',
-        version: '10'
-      }
-    };
+  // if (process.env.SAUCE) {
 
-    conf.plugins.push('karma-sauce-launcher');
-    conf.reporters = ['saucelabs', 'dots'];
-    conf.sauceLabs = {
-      testName: 'ng2-facebook-sdk',
-      public: 'public',
-      recordScreenshots: false,
-      startConnect: false,
-      tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER
-    };
-    conf.customLaunchers = customLaunchers;
-    conf.browsers = Object.keys(customLaunchers);
-    conf.singleRun = true;
-    conf.concurrency = 5;
-    conf.browserDisconnectTolerance = 2;
-    conf.browserNoActivityTimeout = 20000;
-    conf.browserDisconnectTimeout = 5000;
-  }
+  //   // Browsers to run on Sauce Labs
+  //   const customLaunchers = {
+  //     sl_chrome: {
+  //       base: 'SauceLabs',
+  //       browserName: 'chrome',
+  //       platform: 'Windows 10',
+  //       version: '49'
+  //     },
+  //     sl_firefox_dev: {
+  //       base: 'SauceLabs',
+  //       browserName: 'firefox',
+  //       platform: 'Windows 10',
+  //       version: 'dev'
+  //     },
+  //     sl_firefox_52: {
+  //       base: 'SauceLabs',
+  //       browserName: 'firefox',
+  //       platform: 'Windows 10',
+  //       version: '52'
+  //     },
+  //     sl_firefox_40: {
+  //       base: 'SauceLabs',
+  //       browserName: 'firefox',
+  //       platform: 'Windows 10',
+  //       version: '40'
+  //     },
+  //     sl_ie_11: {
+  //       base: 'SauceLabs',
+  //       browserName: 'internet explorer',
+  //       platform: 'Windows 7',
+  //       version: '11'
+  //     },
+  //     sl_ie_10: {
+  //       base: 'SauceLabs',
+  //       browserName: 'internet explorer',
+  //       platform: 'Windows 7',
+  //       version: '10'
+  //     },
+  //     sl_edge: {
+  //       base: 'SauceLabs',
+  //       browserName: 'MicrosoftEdge',
+  //       platform: 'Windows 10',
+  //       version: '14'
+  //     },
+  //     sl_android_5: {
+  //       base: 'SauceLabs',
+  //       browserName: 'android',
+  //       platform: 'Linux',
+  //       version: '5.1'
+  //     },
+  //     'sl_android_4.4': {
+  //       base: 'SauceLabs',
+  //       browserName: 'android',
+  //       platform: 'Linux',
+  //       version: '4.4'
+  //     },
+  //     sl_safari: {
+  //       base: 'SauceLabs',
+  //       browserName: 'safari',
+  //       platform: 'macOS 10.12',
+  //       version: '10'
+  //     }
+  //   };
+
+  //   conf.plugins.push('karma-sauce-launcher');
+  //   conf.reporters = ['saucelabs', 'dots'];
+  //   conf.sauceLabs = {
+  //     testName: 'ng2-facebook-sdk',
+  //     public: 'public',
+  //     recordScreenshots: false,
+  //     startConnect: false,
+  //     tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER
+  //   };
+  //   conf.customLaunchers = customLaunchers;
+  //   conf.browsers = Object.keys(customLaunchers);
+  //   conf.singleRun = true;
+  //   conf.concurrency = 5;
+  //   conf.browserDisconnectTolerance = 2;
+  //   conf.browserNoActivityTimeout = 20000;
+  //   conf.browserDisconnectTimeout = 5000;
+  // }
 
   config.set(conf);
 
