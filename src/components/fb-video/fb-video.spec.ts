@@ -2,8 +2,6 @@ import { FBVideoComponent } from './fb-video';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
 
-import { Observable } from 'rxjs/Observable';
-
 declare var window: any;
 
 describe('FBVideoComponent', () => {
