@@ -69,11 +69,8 @@ describe('FBMLAttribute', () => {
     fixture.detectChanges();
     expect(Object.keys(de.attributes)).toContain('data-test-attr');
     expect(de.attributes['data-test-attr']).toEqual('test-val');
-
-    it('should return value we set before', () => {
-      expect(comp.testAttr).toEqual('test-val');
-    });
-
+    // should return value we set before
+    expect(comp.testAttr).toEqual('test-val');
   });
 
 });
