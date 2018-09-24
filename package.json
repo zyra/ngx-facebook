@@ -5,7 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:lib": "ng build ngx-facebook",
     "test": "ng test",
+    "test:lib": "ng test ngx-facebook",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

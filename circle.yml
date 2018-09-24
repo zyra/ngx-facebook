@@ -20,10 +20,10 @@ jobs:
            command: npm run lint
         - run:
            name: Build module
-           command: npm run build
+           command: npm run build:lib
         - run:
            name: Test
-           command: npm test
+           command: npm test:lib
         - add_ssh_keys
         - deploy:
            name: Update docs
