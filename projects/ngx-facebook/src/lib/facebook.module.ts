@@ -36,7 +36,8 @@ export function getComponents() {
  * @shortdesc The module to import to add this library
  * @description
  * The main module to import into your application.
- * You only need to import this module if you wish to use the components in this library; otherwise, you could just import [FacebookService](../facebook-service) into your module instead.
+ * You only need to import this module if you wish to use the components in this library;
+ * otherwise, you could just import [FacebookService](../facebook-service) into your module instead.
  * This module will make all components and providers available in your application.
  *
  * @usage

@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, Renderer } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, Renderer2 } from '@angular/core';
 
 import { FBMLAttribute, FBMLComponent, FBMLInstanceMethod } from '../fbml-component';
 
@@ -131,7 +131,7 @@ export class FBVideoComponent extends FBMLComponent implements OnInit, OnDestroy
 
   private _listeners: any[] = [];
 
-  constructor(el: ElementRef, rnd: Renderer) {
+  constructor(el: ElementRef, rnd: Renderer2) {
     super(el, rnd, 'fb-video');
     this.nativeElement.id = this._id = 'video-' + String(Math.floor(Math.random() * 10000 + 1));
   }

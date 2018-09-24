@@ -1,4 +1,4 @@
-import { ElementRef, Renderer } from '@angular/core';
+import { ElementRef, Renderer2 } from '@angular/core';
 
 /**
  * @hidden
@@ -45,16 +45,16 @@ export function FBMLInstanceMethod(target: any, key: string) {
 export class FBMLComponent {
   protected nativeElement: HTMLElement;
 
-  constructor(private el: ElementRef, private rnd: Renderer, private fbClass: string) {
+  constructor(private el: ElementRef, private rnd: Renderer2, private fbClass: string) {
     this.nativeElement = this.el.nativeElement;
-    this.rnd.setElementClass(this.nativeElement, this.fbClass, true);
+    this.rnd.addClass(this.nativeElement, this.fbClass);
   }
 
   protected setAttribute(name: string, value: string) {
     if (!name || !value) {
       return;
     }
-    this.rnd.setElementAttribute(this.nativeElement, name, value);
+    this.rnd.setAttribute(this.nativeElement, name, value);
   }
 
   protected getAttribute(name: string): string {
