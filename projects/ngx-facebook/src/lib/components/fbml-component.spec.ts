@@ -35,7 +35,7 @@ describe('FBMLComponent', () => {
     }).compileComponents();
   }));
 
-  it('should create an element with class fb-test', () => {
+  test('should create an element with class fb-test', () => {
 
     const instance = TestBed.createComponent(FBTestComponent);
     instance.detectChanges();
@@ -64,7 +64,7 @@ describe('FBMLAttribute', () => {
     de = fixture.debugElement;
   });
 
-  it('should add data-test-attr attribute to element', () => {
+  test('should add data-test-attr attribute to element', () => {
     comp.testAttr = 'test-val';
     fixture.detectChanges();
     expect(Object.keys(de.attributes)).toContain('data-test-attr');
@@ -93,14 +93,14 @@ describe('FBMLInstanceMethod', () => {
     de = fixture.debugElement;
   });
 
-  it('should do basic call to instance method', () => {
+  test('should do basic call to instance method', () => {
     spyOn(comp._instance, 'testMethod').and.callThrough();
     const res = comp.testMethod();
     expect(comp._instance.testMethod).toHaveBeenCalled();
     expect(res).toEqual('success');
   });
 
-  it('should do call with args to instance method', () => {
+  test('should do call with args to instance method', () => {
     spyOn(comp._instance, 'testMethodWithArgs').and.callThrough();
     const res = comp.testMethodWithArgs('hello', 'world');
     expect(comp._instance.testMethodWithArgs).toHaveBeenCalledWith('hello', 'world');

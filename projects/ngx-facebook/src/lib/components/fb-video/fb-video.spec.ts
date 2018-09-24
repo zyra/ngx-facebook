@@ -33,11 +33,11 @@ describe('FBVideoComponent', () => {
     de = fixture.debugElement;
   });
 
-  it('should create component', () => expect(comp).toBeDefined());
+  test('should create component', () => expect(comp).toBeDefined());
 
-  it('should have fb-video class', () => expect(de.classes['fb-video']).toBeTruthy());
+  test('should have fb-video class', () => expect(de.classes['fb-video']).toBeTruthy());
 
-  it('should have data-href property', () => {
+  test('should have data-href property', () => {
     comp.href = 'https://zyramedia.com';
     expect(Object.keys(de.attributes).indexOf('data-href')).toBeDefined();
     expect(de.attributes['data-href']).toEqual('https://zyramedia.com');

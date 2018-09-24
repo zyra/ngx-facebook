@@ -24,11 +24,11 @@ describe('FBCommentEmbedComponent', () => {
     de = fixture.debugElement;
   });
 
-  it('should create component', () => expect(comp).toBeDefined());
+  test('should create component', () => expect(comp).toBeDefined());
 
-  it('should have fb-comment-embed class', () => expect(de.classes['fb-comment-embed']).toBeTruthy());
+  test('should have fb-comment-embed class', () => expect(de.classes['fb-comment-embed']).toBeTruthy());
 
-  it('should have data-href property', () => {
+  test('should have data-href property', () => {
     comp.href = 'https://zyramedia.com';
     expect(de.attributes['data-href']).toBeDefined();
     expect(de.attributes['data-href']).toEqual('https://zyramedia.com');

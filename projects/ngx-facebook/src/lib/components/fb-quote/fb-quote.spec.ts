@@ -24,11 +24,11 @@ describe('FBQuoteComponent', () => {
     de = fixture.debugElement;
   });
 
-  it('should create component', () => expect(comp).toBeDefined());
+  test('should create component', () => expect(comp).toBeDefined());
 
-  it('should have fb-quote class', () => expect(de.classes['fb-quote']).toBeTruthy());
+  test('should have fb-quote class', () => expect(de.classes['fb-quote']).toBeTruthy());
 
-  it('should have data-href property', () => {
+  test('should have data-href property', () => {
     comp.href = 'https://zyramedia.com';
     expect(Object.keys(de.attributes).indexOf('data-href')).toBeDefined();
     expect(de.attributes['data-href']).toEqual('https://zyramedia.com');

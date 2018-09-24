@@ -24,11 +24,11 @@ describe('FBSaveComponent', () => {
     de = fixture.debugElement;
   });
 
-  it('should create component', () => expect(comp).toBeDefined());
+  test('should create component', () => expect(comp).toBeDefined());
 
-  it('should have fb-save class', () => expect(de.classes['fb-save']).toBeTruthy());
+  test('should have fb-save class', () => expect(de.classes['fb-save']).toBeTruthy());
 
-  it('should have data-uri property', () => {
+  test('should have data-uri property', () => {
     comp.uri = 'https://zyramedia.com';
     expect(Object.keys(de.attributes).indexOf('data-uri')).toBeDefined();
     expect(de.attributes['data-uri']).toEqual('https://zyramedia.com');
