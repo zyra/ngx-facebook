@@ -8,6 +8,7 @@
     "build:lib": "ng build ngx-facebook",
     "test": "ng test",
     "test:lib": "ng test ngx-facebook",
+    "test:ci": "ng test ngx-facebook --browser=Headless_Chrome --code-coverage=true --single-run=true",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
