@@ -1,20 +1,87 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container">
 
+  <h1>
+    ngx-facebook Example
+  </h1>
+
+  <p>
+    This is a basic example on how to use the ngx-facebook package. Please check your console for responses. There will
+    be no visual feedback here.
+  </p>
+
+</div>
+
+<div class="container">
+
+  <h2>Facebook Service</h2>
+
+  <button (click)="login()" class="btn btn-lg btn-primary btn-block">
+    Login
+  </button>
+
+  <button (click)="loginWithOptions()" class="btn btn-lg btn-primary btn-block">
+    Login with Options
+  </button>
+
+  <button class="btn btn-lg btn-primary btn-block" (click)="getLoginStatus()">
+    Get login status
+  </button>
+
+  <button (click)="getProfile()" class="btn btn-lg btn-primary btn-block">
+    Get profile
+  </button>
+
+  <button (click)="getFriends()" class="btn btn-lg btn-primary btn-block">
+    Get friends
+  </button>
+
+  <button (click)="share()" class="btn btn-lg btn-primary btn-block">
+    Share dialog
+  </button>
+
+</div>
+
+<div class="container">
+  <h2>Components</h2>
+
+  <h4>fb-like</h4>
+  <fb-like href="https://zyramedia.com"></fb-like>
+
+  <h4>fb-follow</h4>
+  <fb-follow href="https://www.facebook.com/zuck"></fb-follow>
+
+  <h4>fb-page</h4>
+  <fb-page href="https://facebook.com/zyramedia"></fb-page>
+
+  <h4>fb-quote</h4>
+  <fb-quote href="https://github.com/zyra/ngx-facebook"></fb-quote>
+  <p>Highlight any text on this page and see what happens.</p>
+
+  <h4>fb-save</h4>
+  <fb-save uri="https://github.com/zyra/ngx-facebook/"></fb-save>
+
+  <h4>fb-send</h4>
+  <fb-send href="https://github.com/zyra/ngx-facebook/"></fb-send>
+
+  <h4>fb-share</h4>
+  <fb-share href="https://github.com/zyra/ngx-facebook/"></fb-share>
+
+  <h4>fb-video</h4>
+  <fb-video href="https://www.facebook.com/SpaceX/videos/10157486010400131/" (startPlaying)="onVideoEvent('startedPlaying')"
+    (paused)="onVideoEvent('paused')" (finishedPlaying)="onVideoEvent('finishedPlaying')" (startedBuffering)="onVideoEvent('startedBuffering')"
+    (finishedBuffering)="onVideoEvent('finishedBuffering')" (error)="onVideoEvent('error')"></fb-video>
+  <br>
+  <button class="btn btn-primary" (click)="playVideo()">Play</button>
+  <button class="btn btn-primary" (click)="pauseVideo()">Pause</button>
+
+  <h4>fb-comments</h4>
+  <fb-comments numposts="3"></fb-comments>
+
+  <h4>fb-comment-embed</h4>
+  <fb-comment-embed href="https://www.facebook.com/zuck/posts/10102735452532991?comment_id=1070233703036185" width="500"></fb-comment-embed>
+
+  <h4>fb-post</h4>
+  <fb-post href="https://www.facebook.com/20531316728/posts/10154009990506729/"></fb-post>
+
+
+</div>
