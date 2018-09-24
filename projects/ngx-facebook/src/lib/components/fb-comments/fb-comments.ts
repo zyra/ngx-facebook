@@ -1,8 +1,9 @@
-import { Component, Input, ElementRef, Renderer } from '@angular/core';
+import { Component, ElementRef, Input, Renderer } from '@angular/core';
+
 import { FBMLAttribute, FBMLComponent } from '../fbml-component';
 
 /**
- * @name Comments
+ * Comments
  * @shortdesc Comments component
  * @fbdoc https://developers.facebook.com/docs/plugins/comments
  * @description
@@ -20,7 +21,6 @@ import { FBMLAttribute, FBMLComponent } from '../fbml-component';
   template: ''
 })
 export class FBCommentsComponent extends FBMLComponent {
-
   /**
    * The color scheme used by the comments plugin. Can be `light` or `dark`. Defaults to `light`.
    */
@@ -38,7 +38,8 @@ export class FBCommentsComponent extends FBMLComponent {
   href: string = window.location.href;
 
   /**
-   * A boolean value that specifies whether to show the mobile-optimized version or not. If no value is given, it will be automatically detected.
+   * A boolean value that specifies whether to show the mobile-optimized version or not.
+   * If no value is given, it will be automatically detected.
    */
   @Input()
   @FBMLAttribute
@@ -52,7 +53,9 @@ export class FBCommentsComponent extends FBMLComponent {
   numposts: number;
 
   /**
-   * The order to use when displaying comments. Can be `social`, `reverse_time`, or `time`. The different order types are explained [in the FAQ](https://developers.facebook.com/docs/plugins/comments#faqorder). Defaults to `social`
+   * The order to use when displaying comments. Can be `social`, `reverse_time`, or `time`.
+   * The different order types are explained[in the FAQ](https://developers.facebook.com/docs/plugins/comments#faqorder).
+   * Defaults to `social`
    */
   @Input()
   @FBMLAttribute
@@ -69,11 +72,7 @@ export class FBCommentsComponent extends FBMLComponent {
   @FBMLAttribute
   width: string;
 
-  constructor(
-    el: ElementRef,
-    rnd: Renderer
-  ) {
+  constructor(el: ElementRef, rnd: Renderer) {
     super(el, rnd, 'fb-comments');
   }
-
 }

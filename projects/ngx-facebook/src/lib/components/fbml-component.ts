@@ -4,7 +4,12 @@ import { ElementRef, Renderer } from '@angular/core';
  * @hidden
  */
 export function FBMLAttribute(target: any, key: string) {
-  const processKey = (_k: string) => 'data-' + _k.toString().replace(/([a-z\d])([A-Z])/g, '$1-$2').toLowerCase();
+  const processKey = (_k: string) =>
+    'data-' +
+    _k
+      .toString()
+      .replace(/([a-z\d])([A-Z])/g, '$1-$2')
+      .toLowerCase();
   Object.defineProperty(target, key, {
     set: function(value) {
       value = value.toString();
@@ -38,26 +43,24 @@ export function FBMLInstanceMethod(target: any, key: string) {
  * @hidden
  */
 export class FBMLComponent {
-
   protected nativeElement: HTMLElement;
 
-  constructor(
-    private el: ElementRef,
-    private rnd: Renderer,
-    private fbClass: string
-  ) {
+  constructor(private el: ElementRef, private rnd: Renderer, private fbClass: string) {
     this.nativeElement = this.el.nativeElement;
     this.rnd.setElementClass(this.nativeElement, this.fbClass, true);
   }
 
   protected setAttribute(name: string, value: string) {
-    if (!name || !value) return;
+    if (!name || !value) {
+      return;
+    }
     this.rnd.setElementAttribute(this.nativeElement, name, value);
   }
 
   protected getAttribute(name: string): string {
-    if (!name) return;
+    if (!name) {
+      return;
+    }
     return this.nativeElement.getAttribute(name);
   }
-
 }

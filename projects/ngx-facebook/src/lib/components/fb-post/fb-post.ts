@@ -1,8 +1,9 @@
-import { Component, Input, ElementRef, Renderer } from '@angular/core';
+import { Component, ElementRef, Input, Renderer } from '@angular/core';
+
 import { FBMLAttribute, FBMLComponent } from '../fbml-component';
 
 /**
- * @name Embedded Posts
+ * Embedded Posts
  * @shortdesc Embedded post component
  * @fbdoc https://developers.facebook.com/docs/plugins/embedded-posts
  * @description

@@ -1,8 +1,9 @@
-import { Component, Input, ElementRef, Renderer } from '@angular/core';
+import { Component, ElementRef, Input, Renderer } from '@angular/core';
+
 import { FBMLAttribute, FBMLComponent } from '../fbml-component';
 
 /**
- * @name Follow Button
+ * Follow Button
  * @shortdesc Follow button component
  * @fbdoc https://developers.facebook.com/docs/plugins/follow-button
  * @description The Follow button lets people subscribe to the public updates of others on Facebook.
@@ -16,7 +17,6 @@ import { FBMLAttribute, FBMLComponent } from '../fbml-component';
   template: ''
 })
 export class FBFollowComponent extends FBMLComponent {
-
   /**
    * The color scheme used by the plugin. Can be `light` or `dark`. Defaults to `light`.
    */
@@ -32,7 +32,8 @@ export class FBFollowComponent extends FBMLComponent {
   href: string;
 
   /**
-   * If your web site or online service, or a portion of your service, is directed to children under 13 you must enable this. Defaults to `false`.
+   * If your web site or online service, or a portion of your service,
+   * is directed to children under 13 you must enable this. Defaults to `false`.
    */
   @Input()
   @FBMLAttribute
@@ -67,11 +68,7 @@ export class FBFollowComponent extends FBMLComponent {
   @FBMLAttribute
   width: string;
 
-  constructor(
-    el: ElementRef,
-    rnd: Renderer
-  ) {
+  constructor(el: ElementRef, rnd: Renderer) {
     super(el, rnd, 'fb-follow');
   }
-
 }

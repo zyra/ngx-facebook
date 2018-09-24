@@ -1,8 +1,9 @@
-import { Component, Input, ElementRef, Renderer } from '@angular/core';
+import { Component, ElementRef, Input, Renderer } from '@angular/core';
+
 import { FBMLAttribute, FBMLComponent } from '../fbml-component';
 
 /**
- * @name Like Button
+ * Like Button
  * @shortdesc Like button component
  * @fbdoc https://developers.facebook.com/docs/plugins/like-button
  * @description
@@ -18,7 +19,6 @@ import { FBMLAttribute, FBMLComponent } from '../fbml-component';
   template: ''
 })
 export class FBLikeComponent extends FBMLComponent {
-
   /**
    * The verb to display on the button. Can be either `like` or `recommend`.
    * Defaults to `like`.
@@ -44,7 +44,8 @@ export class FBLikeComponent extends FBMLComponent {
   href: string = window.location.href;
 
   /**
-   * If your web site or online service, or a portion of your service, is directed to children under 13 [you must enable this](https://developers.facebook.com/docs/plugins/restrictions/).
+   * If your web site or online service, or a portion of your service,
+   * is directed to children under 13 [you must enable this](https://developers.facebook.com/docs/plugins/restrictions/).
    * Defaults to `false`.
    */
   @Input()
@@ -62,7 +63,8 @@ export class FBLikeComponent extends FBMLComponent {
   layout: string;
 
   /**
-   * A label for tracking referrals which must be less than 50 characters and can contain alphanumeric characters and some punctuation (currently +/=-.:_).
+   * A label for tracking referrals which must be less than 50 characters
+   * and can contain alphanumeric characters and some punctuation (currently +/=-.:_).
    * See the [FAQ](https://developers.facebook.com/docs/plugins/faqs#ref) for more details.
    */
   @Input()
@@ -106,5 +108,4 @@ export class FBLikeComponent extends FBMLComponent {
   constructor(el: ElementRef, rnd: Renderer) {
     super(el, rnd, 'fb-like');
   }
-
 }

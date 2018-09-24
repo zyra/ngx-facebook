@@ -1,9 +1,11 @@
-import { Component, Input, Output, ElementRef, Renderer, OnInit, OnDestroy, EventEmitter } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, Renderer } from '@angular/core';
+
 import { FBMLAttribute, FBMLComponent, FBMLInstanceMethod } from '../fbml-component';
+
 declare var FB: any;
 
 /**
- * @name Embedded Video
+ * Embedded Video
  * @shortdesc Component to embed Facebook videos
  * @fbdoc https://developers.facebook.com/docs/plugins/embedded-video-player
  * @description Component to embed Facebook videos and control them.
@@ -42,7 +44,6 @@ declare var FB: any;
   template: ''
 })
 export class FBVideoComponent extends FBMLComponent implements OnInit, OnDestroy {
-
   private _instance: any;
 
   /**
@@ -60,7 +61,9 @@ export class FBVideoComponent extends FBMLComponent implements OnInit, OnDestroy
   allowfullscreen: boolean;
 
   /**
-   * Automatically start playing the video when the page loads. The video will be played without sound (muted). People can turn on sound via the video player controls. This setting does not apply to mobile devices. Can be false or true. Defaults to false.
+   * Automatically start playing the video when the page loads.The video will be played without sound (muted).
+   * People can turn on sound via the video player controls. This setting does not apply to mobile devices.
+   * Can be false or true. Defaults to false.
    */
   @Input()
   @FBMLAttribute
@@ -128,12 +131,9 @@ export class FBVideoComponent extends FBMLComponent implements OnInit, OnDestroy
 
   private _listeners: any[] = [];
 
-  constructor(
-    el: ElementRef,
-    rnd: Renderer
-  ) {
+  constructor(el: ElementRef, rnd: Renderer) {
     super(el, rnd, 'fb-video');
-    this.nativeElement.id = this._id = 'video-' + String(Math.floor((Math.random() * 10000) + 1));
+    this.nativeElement.id = this._id = 'video-' + String(Math.floor(Math.random() * 10000 + 1));
   }
 
   /**
@@ -180,7 +180,6 @@ export class FBVideoComponent extends FBMLComponent implements OnInit, OnDestroy
 
   /**
    * Seeks to specified position.
-   * @param seconds {number}
    */
   @FBMLInstanceMethod
   seek(seconds: number) {}
@@ -201,11 +200,12 @@ export class FBVideoComponent extends FBMLComponent implements OnInit, OnDestroy
    * Returns true if video is muted, false if not.
    */
   @FBMLInstanceMethod
-  isMuted(): boolean { return; }
+  isMuted(): boolean {
+    return;
+  }
 
   /**
    * Set the volume
-   * @param volume
    */
   @FBMLInstanceMethod
   setVolume(volume: number) {}
@@ -214,7 +214,9 @@ export class FBVideoComponent extends FBMLComponent implements OnInit, OnDestroy
    * Get the volume
    */
   @FBMLInstanceMethod
-  getVolume(): number { return; }
+  getVolume(): number {
+    return;
+  }
 
   /**
    * Returns the current video time position in seconds
@@ -227,5 +229,4 @@ export class FBVideoComponent extends FBMLComponent implements OnInit, OnDestroy
    */
   @FBMLInstanceMethod
   getDuration() {}
-
 }

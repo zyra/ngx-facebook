@@ -1,8 +1,9 @@
-import { Component, Input, ElementRef, Renderer } from '@angular/core';
+import { Component, ElementRef, Input, Renderer } from '@angular/core';
+
 import { FBMLAttribute, FBMLComponent } from '../fbml-component';
 
 /**
- * @name Send Button
+ * Send Button
  * @shortdesc Send button component
  * @fbdoc https://developers.facebook.com/docs/plugins/send-button
  * @description
@@ -17,7 +18,6 @@ import { FBMLAttribute, FBMLComponent } from '../fbml-component';
   template: ''
 })
 export class FBSendComponent extends FBMLComponent {
-
   /**
    * The color scheme used by the plugin. Can be "light" or "dark". Defaults to light.
    */
@@ -40,7 +40,8 @@ export class FBSendComponent extends FBMLComponent {
   kidDirectedSite: boolean;
 
   /**
-   * A label for tracking referrals which must be less than 50 characters, and can contain alphanumeric characters and some punctuation (currently +/=-.:_).
+   * A label for tracking referrals which must be less than 50 characters,
+   * and can contain alphanumeric characters and some punctuation (currently +/=-.:_).
    */
   @Input()
   @FBMLAttribute
@@ -53,11 +54,7 @@ export class FBSendComponent extends FBMLComponent {
   @FBMLAttribute
   size: string;
 
-  constructor(
-    el: ElementRef,
-    rnd: Renderer
-  ) {
+  constructor(el: ElementRef, rnd: Renderer) {
     super(el, rnd, 'fb-send');
   }
-
 }

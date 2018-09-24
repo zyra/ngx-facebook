@@ -36,11 +36,9 @@ export type ApiMethod = 'get' | 'post' | 'delete';
  */
 @Injectable()
 export class FacebookService {
-
   /**
    * This method is used to initialize and setup the SDK.
-   * @param params {InitParams} Initialization parameters
-   * @returns {Promise<any>}
+   * @param params Initialization parameters
    */
   init(params: InitParams): Promise<any> {
     try {
@@ -58,14 +56,12 @@ export class FacebookService {
    *   .then(res => console.log(res))
    *   .catch(e => console.log(e));
    * ```
-   * @param path {string} The Graph API endpoint path that you want to call.
-   * @param [method=get] {string} The HTTP method that you want to use for the API request.
-   * @param [params] {Object} An object consisting of any parameters that you want to pass into your Graph API call.
-   * @returns {Promise<any>}
+   * @param path The Graph API endpoint path that you want to call.
+   * @param [method=get] The HTTP method that you want to use for the API request.
+   * @param [params] An object consisting of any parameters that you want to pass into your Graph API call.
    */
   api(path: string, method: ApiMethod = 'get', params: any = {}): Promise<any> {
     return new Promise<any>((resolve, reject) => {
-
       try {
         FB.api(path, method, params, (response: any) => {
           if (!response) {
@@ -79,7 +75,6 @@ export class FacebookService {
       } catch (e) {
         reject(e);
       }
-
     });
   }
 
@@ -93,33 +88,32 @@ export class FacebookService {
    * - Send dialog
    * - Payments dialog
    * - Go Live dialog
-   * @param params {UIParams} A collection of parameters that control which dialog is loaded, and relevant settings.
-   * @returns {Promise<UIResponse>}
+   * @param params A collection of parameters that control which dialog is loaded, and relevant settings.
    */
   ui(params: UIParams): Promise<UIResponse> {
     return new Promise<any>((resolve, reject) => {
-
       try {
         FB.ui(params, (response: any) => {
-          if(!response) reject();
-          else if(response.error) reject(response.error);
-          else resolve(response);
+          if (!response) {
+            reject();
+          } else if (response.error) {
+            reject(response.error);
+          } else {
+            resolve(response);
+          }
         });
       } catch (e) {
         reject(e);
       }
-
     });
   }
 
   /**
    * This method allows you to determine if a user is logged in to Facebook and has authenticated your app.
-   * @param [forceFreshResponse=false] {boolean} Force a fresh response.
-   * @returns {Promise<LoginStatus>}
+   * @param [forceFreshResponse=false] Force a fresh response.
    */
   getLoginStatus(forceFreshResponse?: boolean): Promise<LoginStatus> {
     return new Promise<LoginStatus>((resolve, reject) => {
-
       try {
         FB.getLoginStatus((response: LoginStatus) => {
           if (!response) {
@@ -131,7 +125,6 @@ export class FacebookService {
       } catch (e) {
         reject(e);
       }
-
     });
   }
 
@@ -154,24 +147,21 @@ export class FacebookService {
    *   .then(...)
    *   .catch(...);
    * ```
-   * @param [options] {LoginOptions} Login options
-   * @returns {Promise<LoginResponse>} returns a promise that resolves with [LoginResponse](../login-response) object, or rejects with an error
+   * @param [options] Login options
    */
   login(options?: LoginOptions): Promise<LoginResponse> {
     return new Promise<LoginResponse>((resolve, reject) => {
-
       try {
         FB.login((response: LoginResponse) => {
           if (response.authResponse) {
             resolve(response);
-          }else{
+          } else {
             reject();
           }
         }, options);
       } catch (e) {
         reject(e);
       }
-
     });
   }
 
@@ -181,11 +171,9 @@ export class FacebookService {
    * ```typescript
    * this.fb.logout().then(() => console.log('Logged out!'));
    * ```
-   * @returns {Promise<any>} returns a promise that resolves when the user is logged out
    */
   logout(): Promise<any> {
     return new Promise<any>((resolve, reject) => {
-
       try {
         FB.logout((response: any) => {
           resolve(response);
@@ -193,7 +181,6 @@ export class FacebookService {
       } catch (e) {
         reject(e);
       }
-
     });
   }
 
@@ -207,7 +194,6 @@ export class FacebookService {
    *
    * const authResponse: AuthResponse = this.fb.getAuthResponse();
    * ```
-   * @returns {AuthResponse} returns an [AuthResponse](../auth-response) object
    */
   getAuthResponse(): AuthResponse {
     try {
@@ -216,6 +202,4 @@ export class FacebookService {
       console.error('ng2-facebook-sdk: ', e);
     }
   }
-
 }
-

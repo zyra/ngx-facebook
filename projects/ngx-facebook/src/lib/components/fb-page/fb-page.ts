@@ -1,12 +1,14 @@
-import { Component, Input, ElementRef, Renderer } from '@angular/core';
+import { Component, ElementRef, Input, Renderer } from '@angular/core';
+
 import { FBMLAttribute, FBMLComponent } from '../fbml-component';
 
 /**
- * @name Page Plugin
+ * Page Plugin
  * @shortdesc Page plugin component
  * @fbdoc https://developers.facebook.com/docs/plugins/page-plugin
  * @description
- * The Page plugin lets you easily embed and promote any Facebook Page on your website. Just like on Facebook, your visitors can like and share the Page without leaving your site.
+ * The Page plugin lets you easily embed and promote any Facebook Page on your website.
+ * Just like on Facebook, your visitors can like and share the Page without leaving your site.
  * @usage
  * ```html
  * <fb-page href="https://facebook.com/facebook"></fb-page>
@@ -17,7 +19,6 @@ import { FBMLAttribute, FBMLComponent } from '../fbml-component';
   template: ''
 })
 export class FBPageComponent extends FBMLComponent {
-
   /**
    * The URL of the Facebook Page
    */
@@ -89,11 +90,7 @@ export class FBPageComponent extends FBMLComponent {
   @FBMLAttribute
   adaptContainerWidth: boolean;
 
-  constructor(
-    el: ElementRef,
-    rnd: Renderer
-  ) {
+  constructor(el: ElementRef, rnd: Renderer) {
     super(el, rnd, 'fb-page');
   }
-
 }
