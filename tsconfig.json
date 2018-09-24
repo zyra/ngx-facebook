@@ -1,27 +1,29 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "target": "es5",
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
     "module": "es2015",
     "moduleResolution": "node",
-    "sourceMap": true,
-    "inlineSources": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "removeComments": false,
-    "noImplicitAny": true,
-    "declaration": true,
-    "outDir": "dist",
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "lib": [
-      "es2015",
+      "es2017",
       "dom"
     ],
-    "newLine": "LF"
-  },
-  "exclude": [
-    "node_modules",
-    "scripts"
-  ],
-  "angularCompilerOptions": {
-    "genDir": "aot"
+    "paths": {
+      "ngx-facebook": [
+        "dist/ngx-facebook"
+      ],
+      "ngx-facebook/*": [
+        "dist/ngx-facebook/*"
+      ]
+    }
   }
 }

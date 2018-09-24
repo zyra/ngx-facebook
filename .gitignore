@@ -4,3 +4,5 @@ dist
 aot
 generated-docs
 dev
+
+\.DS_Store

@@ -1,177 +1,27 @@
-# ngx-facebook
+# NgxFacebookV6
 
-This is a wrapper for the official Facebook JavaScript SDK. It makes it easier to use Facebook SDK with Angular 2+ by providing components, providers and types.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
 
-<br><br>
+## Development server
 
-[![npm](https://img.shields.io/npm/l/express.svg)](https://www.npmjs.com/package/ngx-facebook)
-[![CircleCI](https://img.shields.io/circleci/project/github/zyra/ngx-facebook.svg)](https://circleci.com/gh/zyra/ngx-facebook)
-[![Sauce Test Status](https://saucelabs.com/buildstatus/ng2facebooksdk)](https://saucelabs.com/u/ng2facebooksdk)
-[![npm](https://img.shields.io/npm/dt/ngx-facebook.svg)](https://www.npmjs.com/package/ngx-facebook)
-[![npm](https://img.shields.io/npm/dm/ngx-facebook.svg)](https://www.npmjs.com/package/ngx-facebook)
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/ng2facebooksdk.svg)](https://saucelabs.com/u/ng2facebooksdk)
+## Code scaffolding
 
-<br><br>
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Installation
+## Build
 
-#### 1. Install via NPM:
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-```shell
-npm i --save ngx-facebook
-```
+## Running unit tests
 
-#### 2. Add the Facebook JavaScript SDK to your index.html
-```html
-<script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js"></script>
-```
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-#### 3. Import `FacebookModule` into your app's root module
-```typescript
+## Running end-to-end tests
 
-import { FacebookModule } from 'ngx-facebook';
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-@NgModule({
-  ...
-  imports: [
-    FacebookModule.forRoot()
-  ],
-  ...
-})
-export class AppModule { }
+## Further help
 
-```
-
-If you only want to use [FacebookService](https://zyra.github.io/ngx-facebook/facebook-service) only, without using the other components, then you can import it in your app's module instead of `FacebookModule`.
-
-#### 4. Inject `FacebookService` and call the `init` method (optional):
-This method must be called before using [`login`](http://zyra.github.io/ngx-facebook/facebook-service/#login) or [`api`](http://zyra.github.io/ngx-facebook/facebook-service/#api) methods. It is not required for other methods/components.
-
-```typescript
-import { FacebookService, InitParams } from 'ngx-facebook';
-
-...
-
-export class MyComponentOrService {
-
-  constructor(private fb: FacebookService) {
-
-    let initParams: InitParams = {
-      appId: '1234566778',
-      xfbml: true,
-      version: 'v2.8'
-    };
-
-    fb.init(initParams);
-
-  }
-
-}
-```
-
-<br><br>
-
-## Documentation
-You can view complete and detailed documentation by visiting https://zyra.github.io/ngx-facebook/.
-
-<br><br>
-
-## Example Usage
-
-You can view our [example project here](https://zyra.github.io/ngx-facebook-example/) and/or view its [source code here](https://github.com/zyra/ngx-facebook-example/)
-
-<br><br>
-
-### Example of login with Facebook
-
-```typescript
-import { FacebookService, LoginResponse } from 'ngx-facebook';
-
-@Component(...)
-export class MyComponent {
-
-  constructor(private fb: FacebookService) { }
-
-  loginWithFacebook(): void {
-
-    this.fb.login()
-      .then((response: LoginResponse) => console.log(response))
-      .catch((error: any) => console.error(error));
-
-  }
-
-}
-```
-
-<br><br>
-
-### Example of sharing on Facebook
-```typescript
-import { FacebookService, UIParams, UIResponse } from 'ngx-facebook';
-
-...
-
-share(url: string) {
-
-  let params: UIParams = {
-    href: 'https://github.com/zyra/ngx-facebook',
-    method: 'share'
-  };
-
-  this.fb.ui(params)
-    .then((res: UIResponse) => console.log(res))
-    .catch((e: any) => console.error(e));
-
-}
-```
-
-<br><br>
-
-### Example of adding a Facebook like button
-```html
-<fb-like href="https://github.com/zyra/ngx-facebook"></fb-like>
-```
-
-<br><br>
-
-### Example of playing a Facebook video
-
-#### Basic video component usage:
-```html
-<fb-video href="https://www.facebook.com/facebook/videos/10153231379946729/"></fb-video>
-```
-
-#### Advanced video component usage:
-```html
-<fb-video href="https://www.facebook.com/facebook/videos/10153231379946729/" (paused)="onVideoPaused($event)"></fb-video>
-```
-```typescript
-import { Component, ViewChild } from '@angular/core';
-import { FBVideoComponent } from 'ngx-facebook';
-
-@Component(...)
-export class MyComponent {
-
-  @ViewChild(FBVideoComponent) video: FBVideoComponent;
-
-  ngAfterViewInit() {
-    this.video.play();
-    this.video.pause();
-    this.video.getVolume();
-  }
-
-  onVideoPaused(ev: any) {
-    console.log('User paused the video');
-  }
-
-}
-```
-
-<br><br>
-## Contribution
-- **Having an issue**? or looking for support? [Open an issue](https://github.com/zyra/ngx-facebook/issues/new) and we will get you the help you need.
-- Got a **new feature or a bug fix**? Fork the repo, make your changes, and submit a pull request.
-
-## Support this project
-If you find this project useful, please star the repo to let people know that it's reliable. Also, share it with friends and colleagues that might find this useful as well. Thank you :smile:
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
