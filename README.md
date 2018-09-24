@@ -7,7 +7,7 @@ This is a wrapper for the official Facebook JavaScript SDK. It makes it easier t
 [![npm](https://img.shields.io/npm/l/express.svg)](https://www.npmjs.com/package/ngx-facebook)
 [![CircleCI](https://img.shields.io/circleci/project/github/zyra/ngx-facebook.svg)](https://circleci.com/gh/zyra/ngx-facebook)
 [![Sauce Test Status](https://saucelabs.com/buildstatus/ng2facebooksdk)](https://saucelabs.com/u/ng2facebooksdk)
-[![npm](https://img.shields.io/npm/dt/ngx-facebook-sdk.svg)](https://www.npmjs.com/package/ngx-facebook-sdk)
+[![npm](https://img.shields.io/npm/dt/ngx-facebook.svg)](https://www.npmjs.com/package/ngx-facebook)
 [![npm](https://img.shields.io/npm/dm/ngx-facebook.svg)](https://www.npmjs.com/package/ngx-facebook)
 
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/ng2facebooksdk.svg)](https://saucelabs.com/u/ng2facebooksdk)
