@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-facebook-v6": {
+    "ngx-facebook-app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ngx-facebook-v6",
+            "outputPath": "dist/ngx-facebook-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -45,18 +45,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-facebook-v6:build"
+            "browserTarget": "ngx-facebook-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngx-facebook-v6:build:production"
+              "browserTarget": "ngx-facebook-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-facebook-v6:build"
+            "browserTarget": "ngx-facebook-app:build"
           }
         },
         "test": {
@@ -74,7 +74,7 @@
         }
       }
     },
-    "ngx-facebook-v6-e2e": {
+    "ngx-facebook-app-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -82,11 +82,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ngx-facebook-v6:serve"
+            "devServerTarget": "ngx-facebook-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ngx-facebook-v6:serve:production"
+              "devServerTarget": "ngx-facebook-app:serve:production"
             }
           }
         },
@@ -129,5 +129,5 @@
       }
     }
   },
-  "defaultProject": "ngx-facebook-v6"
+  "defaultProject": "ngx-facebook-app"
 }
