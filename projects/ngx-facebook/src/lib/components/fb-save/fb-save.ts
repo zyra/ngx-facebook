@@ -11,7 +11,7 @@ import { FBMLAttribute, FBMLComponent } from '../fbml-component';
  * share it with friends, and receive relevant notifications.
  * @usage
  * ```html
- * <fb-save uri="https://github.com/zyra/ng2-facebook-sdk/"></fb-save>
+ * <fb-save uri="https://github.com/zyra/ngx-facebook/"></fb-save>
  * ```
  */
 @Component({

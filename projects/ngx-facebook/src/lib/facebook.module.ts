@@ -14,7 +14,7 @@ import { FBSendComponent } from './components/fb-send/fb-send';
 import { FBShareComponent } from './components/fb-share/fb-share';
 import { FBVideoComponent } from './components/fb-video/fb-video';
 
-const components: any[] = [
+const components = [
   FBCommentEmbedComponent,
   FBCommentsComponent,
   FBFollowComponent,
@@ -44,7 +44,7 @@ export function getComponents() {
  * In order to use this library, you need to import `FacebookModule` into your app's main `NgModule`.
  *
  * ```typescript
- * import { FacebookModule } from 'ng2-facebook-sdk';
+ * import { FacebookModule } from 'ngx-facebook';
  *
  * @NgModule({
  *   ...

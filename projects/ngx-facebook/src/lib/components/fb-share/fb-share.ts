@@ -11,7 +11,7 @@ import { FBMLAttribute, FBMLComponent } from '../fbml-component';
  * in groups, or to their friends via a Facebook Message.
  * @usage
  * ```html
- * <fb-share href="https://github.com/zyra/ng2-facebook-sdk/"></fb-share>
+ * <fb-share href="https://github.com/zyra/ngx-facebook/"></fb-share>
  * ```
  */
 @Component({

@@ -22,7 +22,7 @@ export type ApiMethod = 'get' | 'post' | 'delete';
  * You only need to inject this service in your application if you aren't using [`FacebookModule`](../facebook-module).
  * @usage
  * ```typescript
- * import { FacebookService, InitParams } from 'ng2-facebook-sdk';
+ * import { FacebookService, InitParams } from 'ngx-facebook';
  *
  * constructor(private fb: FacebookService) {
  *
@@ -189,7 +189,7 @@ export class FacebookService {
    * This synchronous function returns back the current authResponse.
    * @usage
    * ```typescript
-   * import { AuthResponse, FacebookService } from 'ng2-facebook-sdk';
+   * import { AuthResponse, FacebookService } from 'ngx-facebook';
    *
    * ...
    *
@@ -200,7 +200,7 @@ export class FacebookService {
     try {
       return <AuthResponse>FB.getAuthResponse();
     } catch (e) {
-      console.error('ng2-facebook-sdk: ', e);
+      console.error('ngx-facebook: ', e);
     }
   }
 }
