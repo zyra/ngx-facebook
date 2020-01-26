@@ -1,6 +1,5 @@
 node_modules
 .idea
-dist
 aot
 generated-docs
 dev
