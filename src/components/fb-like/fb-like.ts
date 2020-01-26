@@ -1,4 +1,4 @@
-import { Component, Input, ElementRef, Renderer } from '@angular/core';
+import { Component, Input, ElementRef, Renderer2 } from '@angular/core';
 import { FBMLAttribute, FBMLComponent } from '../fbml-component';
 
 /**
@@ -103,7 +103,7 @@ export class FBLikeComponent extends FBMLComponent {
   @FBMLAttribute
   width: string;
 
-  constructor(el: ElementRef, rnd: Renderer) {
+  constructor(el: ElementRef, rnd: Renderer2) {
     super(el, rnd, 'fb-like');
   }
 
