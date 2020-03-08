@@ -1,4 +1,4 @@
-import { Component, Input, ElementRef, Renderer } from '@angular/core';
+import { Component, Input, ElementRef, Renderer2 } from '@angular/core';
 import { FBMLAttribute, FBMLComponent } from '../fbml-component';
 
 /**
@@ -71,7 +71,7 @@ export class FBCommentsComponent extends FBMLComponent {
 
   constructor(
     el: ElementRef,
-    rnd: Renderer
+    rnd: Renderer2
   ) {
     super(el, rnd, 'fb-comments');
   }
