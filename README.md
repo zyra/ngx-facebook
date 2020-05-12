@@ -19,7 +19,7 @@ This is a wrapper for the official Facebook JavaScript SDK. It makes it easier t
 #### 1. Install via NPM:
 
 ```shell
-npm i --save ngx-facebook
+npm i --save @jemys89/ngx-facebook
 ```
 
 #### 2. Add the Facebook JavaScript SDK to your index.html

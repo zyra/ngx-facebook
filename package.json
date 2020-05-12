@@ -1,6 +1,6 @@
 {
-  "name": "ngx-facebook",
-  "version": "2.4.0",
+  "name": "@jemys89/ngx-facebook",
+  "version": "1.0.0",
   "description": "Facebook TypeScript SDK for Angular",
   "module": "dist/esm/index.js",
   "typings": "dist/esm/index.d.ts",
@@ -33,9 +33,9 @@
   "author": "Zyra Media Inc.",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zyra/ngx-facebook/issues"
+    "url": "https://github.com/jemys89/ngx-facebook/issues"
   },
-  "homepage": "https://github.com/zyra/ngx-facebook",
+  "homepage": "https://github.com/jemys89/ngx-facebook",
   "devDependencies": {
     "@angular/common": "4.1.2",
     "@angular/compiler": "4.1.2",
