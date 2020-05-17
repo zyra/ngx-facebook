@@ -9,7 +9,7 @@
     "prebuild": "rimraf -rf aot dist",
     "build": "gulp build",
     "postbuild": "rimraf -rf aot",
-    "build:dev": "npm run build && cp -r dist ../ng2-facebook-sdk-example/node_modules/ngx-facebook/",
+    "build:dev": "npm run build",
     "pretest": "rimraf -rf dist && tsc",
     "test": "karma start karma.conf.js --single-run",
     "pretest:watch": "npm run pretest",
