@@ -14,7 +14,7 @@
       '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
       '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
       '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
-      'rxjs':                      'npm:rxjs',
+      'rxjs': 'npm:rxjs',
     },
     packages: {
       app: {

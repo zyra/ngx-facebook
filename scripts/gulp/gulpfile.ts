@@ -10,6 +10,7 @@ const NGC = join(NODE_MODULES_BIN, 'ngc');
 const TSCONFIG  = join(PROJECT_ROOT, 'tsconfig.json');
 
 function ngc(target: string, module: string, outDir: string) {
+  console.log(NGC);
   const tsConfigPath = createTsconfig.apply(null, arguments);
   return new Promise<any>((resolve, reject) => {
     exec(`${NGC} -p ${tsConfigPath}`, (err: Error, stdout: string, stderr: string) => {
