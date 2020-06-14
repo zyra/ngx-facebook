@@ -27,7 +27,7 @@ export function FBMLInstanceMethod(target: any, key: string) {
       if (this._instance) {
         return this._instance[key].apply(this._instance, args);
       } else {
-        console.warn('ng2-facebook-sdk: tried calling instance method before component is ready.');
+        console.warn('ngx-facebook-sdk: tried calling instance method before component is ready.');
         return null;
       }
     }

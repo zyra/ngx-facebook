@@ -43,7 +43,7 @@ export function getComponents() {
  * In order to use this library, you need to import `FacebookModule` into your app's main `NgModule`.
  *
  * ```typescript
- * import { FacebookModule } from 'ng2-facebook-sdk';
+ * import { FacebookModule } from 'ngx-facebook-sdk';
  *
  * @NgModule({
  *   ...

@@ -3,19 +3,16 @@
 This is a wrapper for the official Facebook JavaScript SDK. It makes it easier to use Facebook SDK with Angular by providing components, providers and types.
 
 [![npm](https://img.shields.io/npm/l/express.svg)](https://www.npmjs.com/package/ngx-facebook)
-[![CircleCI](https://img.shields.io/circleci/project/github/zyra/ngx-facebook.svg)](https://circleci.com/gh/zyra/ngx-facebook)
-[![Sauce Test Status](https://saucelabs.com/buildstatus/ng2facebooksdk)](https://saucelabs.com/u/ng2facebooksdk)
+[![Build Status](https://drone.zyra.ca/api/badges/zyra/ngx-facebook/status.svg)](https://drone.zyra.ca/zyra/ngx-facebook)
 [![npm](https://img.shields.io/npm/dt/ngx-facebook.svg)](https://www.npmjs.com/package/ngx-facebook)
 [![npm](https://img.shields.io/npm/dm/ngx-facebook.svg)](https://www.npmjs.com/package/ngx-facebook)
-
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/ng2facebooksdk.svg)](https://saucelabs.com/u/ng2facebooksdk)
 
 ## Installation
 
 #### 1. Install via NPM:
 
 ```shell
-npm i ngx-facebook
+npm i -S ngx-facebook
 ```
 
 #### 2. Add the Facebook JavaScript SDK to your index.html
@@ -38,8 +35,6 @@ import { FacebookModule } from 'ngx-facebook';
 })
 export class AppModule { }
 ```
-
-If you only want to use [FacebookService](https://zyra.github.io/ngx-facebook/facebook-service) only, without using the other components, then you can import it in your app's module instead of `FacebookModule`.
 
 #### 4. Inject `FacebookService` and call the `init` method (optional):
 
@@ -169,7 +164,7 @@ We use [SemVer](https://semver.org/) for versioning. For the versions available,
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details  
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Support this project
 

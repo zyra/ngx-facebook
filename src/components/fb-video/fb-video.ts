@@ -20,7 +20,7 @@ declare var FB: any;
  *
  * ```ts
  * import { Component, ViewChild } from '@angular/core';
- * import { FBVideoComponent } from 'ng2-facebook-sdk';
+ * import { FBVideoComponent } from 'ngx-facebook-sdk';
  *
  * @Component(...)
  * export class MyComponent {

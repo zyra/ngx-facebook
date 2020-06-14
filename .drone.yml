@@ -1,0 +1,51 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+clone:
+  depth: 1
+
+steps:
+- name: Build
+  image: node:12
+  commands:
+  - npm i
+  - npm run build
+
+- name: Publish
+  image: node:12
+  when:
+    event:
+    - tag
+  environment:
+    NPM_TOKEN:
+      from_secret: npm_token
+  commands:
+  - echo '//registry.npmjs.org/:_authToken=$${NPM_TOKEN}' > ~/.npmrc
+  - cd dist
+  - npm publish
+
+- name: Generate docs
+  image: node:12
+  when:
+    branch:
+    - master
+  commands:
+  - npm run docs
+  - cp -a doc_content/site_includes/* docs/
+
+- name: Publish docs
+  image: plugins/gh-pages
+  when:
+    event:
+      exclude:
+      - pull_request
+    branch:
+    - master
+  settings:
+    username:
+      from_secret: gh_user
+    password:
+      from_secret: gh_token
+    pages_directory: docs

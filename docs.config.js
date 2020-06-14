@@ -1,7 +1,7 @@
 const _ = require('lodash');
 module.exports = {
   docTitle: 'Angular 2 Facebook SDK',
-  templateDir: './scripts/docs/templates/',
+  templateDir: './doc_content/templates/',
   templates: [
     '${ doc.template }',
     '${ doc.docType }.template.html',
@@ -11,7 +11,7 @@ module.exports = {
     'shortdesc',
     'fbdoc'
   ],
-  outputFolder: '../ngx-facebook-site/',
+  outputFolder: 'docs/',
   sourceFiles: ['./src/**/*.ts'],
   customProcessors: [
     {
