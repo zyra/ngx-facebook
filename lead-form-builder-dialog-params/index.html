@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>FacebookModule | Angular 2 Facebook SDK</title>
+  <title>LeadFormBuilderDialogParams | Angular 2 Facebook SDK</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link rel="stylesheet" href="//zyra.github.io/ngx-facebook/railscasts.css">
   <link rel="stylesheet" href="//zyra.github.io/ngx-facebook/style.css">
@@ -15,38 +15,50 @@
 
 
 
-<h1 class="display-4 api-title">
-  FacebookModule
-  <small>(class exported as FacebookModule)</small>
-</h1>
-
-<p>The main module to import into your application.
-You only need to import this module if you wish to use the components in this library; otherwise, you could just import <a href="../facebook-service">FacebookService</a> into your module instead.
-This module will make all components and providers available in your application.</p>
-
-
-
-
-
-
-<a href="#usage" class="h2 docs-title" id="usage anchor">
+<a id="LeadFormBuilderDialogParams" class="h2 docs-title anchor" href="#LeadFormBuilderDialogParams">
   <img src="https://zyra.github.io/ngx-facebook/link.svg" alt="link">
-  Usage
-</a>
-<p>In order to use this library, you need to import <code>FacebookModule</code> into your app&#39;s main <code>NgModule</code>.</p>
-<pre><code class="lang-typescript">import { FacebookModule } from &#39;ngx-facebook-sdk&#39;;
+  LeadFormBuilderDialogParams</a>
 
-@NgModule({
-  ...
-  imports: [
-    ...
-    FacebookModule.forRoot()
-  ],
-  ...
-})
-export class AppModule { }
-</code></pre>
+<p><p>Params that can be passed when using the Lead Form Builder for forms on Facebook Lead Ads</p>
+</p>
+<table class="table table-striped table-bordered rounded">
+  <thead>
+  <tr>
+    <th>Param</th>
+    <th>Type</th>
+    <th>Details</th>
+  </tr>
+  </thead>
+  <tbody>
+  
+  <tr>
+    <td>
+      page_id
+      <em>(optional)</em></td>
+    <td>
+      <code>string</code>
+    </td>
+    <td>
+      <p>The Facebook like page that the dialog will build forms for</p>
 
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      ad_account_id
+      <em>(optional)</em></td>
+    <td>
+      <code>string</code>
+    </td>
+    <td>
+      <p>The ad account ID associated with the like page</p>
+
+    </td>
+  </tr>
+  
+  </tbody>
+</table>
 
 
 </div>
