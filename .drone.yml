@@ -49,3 +49,8 @@ steps:
     password:
       from_secret: gh_token
     pages_directory: docs
+---
+kind: signature
+hmac: 432876e67f23df6c2a460418943205bf07c9dcda4388ab6324d8f6431aa46cab
+
+...
